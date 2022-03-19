@@ -1,8 +1,16 @@
-import { useRouter } from 'next/router';
+import { getNewsBySlug } from 'lib/api';
 
-const NewsPage = () => {
-  const router = useRouter();
-  return <h1>News Page</h1>;
+const NewsPage = ({ news }) => {
+
+  return <h1>Hello Detail Page - {news.slug}</h1>;
 };
 
 export default NewsPage;
+
+export async function getServerSideProps({ params }) {
+  const news = await getNewsBySlug(params.slug);
+  debugger;
+  return {
+    props: { news },
+  };
+}
