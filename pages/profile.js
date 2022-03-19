@@ -38,7 +38,7 @@ export default function ProfileHome({ news }) {
                     <LatestNews
                       title={latestNews.title}
                       image={latestNews.coverImage}
-                      url={latestNews.url}
+                      slug={latestNews.slug}
                       date={latestNews.date}
                     />
                   ))}

@@ -558,7 +558,13 @@ h1, .sidebar-title {
     margin-left: 24px;
     margin-right: 24px;
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+
+ 
+}
+
+.link:hover {
+    cursor: pointer;
 }
 
 .news-snapshot {
