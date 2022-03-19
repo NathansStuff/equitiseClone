@@ -1,12 +1,13 @@
+import Button from './Button';
+
 const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='logo'>
         <h1>equitise</h1>
       </div>
-      <div className='deals'>
-        <h3>View Deals</h3>
-      </div>
+      <Button text='View Deals' />
+
       <div className='initials'>
         <p>AB</p>
       </div>
