@@ -289,7 +289,7 @@ h1, .sidebar-title {
     display: flex;
     margin-top: 0;
     padding-top: 15px;
-    margin-right:28px;
+    margin-right:10px;
     padding-bottom: 0px;
     justify-content: space-between;
 }
@@ -394,3 +394,139 @@ h1, .sidebar-title {
     height: 100%;
   }
   
+
+
+  .latest-deal {
+      margin: 28px;
+      margin-bottom: 0;
+      display: flex;
+
+      img {
+          width: 172px;
+          height: 102px;
+      }
+  }
+
+  .latest-header {
+      display: flex;
+      width: 480px;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 31px;
+      margin-right: 31px;
+      margin-top: 0;
+      margin-bottom: 0;
+
+  }
+
+  .latest-highlight {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    
+    color: #06004D;
+
+    background: #E9F1F9;
+    border-radius: 2px;
+    height: 24px;
+    width: 116px;
+    margin: 0;
+    p {
+        margin-bottom: 0px;
+        margin-top: 4px;
+    }
+  }
+
+  .latest-title {
+      margin: 0;
+      h3 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 12px;
+        text-transform: uppercase;
+        color: #06004D;
+        mix-blend-mode: normal;
+        opacity: 0.75;
+        margin: 0;
+      }
+  }
+
+  .latest-name {
+      margin-left: 31px;
+
+      h2 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #06004D;
+        margin: 0;
+      }
+
+      h3 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: #5F5F5F;        
+        margin: 0;
+        margin-right: 29px;
+      }
+
+  }
+
+  .latest-raised {
+      display: flex;
+      flex-direction: row;
+      margin-top: 0;
+      margin-left: 31px;
+      margin-bottom: 0;
+      margin-right: 31px;
+      justify-content: space-between;
+  }
+
+  .latest-stats {
+      p {
+            margin: 0;
+            margin-top: 9px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #06004D;
+      }
+  }
+
+  .latest-progress {
+      display: flex;
+      flex-direction: row;
+      margin-left: 31px;
+      margin-top: 0;
+      p {
+          margin-top: 9px;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 22px;
+          color: #9EA0A5;
+      }
+  }
+
+  .latest-divider {
+    position: absolute;
+    height: 1px;
+    width: 680px;
+    border: 1px solid #EAEDF3;
+    margin-left: 29px;
+    margin-right: 29px;
+}
+
