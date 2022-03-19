@@ -4,8 +4,13 @@ import Banner from 'components/Banner';
 import PortfolioSnapshot from 'components/PortfolioSnapshot';
 import LatestDeals from 'components/LatestDeals';
 import LatestNews from 'components/LatestNews';
+import { getAllNews } from 'lib/api';
 
-export default function ProfileHome() {
+export default function ProfileHome({ news }) {
+  if (!news) {
+    return 'Loading!';
+  }
+  debugger;
   return (
     <div>
       <Navbar />
@@ -24,7 +29,20 @@ export default function ProfileHome() {
               </div>
               <div className='portfolio-flex'>
                 <LatestDeals />
-                <LatestNews />
+
+                <div className='news-holder'>
+                  <div className='news-holder-title'>
+                    <h2>Latest News</h2>
+                  </div>
+                  {news.map(latestNews => (
+                    <LatestNews
+                      title={latestNews.title}
+                      image={latestNews.coverImage}
+                      url={latestNews.url}
+                      date={latestNews.date}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -32,4 +50,16 @@ export default function ProfileHome() {
       </div>
     </div>
   );
+}
+
+// This function is called during the build (build time)
+// Provides props to your page
+// It will create static page
+export async function getStaticProps() {
+  const news = await getAllNews();
+  return {
+    props: {
+      news,
+    },
+  };
 }
