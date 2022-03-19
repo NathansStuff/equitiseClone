@@ -1,5 +1,6 @@
 import Navbar from 'components/Navbar';
 import Sidebar from 'components/SideBar';
+import Banner from 'components/Banner';
 
 export default function ProfileHome() {
   return (
@@ -7,7 +8,8 @@ export default function ProfileHome() {
       <Navbar />
       <div className='profilePageContent'>
         <Sidebar />
-        <div>
+        <div className='profile-page-main'>
+          <Banner />
           <div>
             <h3>Main Content</h3>
             <div>
