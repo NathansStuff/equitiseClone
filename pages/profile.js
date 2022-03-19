@@ -3,6 +3,7 @@ import Sidebar from 'components/SideBar';
 import Banner from 'components/Banner';
 import PortfolioSnapshot from 'components/PortfolioSnapshot';
 import LatestDeals from 'components/LatestDeals';
+import LatestNews from 'components/LatestNews';
 
 export default function ProfileHome() {
   return (
@@ -21,11 +22,9 @@ export default function ProfileHome() {
                 <div>Identity</div>
                 <div>Portfolio Distribution</div>
               </div>
-              <LatestDeals />
-              <div>
-                <h2>Div 3 Latest</h2>
-                <div>Latest Deals</div>
-                <div>Latest News</div>
+              <div className='portfolio-flex'>
+                <LatestDeals />
+                <LatestNews />
               </div>
             </div>
           </div>
