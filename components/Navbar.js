@@ -1,5 +1,3 @@
-import logo from 'public/assets/logo.png';
-
 const Navbar = () => {
   return (
     <div className='navbar'>
