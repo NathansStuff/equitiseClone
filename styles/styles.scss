@@ -1,0 +1,104 @@
+body {    
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.navbar {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    
+    height: 70px;
+    max-width: 100%;
+
+    background: #06004D;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
+ 
+    h1 {
+       margin-left: 50px;
+        color: #F6F7F4;
+    }
+
+    .logo {
+        h1 {
+            color: #F6F7F4;
+            margin: 15px;
+            margin-left: 50px;
+        }
+        p {  
+            color: #F6F7F4;
+            margin: 0;
+        }
+    }
+
+    .deals {
+        position: absolute;
+        height: 38px;
+        width: 114px;
+        left: 80%;
+        top: 16px;
+        border-radius: 4px;
+
+        /* Fill/Secondary */
+        
+        background: #6363FF;
+        border-radius: 4px;
+
+        h3 {
+            position: absolute;
+            height: 22px;
+            left: 0px;
+            right: 0px;
+            margin-top: 10px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 22px;
+            /* identical to box height, or 157% */
+            
+            text-align: center;
+            
+            color: #FFFFFF; 
+        }
+    }
+
+    .initials {
+
+        /* Rectangle */
+
+        height: 38px;
+        width: 38px;
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 0%;
+        border-radius: 19px;
+        margin-top: 16px;
+        margin-left: 93%;
+        background: #F6AB2F;
+
+        p {
+            position: absolute;
+            height: 24px;
+            left: 22.37%;
+            right: 22.37%;
+            top: calc(50% - 24px/2);
+            margin-top: 0px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            /* identical to box height, or 150% */
+
+            text-align: center;
+
+            color: #FFFFFF;
+        }
+    }
+}
+
