@@ -10,6 +10,8 @@ body {
     right: 0%;
     top: 0%;
     bottom: 0%;
+    display: flex;
+    justify-content: space-between;
     
     max-height: 70px;
     max-width: 100%;
@@ -23,14 +25,11 @@ body {
     }
 
     .logo {
-        h1 {
+        p {
             color: #F6F7F4;
-            margin: 15px;
+            margin-top: 20px;
             margin-left: 50px;
-        }
-        p {  
-            color: #F6F7F4;
-            margin: 0;
+            font-size: 20px;
         }
     }
 
@@ -71,6 +70,12 @@ body {
             color: #FFFFFF;
         }
     }
+}
+
+.navbar-right {
+    display: flex;
+    width: 250px;
+    margin-top: 16px;
 }
 
 .profilePageContent {
