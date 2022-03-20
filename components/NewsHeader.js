@@ -6,6 +6,7 @@ export default function BlogHeader({
   author,
 }) {
   return (
+
     <div className='blog-detail-header'>
       <p className='lead mb-0'>
         <img
@@ -15,16 +16,17 @@ export default function BlogHeader({
           width='50px'
           alt='avatar'
         />
-        {author.name}
+        {' '}{author.name}
         {', '} {date}
       </p>
-      <h1 className='font-weight-bold blog-detail-header-title mb-0'>
+      <h2 className='font-weight-bold blog-detail-header-title mb-0 center'>
         {title}
-      </h1>
-      <h2 className='blog-detail-header-subtitle mb-3'>{subtitle}</h2>
-      {/* Check if contains cover image */}
+      </h2>
+      <h3 className='blog-detail-header-subtitle mb-3 '>{subtitle}</h3>
+      
       <img
-        className='img-fluid rounded'
+        
+        className='img-fluid rounded center'
         src={coverImage}
         alt='TODO: provide alt'
       />

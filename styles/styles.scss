@@ -594,3 +594,34 @@ h1, .sidebar-title {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+/////////// BLOG CONTENT /////////////
+.blog-detail-page {
+    margin-top: 30px;
+    font-size: 19px;
+  
+    .blog-detail-header {
+      .lead {
+        font-size: 17px;
+      }
+      &-title {
+        font-size: 52px;
+      }
+    }
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
