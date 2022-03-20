@@ -1,11 +1,79 @@
-import PageLayout from 'components/PageLayout';
+import { useState } from 'react';
+import { Row, Col } from 'react-bootstrap';
 
-export default function News() {
+import PageLayout from 'components/PageLayout';
+import CardItem from 'components/CardItem';
+import CardListItem from 'components/CardListItem';
+import FilteringMenu from 'components/FilteringMenu';
+import { getAllNews } from 'lib/api';
+import { useGetNews } from 'actions';
+
+const fetcher = url => fetch(url).then(res => res.json());
+
+export default function News({news: initialData}) {
+    const [filter, setFilter] = useState({
+        view: { list: 0 },
+      });
+    
+      const { data: news, error } = useGetNews(initialData);
+      if (!news) {
+        return 'Loading!';
+      }
+
   return (
     <PageLayout>
-      <div>
-        <h1>Hello</h1>
-      </div>
+      <FilteringMenu
+        filter={filter}
+        onChange={(option, value) => {
+          debugger;
+          setFilter({ ...filter, [option]: value });
+        }}
+      />
+      <hr />
+      <Row className='mb-5'>
+        {/* <Col md="10">
+        <CardListItem />
+      </Col> */}
+        {news.map(newsSingle =>
+          filter.view.list ? (
+            <Col key={`${newsSingle.slug}-list`} md='9'>
+              <CardListItem
+                author={newsSingle.author}
+                title={newsSingle.title}
+                subtitle={newsSingle.subtitle}
+                date={newsSingle.date}
+                link={{
+                  href: '/blogs/[slug]',
+                  as: `/blogs/${blog.slug}`,
+                }}
+              />
+            </Col>
+          ) : (
+            <Col key={newsSingle.slug} md='4'>
+              <CardItem
+                author={newsSingle.author}
+                title={newsSingle.title}
+                subtitle={newsSingle.subtitle}
+                date={newsSingle.date}
+                image={newsSingle.coverImage}
+                link={{
+                  href: '/news/[slug]',
+                  as: `/news/${newsSingle.slug}`,
+                }}
+              />
+            </Col>
+          )
+        )}
+      </Row>
     </PageLayout>
   );
+}
+
+export async function getStaticProps() {
+  const news = await getAllNews({ offset: 0 });
+  return {
+    props: {
+      news,
+    },
+  };
 }
