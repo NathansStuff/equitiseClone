@@ -12,6 +12,110 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     {
+      name: 'customer',
+      type: 'document',
+      title: 'Customer',
+      fields: [
+        {
+          name: 'name',
+          title: 'Name',
+          type: 'string',
+        },
+        {
+          name: 'initials',
+          title: 'Initials',
+          type: 'string',
+        },
+        {
+          name: 'avatar',
+          title: 'Avatar',
+          type: 'image',
+        },
+      ],
+    },
+    {
+      name: 'investment',
+      type: 'document',
+      title: 'Investment',
+      fields: [
+        {
+          name: 'company',
+          type: 'reference',
+          title: 'Invested Company',
+          to: [
+            {
+              type: 'company',
+            },
+          ],
+          description: 'What company is being invested in?',
+        },
+        {
+          name: 'person',
+          type: 'reference',
+          title: 'Investor',
+          to: [
+            {
+              type: 'customer',
+            },
+          ],
+          description: 'Who is doing the investing?',
+        },
+        {
+          name: 'amount',
+          type: 'number',
+          title: 'Total Invested',
+        },
+      ],
+    },
+    {
+      name: 'company',
+      type: 'document',
+      title: 'Company',
+      fields: [
+        {
+          name: 'name',
+          title: 'title',
+          type: 'string',
+        },
+        {
+          name: 'goal',
+          title: 'Goal',
+          type: 'number',
+        },
+        {
+          name: 'minimum',
+          title: 'Minimum Target',
+          type: 'number',
+        },
+        {
+          name: 'shares',
+          title: 'Total Shares',
+          type: 'number',
+        },
+
+        {
+          name: 'price',
+          title: 'Share Price',
+          type: 'number',
+        },
+        {
+          name: 'blurb',
+          title: 'Blurb',
+          type: 'string',
+        },
+        {
+          name: 'start',
+          title: 'Start Date',
+          type: 'datetime',
+        },
+        {
+          name: 'close',
+          title: 'Close Date',
+          type: 'datetime',
+        },
+      ],
+    },
+    {
       name: 'author',
       type: 'document',
       title: 'Author',
