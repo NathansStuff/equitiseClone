@@ -4,6 +4,19 @@ body {
     background: #FAFAFA;
 }
 
+.page-wrapper {
+    padding: 20px;
+  }
+
+.page-footer {
+    padding: 40px;
+    font-size: 20px;
+    text-align: center;
+  
+    a {
+      color: #63696e;
+    }
+  }
 .navbar {
     position: absolute;
     left: 0%;
@@ -14,7 +27,7 @@ body {
     justify-content: space-between;
     
     max-height: 70px;
-    max-width: 100%;
+    width: 100%;
 
     background: #06004D;
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
