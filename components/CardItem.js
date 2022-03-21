@@ -4,7 +4,7 @@ import { urlFor } from 'lib/api';
 
 const CardItem = ({ title, subtitle, image, date, author, link }) => {
   return (
-    <Card className={`fj-card`}>
+    <Card className={`fj-card full-width`}>
       <div className='card-body-wrapper'>
         <Card.Header className='d-flex flex-row'>
           <img

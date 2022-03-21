@@ -18,7 +18,9 @@ body {
   }
   
 .page-footer {
-    padding: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
     font-size: 20px;
     text-align: center;
   
@@ -381,6 +383,12 @@ h1, .sidebar-title {
 }
 
 
+.divider {
+  position: absolute;
+  height: 10px;
+  width: 500px;
+  background: #EAEDF3;
+}
 
 
 /////BUTTON ///////
@@ -915,7 +923,10 @@ h1, .sidebar-title {
     }
   }
   
-  
+  .full-width{
+    width: 100%;
+  }
+
   .dark {
     .card.fj-card {
       background-color: #232129;
@@ -972,12 +983,97 @@ h1, .sidebar-title {
     }
   }
   
+
+
+
+
+
+
+
+  ////////////FOOOTER//////////////
+
   .page-footer {
-    padding: 40px;
     font-size: 20px;
     text-align: center;
-  
     a {
       color: #63696e;
+    }
+  }
+
+.footer-copyright {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 20px;
+}
+
+.footer-privacy {
+  display: flex;
+  flex-direction: row;
+
+  div {
+    p {
+      padding-left: 20px;
+    }
+  }
+}
+
+
+
+  .link-style{
+    a, p {
+      text-decoration:none;
+      color: #5f5f5f;
+      margin-bottom: 8px;
+      margin-top: 0;
+      font-size: 13px;
+      font-family: 'Inter';    
+      display: block;
+    }
+
+    h2 {
+      a {
+      color: #06004D;
+      font-size: 16px;
+      font-family: 'Inter';
+      padding-bottom: 25px;
+      font-weight: 700;
+      display: block;
+      text-decoration: none;
+    }
+  }
+  }
+
+  .footer-flex-row {
+    display: flex;
+  }
+
+  .page-footer {
+    display: flex;
+  }
+
+  
+  .footer-flex-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .social {
+    padding: 5px;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .footer-socials {
+    p {
+      margin-right: 5px;
+
     }
   }
