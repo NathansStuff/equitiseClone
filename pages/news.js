@@ -43,8 +43,8 @@ export default function News({news: initialData}) {
                 subtitle={newsSingle.subtitle}
                 date={newsSingle.date}
                 link={{
-                  href: '/blogs/[slug]',
-                  as: `/blogs/${blog.slug}`,
+                  href: '/news/[slug]',
+                  as: `/news/${newsSingle.slug}`,
                 }}
               />
             </Col>
