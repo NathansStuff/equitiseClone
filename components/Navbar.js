@@ -2,7 +2,7 @@ import Button from './Button';
 
 const Navbar = () => {
   return (
-    <div className='navbar'>
+    <div className='navbar '>
       <div className='logo'>
         <p>equitise</p>
       </div>

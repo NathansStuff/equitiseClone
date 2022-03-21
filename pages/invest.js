@@ -1,4 +1,5 @@
 import PageLayout from 'components/PageLayout';
+import InvestmentCard from 'components/Invest/InvestmentCard';
 
 export default function Invest() {
   return (
@@ -14,7 +15,13 @@ export default function Invest() {
           </p>
         </div>
       </div>
-      <h1>Invest</h1>
+      <div className='invest-content'>
+        <div className='invest-subtitle'>
+          <h4 >CURRENT OFFERS</h4>
+          <h2>Find a business you want to back</h2>
+        </div>
+      </div>
+      <InvestmentCard/>
     </PageLayout>
   );
 }

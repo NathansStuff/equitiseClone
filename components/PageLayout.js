@@ -15,7 +15,7 @@ export default function PageLayout({ children, className }) {
       </Head>
       <Fragment>
         <Navbar />
-        <div className={` ${className}`}>{children}</div>
+        <div className={`page-background`}>{children}</div>
         <Footer />
       </Fragment>
     </Fragment>

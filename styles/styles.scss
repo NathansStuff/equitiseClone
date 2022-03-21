@@ -39,7 +39,7 @@ body {
     
     max-height: 70px;
     width: 100%;
-
+  
     background: #06004D;
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
  
@@ -1321,4 +1321,192 @@ h1, .sidebar-title {
       line-height: 1.65em;
     }
     }
-    /////////////////INVEST PAGE END//////////
+
+    .invest-content {
+      margin-left: 120px;
+      padding-top: 100px;
+    }
+
+    .invest-subtitle {
+      h4 {
+      align-items: center;
+    color: #6363ff;
+    display: flex;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+      }
+      h5 {
+        color: #06004d;
+    display: block;
+    font-family: Inter,sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2em;
+    margin-top: 6px;
+    padding-bottom: 40px;
+      }
+    }
+/////////////////INVEST PAGE END//////////
+
+
+/////////////////INVESTMENT CARD///////////
+.investment-container {
+  width: 350px;
+  height: 620px;
+  margin-left: 20px;
+  background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
+}
+.investment-img {
+  width: 350px;
+  height: 192px;
+  object-fit: cover;
+  opacity: 1;
+  border-radius: 5px;
+}
+
+.page-background {
+  background: whitesmoke;
+}
+
+.investment-logo {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  opacity: 1;
+  background-size: cover;
+  border-radius: 50%;
+  position: relative;
+  left: 230px;
+  text-shadow: 0 0 1px transparent;
+  bottom: 64px;
+  border: 1px solid;
+}
+
+.investment-title {
+  padding: 20px;
+  
+  a {
+    font-size: 13px;
+    align-items: center;
+    color: #6363ff;
+    display: flex;
+    font-family: Inter,sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    bottom: 80px;
+    position: relative;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-decoration: none;
+
+    h4 {
+      font-size: 24px;
+      color: #06004d;
+    }
+  }
+  p {
+    color: #5f5f5f;
+    position: relative;
+    bottom: 80px;
+  }
+}
+
+.investment-summary {
+  padding: 20px;
+  position: relative;
+  bottom: 120px;
+  h4, p {
+    color: #5f5f5f;
+    font-size: 13px;
+  }
+ 
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.investment-progress-bar {
+  background: #5f5f5f;
+  display: block;
+  height: 6px;
+
+}
+
+.investment-progress-filled {
+  background: #6363ff;
+  display: block;
+  height: 6px;
+  position: relative;
+  bottom: 6px;
+  ;
+}
+
+.investment-3-headers {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 20px;
+  color: #6363ff;
+  position: relative;
+  bottom: 140px;
+  h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+  h3 {
+    color: #121230;
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1em;
+  }
+}
+
+.investment-button {
+  position: relative;
+  bottom: 140px;
+  left: 20px;
+  width: 310px;
+  height: 40px;
+  background: #6363ff;
+  border-color: #6363ff;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform .3s,-webkit-transform .3s;
+}
+.investment-button:hover {
+  bottom: 145px;
+}
+
+.investment-time {
+  position: relative;
+  bottom: 140px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  p {
+    display: inline;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #6363ff;
+    font-weight: 400;
+    line-height: 1em;
+    margin-left: 5px;
+  }
+}
+
+
+/////////////////INVESTMENT CARD END///////////

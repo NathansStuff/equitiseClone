@@ -2,7 +2,7 @@ import { SocialIcon } from 'react-social-icons';
 
 export default function Footer() {
   return (
-    <div>
+    <div className='page-background'>
       <footer className='page-footer'>
         <div className='footer-flex-col'>
           <div className='link-style'>
@@ -187,7 +187,7 @@ export default function Footer() {
       <div classname='divider page-footer'>
         <hr />
         <div className='footer-copyright'>
-          <div className='link-style'>
+          <div>
             <p>2022 Copyright Pty Ltd. All rights reserved.</p>
           </div>
           <div className='footer-privacy'>
