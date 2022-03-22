@@ -3,16 +3,20 @@ import InvestmentCard from 'components/Invest/InvestmentCard';
 import { getAllCompanies, getAllInvestments } from 'lib/api';
 import { useGetCompanies, useGetInvestments } from 'actions';
 
-export default function Invest({ companies: initialCompanies, investments: initialInvestments }) {
+export default function Invest({
+  companies: initialCompanies,
+  investments: initialInvestments,
+}) {
   const { data: companies, companiesError } = useGetCompanies(initialCompanies);
-  const { data: investments, investmentsError } = useGetInvestments(initialInvestments);
+  const { data: investments, investmentsError } =
+    useGetInvestments(initialInvestments);
 
   if (!companies || !investments) {
     return 'Loading!';
   }
-  console.log(companies)
-  console.log('*****')
-  console.log(investments)
+  console.log(companies);
+  console.log('*****');
+  console.log(investments);
   return (
     <PageLayout>
       <div className='invest-header-bg'>
@@ -26,31 +30,33 @@ export default function Invest({ companies: initialCompanies, investments: initi
           </p>
         </div>
       </div>
-      <div className='invest-content'>
-        <div className='invest-subtitle'>
-          <h4>CURRENT OFFERS</h4>
-          <h2>Find a business you want to back</h2>
+      <div className='investment-home-container'>
+        <div>
+          <div className='invest-subtitle'>
+            <h4>CURRENT OFFERS</h4>
+            <h2>Find a business you want to back</h2>
+          </div>
+        </div>
+        <div className='investment-companies-container'>
+          {companies.map(company => (
+            <InvestmentCard
+              logo={company.logo}
+              coverImage={company.coverImage}
+              type={company.type}
+              name={company.name}
+              blurb={company.blurb}
+              link={{
+                href: '/company/[slug]',
+                as: `/company/${company.slug}`,
+              }}
+              slug={company.slug}
+              close={company.close}
+              start={company.start}
+              minimum={company.minimum}
+            />
+          ))}
         </div>
       </div>
-      {companies.map(company => (
-     
-        
-        <InvestmentCard
-          logo={company.logo}
-          coverImage={company.coverImage}
-          type={company.type}
-          name={company.name}
-          blurb={company.blurb}
-          link={{
-            href: '/company/[slug]',
-            as: `/company/${company.slug}`,
-          }}
-          slug={company.slug}
-          close={company.close}
-          start={company.start}
-          minimum={company.minimum}
-        />
-      ))}
     </PageLayout>
   );
 }
@@ -61,8 +67,7 @@ export async function getStaticProps() {
   return {
     props: {
       companies,
-      investments
+      investments,
     },
   };
 }
-

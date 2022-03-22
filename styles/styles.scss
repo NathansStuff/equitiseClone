@@ -1322,11 +1322,6 @@ h1, .sidebar-title {
     }
     }
 
-    .invest-content {
-      margin-left: 120px;
-      padding-top: 100px;
-    }
-
     .invest-subtitle {
       h4 {
       align-items: center;
@@ -1348,6 +1343,22 @@ h1, .sidebar-title {
     padding-bottom: 40px;
       }
     }
+
+.investment-companies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.investment-home-container {
+  margin: 0 auto;
+  max-width: 1160px;
+  padding: 100px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 /////////////////INVEST PAGE END//////////
 
 
@@ -1355,10 +1366,11 @@ h1, .sidebar-title {
 .investment-container {
   width: 350px;
   height: 620px;
-  margin-left: 20px;
   background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 .investment-img {
   width: 350px;
