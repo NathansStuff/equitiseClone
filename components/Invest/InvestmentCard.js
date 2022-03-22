@@ -2,6 +2,14 @@ import { urlFor } from 'lib/api';
 import Link from 'next/link';
 import { getInvestmentBySlug } from 'lib/api';
 import { useGetInvestments } from 'actions';
+import CountdownTimer from './CountdownTimer';
+function diff_miliseconds(dt2, dt1) 
+ {
+
+  var diff =(dt2.getTime() - dt1.getTime());
+  return Math.abs(Math.round(diff));
+
+ }
 export default function InvestmentCard({
   name,
   blurb,
@@ -10,8 +18,12 @@ export default function InvestmentCard({
   type,
   link,
   slug,
+  start,
+  close,
   investments: initialInvestments,
 }) {
+
+
   const { data: investments, error } = useGetInvestments(initialInvestments);
   var i;
   var CompanyInvestments;
@@ -23,8 +35,15 @@ export default function InvestmentCard({
 
   var totalInvested = 0;
   for (i = 0; i < CompanyInvestments.length; i++) {
-      totalInvested += CompanyInvestments[i]['amount']
+    totalInvested += CompanyInvestments[i]['amount'];
   }
+
+  var timeNow = new Date();
+  var startDate = new Date(start);
+  var closeDate = new Date(close);
+  var timeDiffMs = diff_miliseconds(closeDate, timeNow)
+
+  console.log(timeDiffMs)
 
   return (
     <div className='investment-container'>
@@ -64,7 +83,7 @@ export default function InvestmentCard({
       <div className='investment-3-headers'>
         <div>
           <h4>Raised</h4>
-          <h3>{totalInvested}</h3>
+          <h3>${totalInvested.toLocaleString()}</h3>
         </div>
         <div>
           <h4>Equity</h4>
@@ -83,9 +102,26 @@ export default function InvestmentCard({
       <div className='investment-time'>
         <p>CLOSES IN </p>
         <p style={{ color: '#06004d', 'font-weight': '700' }}>
-          17d, 12h, 40m and 20s
+        <CountdownTimer countdownTimestampMs={timeDiffMs} close={close}/>
         </p>
+        
       </div>
+
+      {startDate < timeNow && closeDate > timeNow ? (
+        <div className='investment-public-coming'>
+          <p>PUBLIC</p>
+        </div>
+      ) : (
+        <div />
+      )}
+
+      {startDate > timeNow ? (
+        <div className='investment-coming'>
+          <p>COMING SOON</p>
+        </div>
+      ) : (
+        <div />
+      )}
     </div>
   );
 }

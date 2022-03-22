@@ -46,6 +46,8 @@ export default function Invest({ companies: initialCompanies, investments: initi
             as: `/company/${company.slug}`,
           }}
           slug={company.slug}
+          close={company.close}
+          start={company.start}
         />
       ))}
     </PageLayout>

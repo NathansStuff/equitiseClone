@@ -1516,4 +1516,26 @@ h1, .sidebar-title {
   z-index: 5;
   position: absolute;
 }
+
+.investment-public-coming, 
+.investment-coming {
+  position: relative;
+  height: 15px;
+  background-color: #06004d;
+  bottom: 780px;
+  width: fit-content;
+  margin: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 10;
+  p {
+    position: relative;
+    bottom: 10px;
+    width: max-content;
+  }
+}
 /////////////////INVESTMENT CARD END///////////
