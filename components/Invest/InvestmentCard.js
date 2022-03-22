@@ -20,6 +20,7 @@ export default function InvestmentCard({
   minimum,
   investments: initialInvestments,
 }) {
+  
   const { data: investments, error } = useGetInvestments(initialInvestments);
   var i;
   var CompanyInvestments;
@@ -38,8 +39,6 @@ export default function InvestmentCard({
   var startDate = new Date(start);
   var closeDate = new Date(close);
   var timeDiffMs = diff_miliseconds(closeDate, timeNow);
-
-  console.log(timeDiffMs);
 
   return (
     <div className='investment-container'>
