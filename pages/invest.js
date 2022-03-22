@@ -2,7 +2,7 @@ import PageLayout from 'components/PageLayout';
 import InvestmentCard from 'components/Invest/InvestmentCard';
 import { getAllCompanies, getAllInvestments } from 'lib/api';
 import { useGetCompanies, useGetInvestments } from 'actions';
-
+import InvestmentCardPast from 'components/Invest/InvestmentCardPast';
 export default function Invest({
   companies: initialCompanies,
   investments: initialInvestments,
@@ -71,8 +71,7 @@ export default function Invest({
             new Date(company.close) > timeNow ? (
               <div />
             ) : (
-              <InvestmentCard
-                logo={company.logo}
+              <InvestmentCardPast
                 coverImage={company.coverImage}
                 type={company.type}
                 name={company.name}
@@ -85,6 +84,8 @@ export default function Invest({
                 close={company.close}
                 start={company.start}
                 minimum={company.minimum}
+                tag1={company.tag1}
+                tag2={company.tag2}
               />
             )
           )}

@@ -8,5 +8,11 @@ import news from './news';
 
 export default createSchema({
   name: 'default',
-  types: schemaTypes.concat([company, customer, investment, author, news]),
+  types: schemaTypes.concat([
+    company,
+    customer,
+    investment,
+    author,
+    news,
+  ]),
 });

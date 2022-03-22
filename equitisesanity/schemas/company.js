@@ -33,7 +33,29 @@ export default {
       title: 'Total Shares',
       type: 'number',
     },
+    {
+      name: 'tag1',
+      type: 'string',
+      title: 'First Tag',
+      options: {
+        list: [
+          { title: 'Raise Funds', value: 'raise-funds' },
+          { title: 'Case Study', value: 'case-study' },
+        ],
+      },
+    },
 
+    {
+      name: 'tag2',
+      type: 'string',
+      title: 'Second Tag',
+      options: {
+        list: [
+          { title: 'Raise Funds', value: 'raise-funds' },
+          { title: 'Case Study', value: 'case-study' },
+        ],
+      },
+    },
     {
       name: 'price',
       title: 'Share Price',
