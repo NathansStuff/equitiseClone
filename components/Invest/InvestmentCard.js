@@ -1,29 +1,48 @@
-import Button from 'components/Button';
+import { urlFor } from 'lib/api';
+import Link from 'next/link';
+import { getInvestmentBySlug } from 'lib/api';
+import { useGetInvestments } from 'actions';
+export default function InvestmentCard({
+  name,
+  blurb,
+  coverImage,
+  logo,
+  type,
+  link,
+  slug,
+  investments: initialInvestments,
+}) {
+  const { data: investments, error } = useGetInvestments(initialInvestments);
+  var i;
+  var CompanyInvestments;
+  for (i = 0; i < investments.length; i++) {
+    if (name === investments[i]['name'])
+      CompanyInvestments = investments[i]['relatedInvestment'];
+  }
+  const totalInvestments = CompanyInvestments.length;
 
-export default function InvestmentCard() {
+  var totalInvested = 0;
+  for (i = 0; i < CompanyInvestments.length; i++) {
+      totalInvested += CompanyInvestments[i]['amount']
+  }
+
   return (
     <div className='investment-container'>
-      <img
-        src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'
-        className='investment-img'
-      />
+      <Link {...link}>
+        <div className='investment-link'></div>
+      </Link>
+      <img src={urlFor(coverImage).url()} className='investment-img' />
 
       <div className='investment-title'>
-        <img
-          src='https://www.logodesign.net/images/nature-logo.png'
-          className='investment-logo'
-        />
+        <img src={urlFor(logo).url()} className='investment-logo' />
         <a href='#'>
-          <span>Retail</span>
+          <span>{type}</span>
         </a>
         <a href='#'>
-          <h4>Business Name</h4>
+          <h4>{name}</h4>
         </a>
 
-        <p>
-          Bundlfresh is an Australian online marketplace allowing consumers to
-          bundle produce from their favourite local...
-        </p>
+        <p>{blurb}</p>
       </div>
       <div className='investment-summary'>
         <div className='flex-row'>
@@ -45,7 +64,7 @@ export default function InvestmentCard() {
       <div className='investment-3-headers'>
         <div>
           <h4>Raised</h4>
-          <h3>$794,750</h3>
+          <h3>{totalInvested}</h3>
         </div>
         <div>
           <h4>Equity</h4>
@@ -53,14 +72,16 @@ export default function InvestmentCard() {
         </div>
         <div>
           <h4>Investments</h4>
-          <h3>131</h3>
+          <h3>{totalInvestments}</h3>
         </div>
       </div>
-      <button type='button' className='investment-button'>
-        <span className='button__text'>View Deal</span>
-      </button>
+      <Link {...link}>
+        <button type='button' className='investment-button'>
+          <span className='button__text'>View Deal</span>
+        </button>
+      </Link>
       <div className='investment-time'>
-        <p>CLOSES IN  </p>
+        <p>CLOSES IN </p>
         <p style={{ color: '#06004d', 'font-weight': '700' }}>
           17d, 12h, 40m and 20s
         </p>

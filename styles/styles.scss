@@ -1412,6 +1412,7 @@ h1, .sidebar-title {
     color: #5f5f5f;
     position: relative;
     bottom: 80px;
+    height: 80px;
   }
 }
 
@@ -1508,5 +1509,11 @@ h1, .sidebar-title {
   }
 }
 
-
+.investment-link {
+  cursor: pointer !important;
+  width: 350px;
+  height: 280px;
+  z-index: 5;
+  position: absolute;
+}
 /////////////////INVESTMENT CARD END///////////
