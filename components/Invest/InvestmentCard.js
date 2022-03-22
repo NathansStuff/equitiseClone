@@ -3,13 +3,10 @@ import Link from 'next/link';
 import { getInvestmentBySlug } from 'lib/api';
 import { useGetInvestments } from 'actions';
 import CountdownTimer from './CountdownTimer';
-function diff_miliseconds(dt2, dt1) 
- {
-
-  var diff =(dt2.getTime() - dt1.getTime());
+function diff_miliseconds(dt2, dt1) {
+  var diff = dt2.getTime() - dt1.getTime();
   return Math.abs(Math.round(diff));
-
- }
+}
 export default function InvestmentCard({
   name,
   blurb,
@@ -20,10 +17,9 @@ export default function InvestmentCard({
   slug,
   start,
   close,
+  minimum,
   investments: initialInvestments,
 }) {
-
-
   const { data: investments, error } = useGetInvestments(initialInvestments);
   var i;
   var CompanyInvestments;
@@ -41,9 +37,9 @@ export default function InvestmentCard({
   var timeNow = new Date();
   var startDate = new Date(start);
   var closeDate = new Date(close);
-  var timeDiffMs = diff_miliseconds(closeDate, timeNow)
+  var timeDiffMs = diff_miliseconds(closeDate, timeNow);
 
-  console.log(timeDiffMs)
+  console.log(timeDiffMs);
 
   return (
     <div className='investment-container'>
@@ -63,49 +59,73 @@ export default function InvestmentCard({
 
         <p>{blurb}</p>
       </div>
-      <div className='investment-summary'>
-        <div className='flex-row'>
-          <div>
-            <h4>Minimum target met</h4>
+      {startDate < timeNow ? (
+        <div>
+          <div className='investment-summary'>
+            <div className='flex-row'>
+              <div>
+                <h4>
+                  {totalInvested > minimum ? (
+                    <div>'Minimum target met' </div>
+                  ) : (
+                    'Minimum not yet met'
+                  )}
+                </h4>
+              </div>
+              <div>
+                <p>
+                  <strong>
+                    {Math.floor((totalInvested / minimum) * 100)}% raised
+                  </strong>
+                </p>
+              </div>
+            </div>
+            <div className='investment-progress-bar'></div>
+            <div
+              className='investment-progress-filled'
+              style={{
+                width: `${Math.floor((totalInvested / minimum) * 100)}%`,
+                'max-width': '100%',
+              }}
+            ></div>
           </div>
-          <div>
-            <p>
-              <strong>198% raised</strong>
-            </p>
+          <div className='investment-3-headers'>
+            <div>
+              <h4>Raised</h4>
+              <h3>${totalInvested.toLocaleString()}</h3>
+            </div>
+            <div>
+              <h4>Equity</h4>
+              <h3>5%</h3>
+            </div>
+            <div>
+              <h4>Investments</h4>
+              <h3>{totalInvestments}</h3>
+            </div>
           </div>
         </div>
-        <div className='investment-progress-bar'></div>
-        <div
-          className='investment-progress-filled'
-          style={{ width: '8150%', 'max-width': '100%' }}
-        ></div>
-      </div>
-      <div className='investment-3-headers'>
+      ) : (
         <div>
-          <h4>Raised</h4>
-          <h3>${totalInvested.toLocaleString()}</h3>
+          <div className='investment-summary'></div>
+          <div className='investment-3-headers'></div>
+          <div className='investment-interest'>Expression of Interest</div>
         </div>
-        <div>
-          <h4>Equity</h4>
-          <h3>5%</h3>
-        </div>
-        <div>
-          <h4>Investments</h4>
-          <h3>{totalInvestments}</h3>
-        </div>
-      </div>
+      )}
       <Link {...link}>
         <button type='button' className='investment-button'>
           <span className='button__text'>View Deal</span>
         </button>
       </Link>
-      <div className='investment-time'>
-        <p>CLOSES IN </p>
-        <p style={{ color: '#06004d', 'font-weight': '700' }}>
-        <CountdownTimer countdownTimestampMs={timeDiffMs} close={close}/>
-        </p>
-        
-      </div>
+      {startDate < timeNow && closeDate > timeNow ? (
+        <div className='investment-time'>
+          <p>CLOSES IN </p>
+          <p style={{ color: '#06004d', 'font-weight': '700' }}>
+            <CountdownTimer countdownTimestampMs={timeDiffMs} close={close} />
+          </p>
+        </div>
+      ) : (
+        <div className='investment-time' />
+      )}
 
       {startDate < timeNow && closeDate > timeNow ? (
         <div className='investment-public-coming'>
