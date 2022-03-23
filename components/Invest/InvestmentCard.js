@@ -39,7 +39,7 @@ export default function InvestmentCard({
   var startDate = new Date(start);
   var closeDate = new Date(close);
   var timeDiffMs = diff_miliseconds(closeDate, timeNow);
-  debugger
+  
   return (
     <div className='investment-container'>
       <Link {...link}>

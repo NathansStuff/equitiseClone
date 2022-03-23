@@ -18,8 +18,9 @@ export default function Footer() {
             </p>
           </div>
           <div className='link-style'>
-            <p>
-              Authorised and licensed by the Financial Markets Authority (FSP
+            <p className='footer-auth'>
+              Authorised and licensed by the 
+              Financial Markets Authority (FSP
               #000000) and ASIC (AFSL #000000).
             </p>
           </div>

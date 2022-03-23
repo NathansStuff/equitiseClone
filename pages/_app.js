@@ -1,8 +1,8 @@
 //Adds fortawesome icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { faBorderAll, faList } from '@fortawesome/free-solid-svg-icons';
-library.add(faList, faBorderAll);
+import { faBorderAll, faList, faLocationArrow } from '@fortawesome/free-solid-svg-icons';
+library.add(faList, faBorderAll, faLocationArrow);
 
 import 'styles/styles.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
