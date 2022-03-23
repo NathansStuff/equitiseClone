@@ -15,8 +15,9 @@ export default {
     },
     {
       name: 'slug',
+      type: 'slug',
       title: 'Slug',
-      type: 'string',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'goal',
