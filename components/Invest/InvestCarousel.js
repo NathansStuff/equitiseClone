@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const InvestCarousel = props => {
   const { children, show } = props;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [length, setLength] = useState(children.length);
   const [touchPosition, setTouchPosition] = useState(null);
 
-  // Set the length to match current children from props
-  useEffect(() => {
-    setLength(children.length);
-  }, [children]);
-
   const next = () => {
-    if (currentIndex < length - show) {
+    if (currentIndex < 8) {
       setCurrentIndex(prevState => prevState + 1);
+    } else {
+      setCurrentIndex(0);
     }
   };
 
   const prev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(prevState => prevState - 1);
+    } else {
+      setCurrentIndex(8);
     }
   };
 
@@ -52,15 +51,11 @@ const InvestCarousel = props => {
     setCurrentIndex(8);
   };
 
-//   const handleTransitionEnd = () => {
-//     if (currentIndex === 0) {
-//       setTransitionEnabled(false);
-//       setCurrentIndex(length);
-//     } else if (currentIndex === length + show) {
-//       setTransitionEnabled(false);
-//       setCurrentIndex(show);
-//     }
-//   };
+  const handleTransitionEnd = () => {
+    if (currentIndex === 1) {
+      setCurrentIndex(10);
+    }
+  };
 
   const handleTouchStart = e => {
     const touchDown = e.touches[0].clientX;
@@ -116,7 +111,9 @@ const InvestCarousel = props => {
               transform: `translateX(-${currentIndex * (100 / show)}%)`,
             }}
           >
+            {children[8]}
             {children}
+            {children[0]}
           </div>
         </div>
       </div>
@@ -193,6 +190,11 @@ const InvestCarousel = props => {
               : ''
           }
         />
+      </div>
+      <div className='carousel-view-all'>
+        <Link href='/news'>
+          <button>View All</button>
+        </Link>
       </div>
     </div>
   );

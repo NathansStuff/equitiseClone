@@ -22,6 +22,24 @@ export default function Invest({
   if (!companies || !investments || !news) {
     return 'Loading!';
   }
+
+  // Only 9 news component cards
+  let newsComponents = [];
+  let i=0;
+  for (i; i < 9; i++) {
+    newsComponents.push(
+      <CarouselCard
+        coverImage={news[i].coverImage}
+        title={news[i].title}
+        tag1={news[i].tag1}
+        subtitle={news[i].subtitle}
+        tag2={news[i].tag2}
+        link={{
+          href: '/news/[slug]',
+          as: `/news/${news[i].slug}`,
+        }}      />
+    );
+  }
   return (
     <PageLayout>
       <div className='invest-container'>
@@ -109,17 +127,8 @@ export default function Invest({
           }}
         >
           <InvestCarourel show={3}>
-            {news.map(newsSingle => {
-              return (
-                <CarouselCard
-                  coverImage={newsSingle.coverImage}
-                  title={newsSingle.title}
-                  tag1={newsSingle.tag1}
-                  subtitle={newsSingle.subtitle}
-                  tag2={newsSingle.tag2}
-                />
-              );
-            })}
+            {newsComponents}
+            
           </InvestCarourel>
         </div>
       </div>

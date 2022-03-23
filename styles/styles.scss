@@ -1756,6 +1756,7 @@ h1, .sidebar-title {
   overflow: hidden;
   width: 100%;
   height: 100%;
+
 }
 
 .carousel-content {
@@ -1862,13 +1863,50 @@ h1, .sidebar-title {
   background-color: #06004d !important;
 }
 
+.carousel-view-all {
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  button {
+    height: 40px;
+    width: 105px;
+    background: #06004d;
+    border-color: #06004d;
+    border: 1px solid #06004d;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer ;
+    z-index: 2;
+    transition: transform .3s,-webkit-transform .3s;
+
+    &:hover {
+      background-color: hsl(210, 5%, 51%);
+      border-color: hsl(210, 5%, 41%);
+      -webkit-transform: translateY(.25rem);
+      transform: translateY(-.25rem);
+    }
+  }
+}
+
 ///////////////CAROUSEL END///////////////
 ///////////////CAROUSEL CARD START///////////////
+.carousel-card-ult {
+  width: 465px;
+
+}
 .carousel-card-container {
+  cursor: pointer;
   height: 360px;
-  width: 445px;
+  margin: 5px;
+  border: 10px;
   background-color: white;
-  margin: 7px;
   border-radius: 3px;
   box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
   img {
@@ -1883,19 +1921,36 @@ h1, .sidebar-title {
     text-decoration: none;
     font-size: 15px;
     margin-top: 20px;
-    padding: 0 20px;
     font-style: 'Inter';
+    width: fit-content;
+    &:hover {
+      text-decoration: underline;
+    }
+
   }
   h3 {
     color: #06004d;
     padding: 0 20px;
     font-size: 22px;
     font-style: 'Inter';
+
+    
   }
   p {
     padding: 0 20px;
     font-style: 'Inter';
 
   }
+}
+
+.h4-tag {
+  padding: 0 8px;
+}
+
+.carousel-card-tags {
+  padding: 0 20px;
+  height: 46px;
+  display: flex;
+  justify-content: flex-start;
 }
 ///////////////CAROUSEL CARD END///////////////
