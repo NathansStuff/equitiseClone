@@ -1,7 +1,7 @@
 import PageLayout from 'components/PageLayout';
 import InvestmentCard from 'components/Invest/InvestmentCard';
-import { getAllCompanies, getAllInvestments } from 'lib/api';
-import { useGetCompanies, useGetInvestments } from 'actions';
+import { getAllCompanies, getAllInvestments, getAllNews } from 'lib/api';
+import { useGetCompanies, useGetInvestments, useGetNews } from 'actions';
 import InvestmentCardPast from 'components/Invest/InvestmentCardPast';
 import Newsletter from 'components/Newsletter';
 import News from './news';
@@ -11,13 +11,15 @@ import CarouselCard from 'components/Invest/CarouselCard';
 export default function Invest({
   companies: initialCompanies,
   investments: initialInvestments,
+  news: initialNews,
 }) {
   const { data: companies, companiesError } = useGetCompanies(initialCompanies);
+  const { data: news, newsError } = useGetNews(initialNews);
   const { data: investments, investmentsError } =
     useGetInvestments(initialInvestments);
   const timeNow = new Date();
 
-  if (!companies || !investments) {
+  if (!companies || !investments || !news) {
     return 'Loading!';
   }
   return (
@@ -107,15 +109,17 @@ export default function Invest({
           }}
         >
           <InvestCarourel show={3}>
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
+            {news.map(newsSingle => {
+              return (
+                <CarouselCard
+                  coverImage={newsSingle.coverImage}
+                  title={newsSingle.title}
+                  tag1={newsSingle.tag1}
+                  subtitle={newsSingle.subtitle}
+                  tag2={newsSingle.tag2}
+                />
+              );
+            })}
           </InvestCarourel>
         </div>
       </div>
@@ -126,10 +130,12 @@ export default function Invest({
 export async function getStaticProps() {
   const companies = await getAllCompanies({ offset: 0 });
   const investments = await getAllInvestments();
+  const news = await getAllNews({ offset: 0 });
   return {
     props: {
       companies,
       investments,
+      news,
     },
   };
 }
