@@ -5,6 +5,8 @@ import { useGetCompanies, useGetInvestments } from 'actions';
 import InvestmentCardPast from 'components/Invest/InvestmentCardPast';
 import Newsletter from 'components/Newsletter';
 import News from './news';
+import InvestCarourel from 'components/Invest/InvestCarousel';
+import CarouselCard from 'components/Invest/CarouselCard';
 
 export default function Invest({
   companies: initialCompanies,
@@ -96,6 +98,26 @@ export default function Invest({
           </div>
         </div>
         <Newsletter />
+        <div
+          style={{
+            maxWidth: 1200,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            marginTop: 64,
+          }}
+        >
+          <InvestCarourel show={3}>
+            <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
+            <CarouselCard />
+          </InvestCarourel>
+        </div>
       </div>
     </PageLayout>
   );
