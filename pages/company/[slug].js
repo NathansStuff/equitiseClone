@@ -14,20 +14,26 @@ const BlogDetail = ({company}) => {
   );
 };
 
+// export async function getServerSideProps({params}) {
+//   const company = await getCompanyBySlug(params.slug);
+//   return {
+//     props: {company}
+//   }
+// }
+
+export async function getStaticPaths() {
+  const companies = await getAllCompanies();
+  return {
+    paths: companies?.map(b => ({ params: { slug: b.slug } })),
+    fallback: false,
+  };
+}
+
 export async function getStaticProps({ params }) {
   const company = await getCompanyBySlug(params.slug);
   return {
     props: { company },
   };
 }
-
-export async function getStaticPaths() {
-  const company = await getAllCompanies();
-  return {
-    paths: company?.map(b => ({ params: { slug: b.slug } })),
-    fallback: false,
-  };
-}
-
 
 export default BlogDetail;
