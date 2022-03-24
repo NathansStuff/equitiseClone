@@ -2,6 +2,8 @@ import BlockContent from '@sanity/block-content-to-react';
 import HighlightCode from 'components/HighlightCode';
 import { urlFor } from 'lib/api';
 import React from 'react';
+import { SocialIcon } from 'react-social-icons';
+import Link from 'next/link';
 
 const BlockRenderer = props => {
   const { style = 'normal' } = props.node;
@@ -59,6 +61,10 @@ const CompanyBody = ({ company }) => {
   const minimumPost = company.minimum + company.preValuation;
   const maximumPost = company.goal + company.preValuation;
   const maxShares = Math.floor(company.goal / company.price).toLocaleString();
+  const timeNow = new Date();
+  const start = new Date(company.start);
+  const end = new Date(company.close);
+  const live = start < timeNow && end > timeNow ? true : false;
   debugger;
   return (
     <div className='company-body-container'>
@@ -84,7 +90,7 @@ const CompanyBody = ({ company }) => {
       <div className='company-body-content'>
         <div>
           <h1>{company.name}</h1>
-          <p>{company.about}</p>
+          <p>{company.blurb}</p>
           <ul className='company-li'>
             <li>
               <p className='company-flex'>
@@ -237,7 +243,63 @@ const CompanyBody = ({ company }) => {
         <BlockContent serializers={serializers} blocks={company.content} />
       </div>
       <div className='company-body-socials'>
-        <h1>Share: {company.facebook}</h1>
+        <div className='comp-social'>
+          <p>Share: </p>
+          <div>
+            {company.facebook ? (
+              <SocialIcon
+                url={`${company.facebook}`}
+                target='_blank'
+                style={{ height: '30px', width: '30px' }}
+              />
+            ) : (
+              ''
+            )}
+          </div>
+          <div>
+            {company.instagram ? (
+              <SocialIcon
+                url={`${company.instagram}`}
+                target='_blank'
+                style={{ height: '30px', width: '30px' }}
+              />
+            ) : (
+              ''
+            )}
+          </div>
+          <div>
+            {company.linkedin ? (
+              <SocialIcon
+                url={`${company.linkedin}`}
+                target='_blank'
+                style={{ height: '30px', width: '30px' }}
+              />
+            ) : (
+              ''
+            )}
+          </div>
+        </div>
+        <div className='company-blurb'>
+          <p>{company.about}</p>
+        </div>
+        <div className='live'>
+          {live ? <h3>Offer Live</h3> : <h3>Offer Ended</h3>}
+        </div>
+        <Link href='/register'>
+          <div className='company-signup-btn'>
+            <p>Sign up to invest</p>
+          </div>
+        </Link>
+
+        <div className='company-login'>
+          {' '}
+          <p>
+            or{' '}
+            <Link style={{ cursor: 'pointer' }} href='/login'>
+              Login
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

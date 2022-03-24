@@ -2269,4 +2269,40 @@ h1, .sidebar-title {
   text-decoration: none !important;
   color: green;
 }
+
+.comp-social{
+  display: flex;
+  width: 100%;
+  // flex-direction: row;
+  // justify-content: flex-start;
+  // background-color: #006e58;
+  div{
+    width: 50px;
+    padding-left: 20px;
+  }
+}
+
+.company-blurb {
+  border-left: 4px solid #6363ff;
+  margin-top: 20px;
+  padding-left: 20px;
+  p {
+    font-style: italic;
+  }
+}
+.live {
+  font-size: 32px;
+  color: #06004d;
+  font-weight: 700;
+  padding-top: 25px;
+  padding-left: 0;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+.company-login {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 ///////////////COMPANY BODY END///////////////
