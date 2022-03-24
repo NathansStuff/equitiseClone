@@ -25,6 +25,11 @@ export default {
       type: 'number',
     },
     {
+      name: 'video',
+      title: 'Promotional Video',
+      type: 'string',
+    },
+    {
       name: 'minimum',
       title: 'Minimum Target',
       type: 'number',

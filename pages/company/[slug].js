@@ -1,10 +1,19 @@
-import { getCompanyBySlug, getAllCompanies } from 'lib/api';
+import { getCompanyBySlug, getAllCompanies, getAllInvestments } from 'lib/api';
 import CompanyTitle from 'components/company/CompanyTitle';
 import PageLayout from 'components/PageLayout';
-const BlogDetail = ({ company }) => {
+import { useGetInvestments } from 'actions';
+
+
+const CompanyDetail = ({ company, investments: initialInvestments }) => {
+  const { data: investments, investmentsError } =
+    useGetInvestments(initialInvestments);
+    if ( !investments ) {
+      return 'Loading!';
+    }
+    debugger
   return (
     <PageLayout>
-      <CompanyTitle logo={company.logo} close={company.close} />
+      <CompanyTitle logo={company.logo} close={company.close} name={company.name} goal={company.goal} price={company.price} type={company.type} video={company.video}/>
     </PageLayout>
   );
 };
@@ -19,9 +28,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const company = await getCompanyBySlug(params.slug);
+  const investments = await getAllInvestments();
+
   return {
-    props: { company },
+    props: { company, investments },
   };
 }
 
-export default BlogDetail;
+export default CompanyDetail;

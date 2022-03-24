@@ -4,6 +4,21 @@ body {
     background: #FAFAFA;
 }
 
+.link-text {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.link-prev-text {
+  display: flex;
+  flex-direction: row;
+  p {
+    margin-right: 5px;
+  }
+}
+
 .page-wrapper {
     padding: 100px;
   }

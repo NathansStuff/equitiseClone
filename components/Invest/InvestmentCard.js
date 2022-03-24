@@ -3,10 +3,7 @@ import Link from 'next/link';
 import { getInvestmentBySlug } from 'lib/api';
 import { useGetInvestments } from 'actions';
 import CountdownTimer from '../CountdownTimer';
-function diff_miliseconds(dt2, dt1) {
-  var diff = dt2.getTime() - dt1.getTime();
-  return Math.abs(Math.round(diff));
-}
+
 export default function InvestmentCard({
   name,
   blurb,
@@ -20,7 +17,6 @@ export default function InvestmentCard({
   minimum,
   investments: initialInvestments,
 }) {
-  
   const { data: investments, error } = useGetInvestments(initialInvestments);
   var i;
   var CompanyInvestments;
@@ -38,7 +34,7 @@ export default function InvestmentCard({
   var timeNow = new Date();
   var startDate = new Date(start);
   var closeDate = new Date(close);
-  
+
   return (
     <div className='investment-container'>
       <Link {...link}>
@@ -118,7 +114,7 @@ export default function InvestmentCard({
         <div className='investment-time'>
           <p>CLOSES IN </p>
           <p style={{ color: '#06004d', 'font-weight': '700' }}>
-            <CountdownTimer  close={close} />
+            <CountdownTimer close={close} />
           </p>
         </div>
       ) : (
