@@ -76,7 +76,7 @@ export default {
     {
       name: 'maximumInvestment',
       title: 'Maximum Investment (Retail)',
-      type: 'string',
+      type: 'number',
     },
     {
       name: 'maximumInvestmentSophisticated',

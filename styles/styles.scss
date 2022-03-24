@@ -2234,5 +2234,17 @@ h1, .sidebar-title {
   flex-direction: row;
   align-items: flex-start;
 }
-
+.company-table {
+  width: 100%;
+  background-color: #fff;
+  tr {
+    border: 1px solid;
+    height: 36px;
+    th,td{padding-left: 5px;
+  }}
+  th {
+    background-color: #06004D;
+    color: white;
+  }
+}
 ///////////////COMPANY BODY END///////////////

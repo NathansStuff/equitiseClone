@@ -56,6 +56,9 @@ const getHeaders = content => {
 
 const CompanyBody = ({ company }) => {
   const headers = getHeaders(company.content);
+  const minimumPost = company.minimum + company.preValuation;
+  const maximumPost = company.goal + company.preValuation;
+  const maxShares = Math.floor(company.goal / company.price).toLocaleString();
   return (
     <div className='company-body-container'>
       <div className='company-body-header-container'>
@@ -99,7 +102,7 @@ const CompanyBody = ({ company }) => {
             <li>
               <p className='company-flex'>
                 <div className='company-overlay-container' id='cooling'>
-                  <strong className='company-hover' >
+                  <strong className='company-hover'>
                     Cooling off rights:
                     <div className='company-li-overlay'>
                       <p>Second cool amazing overlay message the next!</p>
@@ -110,6 +113,94 @@ const CompanyBody = ({ company }) => {
               </p>
             </li>
           </ul>
+          <h1>OFFER OVERVIEW</h1>
+        </div>
+        <table className='company-table'>
+          <tbody>
+            <tr>
+              <th>Offer Overview</th>
+              <th></th>
+              <th>
+                <th>AUD</th>
+              </th>
+            </tr>
+            <tr>
+              <td>Minimum Investment</td>
+              <td>amount</td>
+              <td>
+                {'$'}
+                {company.price}
+              </td>
+            </tr>
+            <tr>
+              <td>Maximum Investment</td>
+              <td>retail investors only</td>
+              <td>
+                {' '}
+                {'$'}
+                {company.maximumInvestment.toLocaleString()}
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>sophisticated investors only</td>
+              <td>{company.maximumInvestmentSophisticated.toLocaleString()}</td>
+            </tr>
+            <tr>
+              <td>Pre-Money Valuation</td>
+              <td>equity</td>
+              <td>
+                {' '}
+                {'$'}
+                {company.preValuation.toLocaleString()}
+              </td>
+            </tr>
+            <tr>
+              <td>Offer Amount</td>
+              <td>minimum</td>
+              <td>
+                {' '}
+                {'$'}
+                {company.minimum.toLocaleString()}
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>maximum</td>
+              <td>
+                {' '}
+                {'$'}
+                {company.goal.toLocaleString()}
+              </td>
+            </tr>
+            <tr>
+              <td>Post-Money Valuation</td>
+              <td>minimum</td>
+              <td>
+                {'$'}
+                {minimumPost.toLocaleString()}
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>maximum</td>
+              <td>
+                {'$'}
+                {maximumPost.toLocaleString()}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          The company is offering up to {maxShares} shares at an issue price of{' '}
+          {'$'}
+          {company.price} per share up to {'$'}
+          {company.goal}
+        </p>
+        <h1>Key Documents</h1>
+        {}
+        <div>
+            
         </div>
         <BlockContent serializers={serializers} blocks={company.content} />
       </div>

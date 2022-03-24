@@ -10,7 +10,6 @@ const CompanyDetail = ({ company, investments: initialInvestments }) => {
   if (!investments) {
     return 'Loading!';
   }
-  debugger
   return (
     <PageLayout>
       <CompanyTitle
