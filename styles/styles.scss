@@ -2306,3 +2306,163 @@ h1, .sidebar-title {
   justify-content: center;
 }
 ///////////////COMPANY BODY END///////////////
+
+///////////////EQUITY START///////////////
+.equity-header-cont {
+  display: flex;
+  flex-direction: row;
+  background-color: #06004D;
+
+}
+.equity-faq-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  bottom: 100px;
+}
+.equity-faq-card {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+  padding: 60px 70px 0 70px;
+  max-width: 1420px;
+  h5 {
+    align-items: center;
+    color: #6363ff;
+    display: flex;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  h2 {
+    color: #06004d;
+    font-family: Inter,sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1em;
+    margin-bottom: 30px;
+  }
+}
+
+.equity-faq-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.equity-faq-card-container {
+  display: flex;
+}
+
+.equity-faq-each {
+  max-width: 300px;
+  padding: 0 10px;
+  
+  h4 {
+  color: #06004d;
+    font-family: Inter,sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    height: 56px;
+    line-height: 28px;
+    margin: 0;
+}
+}
+.faq-ul {
+  list-style-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxNSAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPG1hc2sgaWQ9Im1hc2swIiBtYXNrLXR5cGU9ImFscGhhIiBtYXNrVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4PSItMSIgeT0iLTEiIHdpZHRoPSIxNyIgaGVpZ2h0PSIxMiI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTQuMzAyNCAtMC41MzA2NEwxNS41MzMyIDAuNzAwMTJMNS4zNzg3NCAxMC44NTQ2TC0wLjQ2Njc5NyA1LjAwOTA1TDAuNzYzOTYzIDMuNzc4MjlMNS4zNzg3NCA4LjM5MzA2TDE0LjMwMjQgLTAuNTMwNjRaIiBmaWxsPSJ3aGl0ZSIvPgo8L21hc2s+CjxnIG1hc2s9InVybCgjbWFzazApIj4KPHJlY3QgeD0iMC41MzMyMDMiIHk9IjAuNDY5MzYiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzREQUZENyIvPgo8L2c+Cjwvc3ZnPgo=);
+    list-style-position: inside;
+    padding-left: 0;
+  li {
+    margin-top: 7px;
+  ::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+  }}
+}
+
+.cta::before {
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU3LjEgKDgzMDg4KSAtIGh0dHBzOi8vc2tldGNoLmNvbSAtLT4KICAgIDx0aXRsZT5JY29uIC8gcXVlc3Rpb24tZGFyazwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPgogICAgICAgIDxwYXRoIGQ9Ik04LDAgQzMuNTg1ODQxNzQsMCAwLDMuNTg1ODQxNzQgMCw4IEMwLDEyLjQxNDE1ODMgMy41ODU4NDE3NCwxNiA4LDE2IEMxMi40MTQxNTgzLDE2IDE2LDEyLjQxNDE1ODMgMTYsOCBDMTYsMy41ODU4NDE3NCAxMi40MTQxNTgzLDAgOCwwIFogTTgsMC42OTU2NTIxNzQgQzEyLjAzODE5OTcsMC42OTU2NTIxNzQgMTUuMzA0MzQ3OCwzLjk2MTgwMDM1IDE1LjMwNDM0NzgsOCBDMTUuMzA0MzQ3OCwxMi4wMzgxOTk3IDEyLjAzODE5OTcsMTUuMzA0MzQ3OCA4LDE1LjMwNDM0NzggQzMuOTYxODAwMzUsMTUuMzA0MzQ3OCAwLjY5NTY1MjE3NCwxMi4wMzgxOTk3IDAuNjk1NjUyMTc0LDggQzAuNjk1NjUyMTc0LDMuOTYxODAwMzUgMy45NjE4MDAzNSwwLjY5NTY1MjE3NCA4LDAuNjk1NjUyMTc0IFogTTguMTAwNTQzMywzLjY1NDg5MTEzIEM2LjgwMzE1MiwzLjY1NDg5MTEzIDUuOTQyOTEzMDQsNC40NDEwMjE5MSA1Ljc1NTQzNDc4LDUuNjM4NTg3MTMgQzUuNzQzMjYwODcsNS43MTM3MTcyMiA1Ljc4MDE2ODM1LDUuNzYzMjkzNTcgNS44NTUyOTg3OCw1Ljc3NTgxNTMgTDYuNjQxMzA0MzUsNS45MTM3MjI3OCBDNi43MTY0MzQ3OCw1LjkyNjI0NDUyIDYuNzY2MDEwNzgsNS44ODg2NDEzOSA2Ljc3ODUzMjUyLDUuODEzODU4NzggQzYuOTI4MDk3NzQsNS4wNTI4MTUzIDcuMzc2OTcyODcsNC42MjgzOTY4NyA4LjA3NTQwNzY1LDQuNjI4Mzk2ODcgQzguNzg2NzEyLDQuNjI4Mzk2ODcgOS4yODUzMjU5MSw1LjA3Nzc2NjI2IDkuMjg1MzI1OTEsNS43ODg3MjI3OCBDOS4yODUzMjYyNiw2LjIxMzA3MDYxIDkuMTM1OTAyMjYsNi40OTk4OTY3IDguNjk5NzI4MzUsNy4wOTg1MDUzOSBMNy44NjM0NTExMyw4LjI0NTkyMzgzIEM3LjYwMTUzODA5LDguNjA4MDEwNzggNy40ODk4MDk3NCw4Ljg3MDA4Njk2IDcuNDg5ODA5NzQsOS4zNjk1NjUyMiBMNy40ODk4MDk3NCw5Ljg4MDQzNDc4IEM3LjQ4OTgwOTc0LDkuOTU1MjE3MzkgNy41MzkzNDc4MywxMC4wMDU0Njc1IDcuNjE0MTMwNDMsMTAuMDA0MTA0NCBMOC40Mzc0OTk4MywxMC4wMDQxMDQ0IEM4LjUxMjI4Mjc4LDEwLjAwNDEwNDQgOC41NjE4MjA1Miw5Ljk1NDUzODA5IDguNTYxODIwNTIsOS44Nzk3NTU0OCBMOC41NjE4MjA1Miw5LjQ4MDk3ODA5IEM4LjU2MTgyMDUyLDkuMDU2OTc4MDkgOC42MzcxNTc1Nyw4Ljg4MjIxMTgzIDguODg2NTQ4ODcsOC41NDU1MTYxNyBMOS43MjIxNDY3OCw3LjM5NzQxODQzIEMxMC4xNDY0OTQ2LDYuODEwOTgzNjUgMTAuMzU4MDE2Myw2LjM3NDc3MTgzIDEwLjM1ODAxNjMsNS43NzU4MTUzIEMxMC4zNTgwMTYzLDQuNTQwNjg0ODcgOS40NDczMjU5MSwzLjY1NDg5MTEzIDguMTAwNTQzMywzLjY1NDg5MTEzIFogTTcuNTUyMzA5OTEsMTAuOTUzODA0NSBDNy40NzcxNzk0OCwxMC45NTM4MDQ1IDcuNDI3MzA5OTEsMTEuMDA0MDIxNiA3LjQyNzMwOTkxLDExLjA3ODgwNDIgTDcuNDI3MzA5OTEsMTIuMTUxNDk0NiBDNy40MjczMDk5MSwxMi4yMjYyNzcyIDcuNDc2ODMxNjUsMTIuMjc1ODE1MyA3LjU1MjMwOTkxLDEyLjI3NTgxNTMgTDguNTAwNjc5MywxMi4yNzU4MTUzIEM4LjU3NTExNDA5LDEyLjI3NTgxNTMgOC42MjUsMTIuMjI2NjI1IDguNjI1LDEyLjE1MTQ5NDYgTDguNjI1LDExLjA3ODgwNDIgQzguNjI1LDExLjAwNDM2OTcgOC41NzU0NjE5MSwxMC45NTM4MDQ1IDguNTAwNjc5MywxMC45NTM4MDQ1IEw3LjU1MjMwOTkxLDEwLjk1MzgwNDUgWiIgaWQ9InBhdGgtMSI+PC9wYXRoPgogICAgPC9kZWZzPgogICAgPGcgaWQ9Ikljb24tLy1xdWVzdGlvbiIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkNvbG91ci0vLVByaW1hcnkiPgogICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+CiAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgICAgICA8L21hc2s+CiAgICAgICAgICAgIDx1c2UgaWQ9Ik1hc2siIGZpbGw9IiMxMjEyMzAiIGZpbGwtcnVsZT0ibm9uemVybyIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+CiAgICAgICAgICAgIDxnIG1hc2s9InVybCgjbWFzay0yKSIgZmlsbD0iIzEyMTIzMCIgaWQ9IlJlY3RhbmdsZSI+CiAgICAgICAgICAgICAgICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPjwvcmVjdD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+) no-repeat;
+    content: "";
+    display: block;
+    float: left;
+    height: 17px;
+    margin: 0 10px 0 0;
+    position: relative;
+    top: 7px;
+    width: 17px;
+}
+
+.equity-more-cont {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+
+}
+.equity-more-p {
+  padding-left: 5px;
+  font-size: 17px;
+  color: #06004D;
+}
+
+.equity-more {
+  font-size: 17px;
+  color: #06004D;
+  font-weight: 700;
+}
+
+.equity-faq-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.equity-signup-btn {
+  transition: opacity .5s .5s,transform .5s .5s,-webkit-transform .5s .5s;
+  color: #fff;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+  background: #6363ff;
+  border-color: #6363ff;
+  display: flex;
+  justify-content: center;
+  display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #06004d;
+    border-radius: 3px;
+    height: 40px;
+  p {
+    margin-bottom:  0;
+  } 
+  &:hover {
+    background-color: blue;
+    transform: translateY(-5px);
+  } 
+}
+
+.equity-banner {
+  width: calc(100% + 140px);
+  position: relative;
+  right: 70px;
+  height: 70px;
+  background-color: #06004D;
+  color: #fafafa;
+  padding: 14px 70px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+
+}
+///////////////EQUITY END///////////////
