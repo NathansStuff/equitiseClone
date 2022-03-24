@@ -8,20 +8,20 @@ const defaultRemainingTime = {
   days: '00',
 };
 
-function getRemainingTimeUntilMsTimestamp(timestampMs, close) {
+function getRemainingTimeUntilMsTimestamp(timestapmMs, close) {
   const timestampDayjs = dayjs(close);
-    const nowDayjs = dayjs();
-    if (timestampDayjs.isBefore(nowDayjs)) {
-      return {
-        seconds: '00',
-        minutes: '00',
-        hours: '00',
-        days: '00',
-      };
-    }
+  const nowDayjs = dayjs();
+  if (timestampDayjs.isBefore(nowDayjs)) {
+    return {
+      seconds: '00',
+      minutes: '00',
+      hours: '00',
+      days: '00',
+    };
+  }
   return {
     seconds: getRemainingSeconds(nowDayjs, timestampDayjs),
-    minutes : getRemainingMinutes(nowDayjs, timestampDayjs),
+    minutes: getRemainingMinutes(nowDayjs, timestampDayjs),
     hours: getRemainingHours(nowDayjs, timestampDayjs),
     days: getRemainingDays(nowDayjs, timestampDayjs),
   };
@@ -33,8 +33,8 @@ function getRemainingSeconds(nowDayjs, timestampDayjs) {
 }
 
 function getRemainingMinutes(nowDayjs, timestampDayjs) {
-    const minutes = timestampDayjs.diff(nowDayjs, 'minutes') % 60;
-    return padWithZeros(minutes, 2);
+  const minutes = timestampDayjs.diff(nowDayjs, 'minutes') % 60;
+  return padWithZeros(minutes, 2);
 }
 
 function getRemainingHours(nowDayjs, timestampDayjs) {
@@ -48,11 +48,10 @@ function getRemainingDays(nowDayjs, timestampDayjs) {
 }
 
 function padWithZeros(number, minLength) {
-    const numberString = number.toString();
-    if(numberString.length >= minLength) return numberString;
-    return "0".repeat(minLength - numberString.length) +  numberString;
+  const numberString = number.toString();
+  if (numberString.length >= minLength) return numberString;
+  return '0'.repeat(minLength - numberString.length) + numberString;
 }
-
 
 const CountdownTimer = ({ countdownTimestampMs, close }) => {
   const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
@@ -69,12 +68,10 @@ const CountdownTimer = ({ countdownTimestampMs, close }) => {
   }
 
   return (
-    <div className='countdown-timer'>
-      <span>
-        {remainingTime.days}D, {remainingTime.hours}H, {remainingTime.minutes}M,{' '}
-        {remainingTime.seconds}S
-      </span>
-    </div>
+    <span>
+      {remainingTime.days}D, {remainingTime.hours}H, {remainingTime.minutes}M, and {' '}
+      {remainingTime.seconds}S
+    </span>
   );
 };
 export default CountdownTimer;

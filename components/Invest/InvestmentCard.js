@@ -2,7 +2,7 @@ import { urlFor } from 'lib/api';
 import Link from 'next/link';
 import { getInvestmentBySlug } from 'lib/api';
 import { useGetInvestments } from 'actions';
-import CountdownTimer from './CountdownTimer';
+import CountdownTimer from '../CountdownTimer';
 function diff_miliseconds(dt2, dt1) {
   var diff = dt2.getTime() - dt1.getTime();
   return Math.abs(Math.round(diff));
@@ -38,7 +38,6 @@ export default function InvestmentCard({
   var timeNow = new Date();
   var startDate = new Date(start);
   var closeDate = new Date(close);
-  var timeDiffMs = diff_miliseconds(closeDate, timeNow);
   
   return (
     <div className='investment-container'>
@@ -119,7 +118,7 @@ export default function InvestmentCard({
         <div className='investment-time'>
           <p>CLOSES IN </p>
           <p style={{ color: '#06004d', 'font-weight': '700' }}>
-            <CountdownTimer countdownTimestampMs={timeDiffMs} close={close} />
+            <CountdownTimer  close={close} />
           </p>
         </div>
       ) : (

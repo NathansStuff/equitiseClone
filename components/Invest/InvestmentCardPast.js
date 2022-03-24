@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import Link from 'next/link';
 import { getInvestmentBySlug } from 'lib/api';
 import { useGetInvestments } from 'actions';
-import CountdownTimer from './CountdownTimer';
+import CountdownTimer from '../CountdownTimer';
 
 function diff_miliseconds(dt2, dt1) {
   var diff = dt2.getTime() - dt1.getTime();

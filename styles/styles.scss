@@ -1954,3 +1954,146 @@ h1, .sidebar-title {
   justify-content: flex-start;
 }
 ///////////////CAROUSEL CARD END///////////////
+
+///////////////COMPANY TITLE START///////////////
+.company-title-container {
+  width: 100%;
+  background-color: #06004D;
+  position: relative;
+  bottom: 10px;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: Inter,sans-serif;
+  color: #fff;
+
+  iframe {
+    width: 100%;
+    height: 380px;
+  }
+
+}
+.company-title-div{ 
+  flex-basis: 1;
+  max-width: 700px;
+  width: 100%;
+  padding: 10px;
+  margin-left: 40px;
+}
+
+.company-title-header {
+  height: 70px;
+  padding-bottom: 25px;
+  display: flex;
+  h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2em;
+  }
+
+  img {
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    opacity: 1;
+  }
+}
+
+.company-title-title {
+  margin-left: 30px;
+}
+
+.company-title-tags {
+  display: flex;
+}
+
+.company-tags {
+  background: #6363ff;
+    border: #6363ff;
+    color: #fff;
+    font-weight: 700;
+    margin-right: 6px;
+    border-radius: 3px;
+
+    padding: 0 10px 3px;
+    text-transform: uppercase;
+    h4 {
+      margin-bottom: 0;
+      font-size: 11px;
+      padding-top: 5px;
+      padding-bottom: 3px;
+    }
+}
+
+.company-title-subtitle {
+  margin-top: 40px;
+  h3 {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+.company-countdown {
+  display: flex;
+  p {
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 5px;
+  }
+}
+
+.company-title-list {
+  height: 90px;
+}
+
+.company-title-bot {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  p {
+    font-size: 15px;
+  }
+  button {
+    position: relative;
+    
+  }
+}
+
+.company-title-login {
+  margin-left: 20px;
+  position: relative;
+  top: 10px
+}
+
+.company-signup-btn {
+  transition: opacity .5s .5s,transform .5s .5s,-webkit-transform .5s .5s;
+  color: #fff;
+  margin: 0;
+  min-width: 200px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #6363ff;
+  border-color: #6363ff;
+  display: flex;
+  justify-content: center;
+  display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #06004d;
+    border-radius: 3px;
+  p {
+    margin-bottom:  0;
+  } 
+  &:hover {
+    background-color: blue;
+    transform: translateY(-5px);
+  } 
+}
+///////////////COMPANY TITLE END///////////////

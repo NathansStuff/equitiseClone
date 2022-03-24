@@ -1,25 +1,13 @@
-import NewsContent from 'components/NewsContent';
-import NewsHeader from 'components/NewsHeader';
-import Navbar from 'components/Navbar';
 import { getCompanyBySlug, getAllCompanies } from 'lib/api';
-import { Row, Col } from 'react-bootstrap';
-import { urlFor } from 'lib/api';
-
-const BlogDetail = ({company}) => {
-  debugger
+import CompanyTitle from 'components/company/CompanyTitle';
+import PageLayout from 'components/PageLayout';
+const BlogDetail = ({ company }) => {
   return (
-    <div>
-      <h1>Hello Detail Page - {company.slug}</h1>
-    </div>
+    <PageLayout>
+      <CompanyTitle logo={company.logo} close={company.close} />
+    </PageLayout>
   );
 };
-
-// export async function getServerSideProps({params}) {
-//   const company = await getCompanyBySlug(params.slug);
-//   return {
-//     props: {company}
-//   }
-// }
 
 export async function getStaticPaths() {
   const companies = await getAllCompanies();
