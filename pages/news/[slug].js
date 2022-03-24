@@ -1,5 +1,5 @@
-import NewsContent from 'components/NewsContent';
-import NewsHeader from 'components/NewsHeader';
+import NewsContent from 'components/news/NewsContent';
+import NewsHeader from 'components/news/NewsHeader';
 import Navbar from 'components/Navbar';
 import { getNewsBySlug, getAllNews } from 'lib/api';
 import { Row, Col } from 'react-bootstrap';

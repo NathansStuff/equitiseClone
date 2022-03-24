@@ -38,9 +38,8 @@ const CompanyTitle = ({
   }
   return (
     <div className='company-title-container'>
-      <div className='company-title-div'>
-        <iframe src={`${video}`}></iframe>
-      </div>
+      <iframe src={`${video}`} className='company-title-div'></iframe>
+
       <div className='company-title-div'>
         <div className='company-title-header'>
           <img src={urlFor(logo).url()} />

@@ -23,10 +23,10 @@ const serializers = {
   }
 }
 
-const BlogContent = ({content}) =>
+const NewsContent = ({content}) =>
   <BlockContent
     serializers={serializers}
     blocks={content}
   />
 
-export default BlogContent;
+export default NewsContent;

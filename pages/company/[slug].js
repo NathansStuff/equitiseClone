@@ -2,18 +2,27 @@ import { getCompanyBySlug, getAllCompanies, getAllInvestments } from 'lib/api';
 import CompanyTitle from 'components/company/CompanyTitle';
 import PageLayout from 'components/PageLayout';
 import { useGetInvestments } from 'actions';
-
+import CompanyBody from 'components/company/CompanyBody';
 
 const CompanyDetail = ({ company, investments: initialInvestments }) => {
   const { data: investments, investmentsError } =
     useGetInvestments(initialInvestments);
-    if ( !investments ) {
-      return 'Loading!';
-    }
-    debugger
+  if (!investments) {
+    return 'Loading!';
+  }
+  debugger
   return (
     <PageLayout>
-      <CompanyTitle logo={company.logo} close={company.close} name={company.name} goal={company.goal} price={company.price} type={company.type} video={company.video}/>
+      <CompanyTitle
+        logo={company.logo}
+        close={company.close}
+        name={company.name}
+        goal={company.goal}
+        price={company.price}
+        type={company.type}
+        video={company.video}
+      />
+      <CompanyBody content={company.content} />
     </PageLayout>
   );
 };
