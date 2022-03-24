@@ -179,7 +179,7 @@ export default function Home({ companies: initialCompanies }) {
           </div>
         </div>
       </div>
-      <Testimonials/>
+      <Testimonials />
     </PageLayout>
   );
 }
