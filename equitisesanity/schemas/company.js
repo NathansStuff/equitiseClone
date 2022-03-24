@@ -154,6 +154,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'about',
+      title: 'About (One Liner)',
+      type: 'string',
+    },
+    {
       name: 'coverImage',
       title: 'Cover Image',
       type: 'image',

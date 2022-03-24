@@ -22,7 +22,7 @@ const CompanyDetail = ({ company, investments: initialInvestments }) => {
         type={company.type}
         video={company.video}
       />
-      <CompanyBody content={company.content} />
+      <CompanyBody company={company} />
     </PageLayout>
   );
 };
