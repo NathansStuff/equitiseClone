@@ -20,15 +20,20 @@ export default function InvestmentCard({
   const { data: investments, error } = useGetInvestments(initialInvestments);
   var i;
   var CompanyInvestments;
-  for (i = 0; i < investments.length; i++) {
-    if (name === investments[i]['name'])
-      CompanyInvestments = investments[i]['relatedInvestment'];
+  if (investments) {
+    for (i = 0; i < investments.length; i++) {
+      if (name === investments[i]['name'])
+        CompanyInvestments = investments[i]['relatedInvestment'];
+    }
   }
-  const totalInvestments = CompanyInvestments.length;
+  const totalInvestments = CompanyInvestments ? CompanyInvestments.length : 0;
 
   var totalInvested = 0;
-  for (i = 0; i < CompanyInvestments.length; i++) {
-    totalInvested += CompanyInvestments[i]['amount'];
+
+  if (CompanyInvestments > 0) {
+    for (i = 0; i < CompanyInvestments.length; i++) {
+      totalInvested += CompanyInvestments[i]['amount'];
+    }
   }
 
   var timeNow = new Date();

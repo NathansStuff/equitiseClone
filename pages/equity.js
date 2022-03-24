@@ -1,6 +1,15 @@
 import PageLayout from 'components/PageLayout';
+import InvestmentCard from 'components/Invest/InvestmentCard';
+import { getAllCompanies, getAllInvestments, getAllNews } from 'lib/api';
+import { useGetCompanies, useGetInvestments, useGetNews } from 'actions';
 
-export default function Home() {
+export default function Home({ companies: initialCompanies }) {
+  const timeNow = new Date();
+
+  const { data: companies, companiesError } = useGetCompanies(initialCompanies);
+  if (!companies) {
+    return 'Loading!';
+  }
   return (
     <PageLayout>
       <div className='equity-header-cont'>
@@ -76,14 +85,56 @@ export default function Home() {
             </p>
           </div>
           <div className='equity-banner'>
-           
-            <p style={{'padding-top': '5px'}}>Did you know that you can also invest in IPOs?</p>
+            <p style={{ 'padding-top': '5px' }}>
+              Did you know that you can also invest in IPOs?
+            </p>
             <div className='equity-signup-btn'>
               <p>LEARN MORE</p>
             </div>
           </div>
         </div>
       </div>
+      <div className='investment-home-container' style={{position: 'relative', bottom: '80px'}}>
+        <div>
+          <div className='invest-subtitle'>
+            <h4>CURRENT OFFERS</h4>
+            <h2>Find a business you want to back</h2>
+          </div>
+        </div>
+        <div className='investment-companies-container' >
+          {companies.map(company =>
+            new Date(company.close) > timeNow && company.type == 'retail' ? (
+              <InvestmentCard
+                logo={company.logo}
+                coverImage={company.coverImage}
+                type={company.type}
+                name={company.name}
+                blurb={company.blurb}
+                link={{
+                  href: '/company/[slug]',
+                  as: `/company/${company.slug}`,
+                }}
+                slug={company.slug}
+                close={company.close}
+                start={company.start}
+                minimum={company.minimum}
+              />
+            ) : (
+              <div />
+            )
+          )}
+          <div />
+        </div>
+      </div>
     </PageLayout>
   );
+}
+export async function getStaticProps() {
+  const companies = await getAllCompanies({ offset: 0 });
+
+  return {
+    props: {
+      companies,
+    },
+  };
 }
