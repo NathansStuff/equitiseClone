@@ -2247,4 +2247,21 @@ h1, .sidebar-title {
     color: white;
   }
 }
+.company-doc-container {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  box-shadow: 0 0 5px 0 rgb(0 0 0 / 8%);
+  p {
+    margin: 0;
+  }
+}
+#company-download {
+  text-decoration: none !important;
+  color: green;
+}
 ///////////////COMPANY BODY END///////////////

@@ -59,6 +59,7 @@ const CompanyBody = ({ company }) => {
   const minimumPost = company.minimum + company.preValuation;
   const maximumPost = company.goal + company.preValuation;
   const maxShares = Math.floor(company.goal / company.price).toLocaleString();
+  debugger;
   return (
     <div className='company-body-container'>
       <div className='company-body-header-container'>
@@ -198,10 +199,35 @@ const CompanyBody = ({ company }) => {
           {company.goal}
         </p>
         <h1>Key Documents</h1>
-        {}
-        <div>
-            
-        </div>
+        {company.doc1 ? (
+          <a href={company.doc1} target='_blank' id='company-download'>
+            <div className='company-doc-container'>
+              <p>{company.doc1Title ? `${company.doc1Title}` : 'Document'}</p>
+            </div>
+          </a>
+        ) : (
+          ''
+        )}
+
+        {company.doc2 ? (
+            <a href={company.doc2} target='_blank' id='company-download'>
+              <div className='company-doc-container'>
+                <p>{company.doc2Title ? `${company.doc2Title}` : 'Document'}</p>
+              </div>
+            </a>
+          ) : (
+            ''
+          )}
+
+          {company.doc3 ? (
+            <a href={company.doc3} target='_blank' id='company-download'>
+              <div className='company-doc-container'>
+                <p>{company.doc3Title ? `${company.doc3Title}` : 'Document'}</p>
+              </div>
+            </a>
+          ) : (
+            ''
+          )}
         <BlockContent serializers={serializers} blocks={company.content} />
       </div>
       <div className='company-body-socials'>
