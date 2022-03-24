@@ -2,14 +2,16 @@ import PageLayout from 'components/PageLayout';
 import InvestmentCard from 'components/Invest/InvestmentCard';
 import { getAllCompanies, getAllInvestments, getAllNews } from 'lib/api';
 import { useGetCompanies, useGetInvestments, useGetNews } from 'actions';
+import CountUpTicker from 'components/CountUpTicker';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Home({ companies: initialCompanies }) {
   const timeNow = new Date();
-
   const { data: companies, companiesError } = useGetCompanies(initialCompanies);
   if (!companies) {
     return 'Loading!';
   }
+
   return (
     <PageLayout>
       <div className='equity-header-cont'>
@@ -94,14 +96,17 @@ export default function Home({ companies: initialCompanies }) {
           </div>
         </div>
       </div>
-      <div className='investment-home-container' style={{position: 'relative', bottom: '80px'}}>
+      <div
+        className='investment-home-container'
+        style={{ position: 'relative', bottom: '80px' }}
+      >
         <div>
           <div className='invest-subtitle'>
             <h4>CURRENT OFFERS</h4>
             <h2>Find a business you want to back</h2>
           </div>
         </div>
-        <div className='investment-companies-container' >
+        <div className='investment-companies-container'>
           {companies.map(company =>
             new Date(company.close) > timeNow && company.type == 'retail' ? (
               <InvestmentCard
@@ -126,6 +131,54 @@ export default function Home({ companies: initialCompanies }) {
           <div />
         </div>
       </div>
+      <div
+        className='investment-home-container'
+        style={{ position: 'relative', bottom: '80px' }}
+      >
+        <div>
+          <div className='invest-subtitle'>
+            <h4>METRICS</h4>
+            <h2>Our success with equity crowdfunding</h2>
+          </div>
+        </div>
+        <div className='metrics-container'>
+          <div className='metrics-card'>
+            <div className='metrics-flex'>
+                <CountUpTicker className='metrics-ticker' end={87} suffix='' />{' '}
+                <FontAwesomeIcon icon='handshake' className='metrics-fontawesome' />
+            </div>
+            <span>EQUITY CROWDFUNDS COMPLETED</span>
+          </div>
+          <div className='metrics-card'>
+            <div className='metrics-flex'>
+                <CountUpTicker
+                  className='metrics-ticker'
+                  end={54}
+                  suffix='M'
+                  prefix='$'
+                />
+                <FontAwesomeIcon icon='chart-line' className='metrics-fontawesome' />
+            </div>
+            <span>FUNDS RAISED</span>
+          </div>
+          <div className='metrics-card'>
+            <div className='metrics-flex'>
+            
+                <CountUpTicker className='metrics-ticker' end={78} suffix='%' />
+                <FontAwesomeIcon icon='money-bill-1-wave' className='metrics-fontawesome' />
+            </div>
+            <span>SUCCESS RATE </span>
+          </div>
+          <div className='metrics-card'>
+            <div className='metrics-flex'>
+              <CountUpTicker className='metrics-ticker' end={54} suffix='K' />{' '}
+              <FontAwesomeIcon icon='heart' className='metrics-fontawesome' />
+            </div>
+            <span>INVESTMENTS MADE</span>
+          </div>
+        </div>
+      </div>
+      <div></div>
     </PageLayout>
   );
 }

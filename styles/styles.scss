@@ -2465,4 +2465,45 @@ h1, .sidebar-title {
   justify-content: space-between;
 
 }
+
+.metrics-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.metrics-card {
+  background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    color: #06004d;
+    width: 245px;
+    font-size: 12px;
+    margin: 5px;
+    div{h1{margin: 0;
+    padding:0%}}
+}
+
+.metrics-ticker {
+  font-size: 30px;
+  color: #06004d;
+  font-weight: 700;
+  margin-left: 0;
+  padding-left: 0;
+}
+.metrics-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.metrics-fontawesome {
+  height: 30px;
+  padding-top: 4px;
+}
 ///////////////EQUITY END///////////////
