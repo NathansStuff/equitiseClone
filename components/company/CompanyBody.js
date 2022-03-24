@@ -65,6 +65,12 @@ const CompanyBody = ({ company }) => {
       <div className='company-body-header-container'>
         <div className='company-border-div'>
           <ul className='company-ul'>
+            <li className='company-body-header'>
+              <a href='#Offer Overview'>Offer Overview</a>
+            </li>
+            <li className='company-body-header'>
+              <a href='#Key Documents'>Key Documents</a>
+            </li>
             {headers.map(header => {
               return (
                 <li className='company-body-header'>
@@ -114,7 +120,7 @@ const CompanyBody = ({ company }) => {
               </p>
             </li>
           </ul>
-          <h1>OFFER OVERVIEW</h1>
+          <h1 id='Offer Overview'>OFFER OVERVIEW</h1>
         </div>
         <table className='company-table'>
           <tbody>
@@ -198,7 +204,7 @@ const CompanyBody = ({ company }) => {
           {company.price} per share up to {'$'}
           {company.goal}
         </p>
-        <h1>Key Documents</h1>
+        <h1 id='Key Documents'>Key Documents</h1>
         {company.doc1 ? (
           <a href={company.doc1} target='_blank' id='company-download'>
             <div className='company-doc-container'>
@@ -210,28 +216,28 @@ const CompanyBody = ({ company }) => {
         )}
 
         {company.doc2 ? (
-            <a href={company.doc2} target='_blank' id='company-download'>
-              <div className='company-doc-container'>
-                <p>{company.doc2Title ? `${company.doc2Title}` : 'Document'}</p>
-              </div>
-            </a>
-          ) : (
-            ''
-          )}
+          <a href={company.doc2} target='_blank' id='company-download'>
+            <div className='company-doc-container'>
+              <p>{company.doc2Title ? `${company.doc2Title}` : 'Document'}</p>
+            </div>
+          </a>
+        ) : (
+          ''
+        )}
 
-          {company.doc3 ? (
-            <a href={company.doc3} target='_blank' id='company-download'>
-              <div className='company-doc-container'>
-                <p>{company.doc3Title ? `${company.doc3Title}` : 'Document'}</p>
-              </div>
-            </a>
-          ) : (
-            ''
-          )}
+        {company.doc3 ? (
+          <a href={company.doc3} target='_blank' id='company-download'>
+            <div className='company-doc-container'>
+              <p>{company.doc3Title ? `${company.doc3Title}` : 'Document'}</p>
+            </div>
+          </a>
+        ) : (
+          ''
+        )}
         <BlockContent serializers={serializers} blocks={company.content} />
       </div>
       <div className='company-body-socials'>
-        <h1>Share: </h1>
+        <h1>Share: {company.facebook}</h1>
       </div>
     </div>
   );
