@@ -5,6 +5,7 @@ import { useGetInvestments } from 'actions';
 import CompanyBody from 'components/company/CompanyBody';
 
 const CompanyDetail = ({ company, investments: initialInvestments }) => {
+  
   const { data: investments, investmentsError } =
     useGetInvestments(initialInvestments);
   if (!investments) {

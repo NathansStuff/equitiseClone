@@ -13,3 +13,7 @@ export const useGetCompanies = initialData => {
 export const useGetInvestments = initialData => {
   return useSWR(`/api/investments`, fetcher, { initialData });
 };
+
+export const useGetTestimonys = initialData => {
+  return useSWR(`/api/testimonys`, fetcher, { initialData });
+};

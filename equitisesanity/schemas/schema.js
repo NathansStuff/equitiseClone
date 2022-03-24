@@ -5,6 +5,7 @@ import customer from './customer';
 import investment from './investment';
 import author from './author';
 import news from './news';
+import testimony from './testimony';
 
 export default createSchema({
   name: 'default',
@@ -14,5 +15,6 @@ export default createSchema({
     investment,
     author,
     news,
+    testimony,
   ]),
 });

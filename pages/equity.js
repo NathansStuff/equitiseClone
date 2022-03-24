@@ -1,9 +1,10 @@
 import PageLayout from 'components/PageLayout';
 import InvestmentCard from 'components/Invest/InvestmentCard';
-import { getAllCompanies, getAllInvestments, getAllNews } from 'lib/api';
-import { useGetCompanies, useGetInvestments, useGetNews } from 'actions';
+import { getAllCompanies } from 'lib/api';
+import { useGetCompanies } from 'actions';
 import CountUpTicker from 'components/CountUpTicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Testimonials from 'components/Testimonials';
 
 export default function Home({ companies: initialCompanies }) {
   const timeNow = new Date();
@@ -178,7 +179,7 @@ export default function Home({ companies: initialCompanies }) {
           </div>
         </div>
       </div>
-      <div></div>
+      <Testimonials/>
     </PageLayout>
   );
 }
