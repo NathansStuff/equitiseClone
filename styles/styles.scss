@@ -2507,3 +2507,100 @@ h1, .sidebar-title {
   padding-top: 4px;
 }
 ///////////////EQUITY END///////////////
+
+///////////////TESTIMONY START//////////////
+.testimony-img {
+  height: 66px;
+  object-fit: cover;
+  height: 66px;
+  border-radius: 50%;
+  width: 66px;
+}
+.testimony-img-container {
+  height: 66px;
+  width: 66px;
+  margin-right: 20px;
+}
+
+.testimony-container {
+  padding: 40px;
+  height: 310px;
+    margin: 5px;
+    border: 10px;
+    font-family: Inter,sans-serif;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
+}
+
+.testimony-title {
+  display: flex;
+  height: 66px;
+}
+
+.testimony-name {
+  color: #06004d;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  margin: 0;
+
+}
+.testimony-company{
+  -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    color: #06004d;
+    display: -webkit-box;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    max-height: 132px;
+    overflow: hidden;
+    margin: 0;
+
+}
+.testimony-type {
+  color: #555896;
+  font-size: 14px;
+  line-height: 26px;
+  margin: 0;
+}
+.testimony-testimony {
+  color: #5F5F5F;
+  font-size: 15px;
+  font-style: italic;
+  margin-top: 40px;
+  height: 92px;
+}
+
+.testimony-button {
+  margin-bottom: 0px;
+  width: 159px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  button {
+    background: #06004d;
+    border-color: #06004d;
+    border: 1px solid #06004d;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer ;
+    z-index: 2;
+    transition: transform .3s,-webkit-transform .3s;
+
+    &:hover {
+      background-color: hsl(210, 5%, 51%);
+      border-color: hsl(210, 5%, 41%);
+      -webkit-transform: translateY(.25rem);
+      transform: translateY(-.25rem);
+    }
+  }
+}
+///////////////TESTIMONY END///////////////
