@@ -30,9 +30,6 @@ export default function News({news: initialData}) {
       />
       <hr />
       <Row className='mb-5'>
-        {/* <Col md="10">
-        <CardListItem />
-      </Col> */}
         {news.map(newsSingle =>
           filter.view.list ? (
             <Col key={`${newsSingle.slug}-list`} md='9'>
