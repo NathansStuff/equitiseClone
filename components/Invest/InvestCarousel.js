@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-const InvestCarousel = props => {
-  const { children, show } = props;
+const InvestCarousel = ({ children, show, header = 'Latest News' }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
-
+  const length = children.length;
   const next = () => {
-    if (currentIndex < 8) {
+    if (currentIndex < length - 1) {
       setCurrentIndex(prevState => prevState + 1);
     } else {
       setCurrentIndex(0);
@@ -18,43 +17,16 @@ const InvestCarousel = props => {
     if (currentIndex > 0) {
       setCurrentIndex(prevState => prevState - 1);
     } else {
-      setCurrentIndex(8);
+      setCurrentIndex(length - 1);
     }
   };
 
   const change1 = () => {
     setCurrentIndex(0);
   };
-  const change2 = () => {
-    setCurrentIndex(1);
-  };
-  const change3 = () => {
-    setCurrentIndex(2);
-  };
-  const change4 = () => {
-    setCurrentIndex(3);
-  };
-  const change5 = () => {
-    setCurrentIndex(4);
-  };
-  const change6 = () => {
-    setCurrentIndex(5);
-  };
-  const change7 = () => {
-    setCurrentIndex(6);
-  };
-  const change8 = () => {
-    setCurrentIndex(7);
-  };
 
-  const change9 = () => {
-    setCurrentIndex(8);
-  };
-
-  const handleTransitionEnd = () => {
-    if (currentIndex === 1) {
-      setCurrentIndex(10);
-    }
+  const change = index => {
+    setCurrentIndex(index + 1);
   };
 
   const handleTouchStart = e => {
@@ -87,7 +59,7 @@ const InvestCarousel = props => {
     <div className='carousel-container'>
       <div className='carousel-header'>
         <div>
-          <h3>Latest News</h3>
+          <h3>{header}</h3>
         </div>
         <div className='carousel-button'>
           <button onClick={prev} className='left-arrow'>
@@ -111,7 +83,7 @@ const InvestCarousel = props => {
               transform: `translateX(-${currentIndex * (100 / show)}%)`,
             }}
           >
-            {children[8]}
+            {children[length - 1]}
             {children}
             {children[0]}
           </div>
@@ -126,76 +98,34 @@ const InvestCarousel = props => {
               : ''
           }
         />
-        <button
-          onClick={change2}
-          className={
-            'carousel-slider-button' && currentIndex == 1
-              ? 'carousel-slider-button-active'
-              : ''
+        {children.map((child, index) => {
+          if (index < 8 && index < children.length - 1) {
+            return (
+              <button
+                onClick={() => {
+                  change(index);
+                }}
+                className={
+                  'carousel-slider-button' && currentIndex == index + 1
+                    ? 'carousel-slider-button-active'
+                    : ''
+                }
+              />
+            );
           }
-        />
-        <button
-          onClick={change3}
-          className={
-            'carousel-slider-button' && currentIndex == 2
-              ? 'carousel-slider-button-active'
-              : ''
-          }
-        />
-        <button
-          onClick={change4}
-          className={
-            'carousel-slider-button' && currentIndex == 3
-              ? 'carousel-slider-button-active'
-              : ''
-          }
-        />
-        <button
-          onClick={change5}
-          className={
-            'carousel-slider-button' && currentIndex == 4
-              ? 'carousel-slider-button-active'
-              : ''
-          }
-        />
-        <button
-          onClick={change6}
-          className={
-            'carousel-slider-button' && currentIndex == 5
-              ? 'carousel-slider-button-active'
-              : ''
-          }
-        />
-        <button
-          onClick={change7}
-          className={
-            'carousel-slider-button' && currentIndex == 6
-              ? 'carousel-slider-button-active'
-              : ''
-          }
-        />
-        <button
-          onClick={change8}
-          className={
-            'carousel-slider-button' && currentIndex == 7
-              ? 'carousel-slider-button-active'
-              : ''
-          }
-        />
-        <button
-          onClick={change9}
-          className={
-            'carousel-slider-button' && currentIndex == 8
-              ? 'carousel-slider-button-active'
-              : ''
-          }
-        />
+        })}
       </div>
-      <div className='carousel-view-all'>
-        <Link href='/news'>
-          <button>View All</button>
-        </Link>
-      </div>
+      {
+        (header = 'Latest News' ? (
+          <div className='carousel-view-all'>
+            <Link href='/news'>
+              <button>View All</button>
+            </Link>
+          </div>
+        ) : (
+          <div />
+        ))
+      }
     </div>
   );
 };

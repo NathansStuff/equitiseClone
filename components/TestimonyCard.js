@@ -1,19 +1,19 @@
 import { urlFor } from 'lib/api';
 import Link from 'next/link';
 
-const TestimonialCard = ({ customer, company, type, testimony }) => {
+const TestimonialCard = ({ customer, company, type, testimony, avatar }) => {
   return (
-    <divt className='testimony-container'>
+    <div className='testimony-container'>
       <div className='testimony-title'>
         <div className='testimony-img-container'>
-          <img className='testimony-img' src={urlFor(customer.avatar)} />
+          <img className='testimony-img' src={urlFor(avatar)} />
         </div>
         <div>
           <div>
-            <h2 className='testimony-name'>{customer.name}</h2>
+            <h2 className='testimony-name'>{customer}</h2>
           </div>
           <div>
-            <h3 className='testimony-company'>{company.name}</h3>
+            <h3 className='testimony-company'>{company}</h3>
           </div>
           <div className='testimony-type'>
             {type == 'retail' ? 'RETAIL INVESTOR' : 'SUCCESSFUL RAISE'}
@@ -28,7 +28,7 @@ const TestimonialCard = ({ customer, company, type, testimony }) => {
           <button>Start Investing</button>
         </div>
       </Link>
-    </divt>
+    </div>
   );
 };
 export default TestimonialCard;

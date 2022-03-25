@@ -5,6 +5,7 @@ import { useGetCompanies } from 'actions';
 import CountUpTicker from 'components/CountUpTicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Testimonials from 'components/Testimonials';
+import Newsletter from 'components/Newsletter';
 
 export default function Home({ companies: initialCompanies }) {
   const timeNow = new Date();
@@ -12,6 +13,8 @@ export default function Home({ companies: initialCompanies }) {
   if (!companies) {
     return 'Loading!';
   }
+
+  
 
   return (
     <PageLayout>
@@ -145,28 +148,36 @@ export default function Home({ companies: initialCompanies }) {
         <div className='metrics-container'>
           <div className='metrics-card'>
             <div className='metrics-flex'>
-                <CountUpTicker className='metrics-ticker' end={87} suffix='' />{' '}
-                <FontAwesomeIcon icon='handshake' className='metrics-fontawesome' />
+              <CountUpTicker className='metrics-ticker' end={87} suffix='' />{' '}
+              <FontAwesomeIcon
+                icon='handshake'
+                className='metrics-fontawesome'
+              />
             </div>
             <span>EQUITY CROWDFUNDS COMPLETED</span>
           </div>
           <div className='metrics-card'>
             <div className='metrics-flex'>
-                <CountUpTicker
-                  className='metrics-ticker'
-                  end={54}
-                  suffix='M'
-                  prefix='$'
-                />
-                <FontAwesomeIcon icon='chart-line' className='metrics-fontawesome' />
+              <CountUpTicker
+                className='metrics-ticker'
+                end={54}
+                suffix='M'
+                prefix='$'
+              />
+              <FontAwesomeIcon
+                icon='chart-line'
+                className='metrics-fontawesome'
+              />
             </div>
             <span>FUNDS RAISED</span>
           </div>
           <div className='metrics-card'>
             <div className='metrics-flex'>
-            
-                <CountUpTicker className='metrics-ticker' end={78} suffix='%' />
-                <FontAwesomeIcon icon='money-bill-1-wave' className='metrics-fontawesome' />
+              <CountUpTicker className='metrics-ticker' end={78} suffix='%' />
+              <FontAwesomeIcon
+                icon='money-bill-1-wave'
+                className='metrics-fontawesome'
+              />
             </div>
             <span>SUCCESS RATE </span>
           </div>
@@ -180,6 +191,7 @@ export default function Home({ companies: initialCompanies }) {
         </div>
       </div>
       <Testimonials />
+      <Newsletter />
     </PageLayout>
   );
 }
