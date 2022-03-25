@@ -1755,6 +1755,26 @@ h1, .sidebar-title {
 
 
 ///////////////CAROUSEL START///////////////
+.carousel-filter {
+  display: flex;
+  flex-direction: row;
+  padding: 0 15px;
+}
+.carousel-filter-each {
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h4 {
+    color: #06004d;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+    position: relative;
+    text-transform: capitalize;
+    font-size: 15px;
+  }
+}
 .carousel-container {
   width: 100%;
   display: flex;
@@ -2512,12 +2532,12 @@ h1, .sidebar-title {
 .testimony-img {
   height: 66px;
   object-fit: cover;
-  height: 66px;
+  height: 66px !important;
   border-radius: 50%;
   width: 66px;
 }
 .testimony-img-container {
-  height: 66px;
+  height: 66px !important;
   width: 66px;
   margin-right: 20px;
 }
@@ -2526,17 +2546,18 @@ h1, .sidebar-title {
   width: 309.33px;
   padding: 40px;
   height: 310px;
-    margin: 5px;
-    border: 10px;
-    font-family: Inter,sans-serif;
-    background-color: white;
-    border-radius: 3px;
-    box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
+  margin: 5px;
+  border: 10px;
+  font-family: Inter,sans-serif;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
 }
 
 .testimony-title {
   display: flex;
   height: 66px;
+  width: 100%;
 }
 
 .testimony-name {
@@ -2567,12 +2588,13 @@ h1, .sidebar-title {
   margin: 0;
 }
 .testimony-testimony {
+  p{
   color: #5F5F5F;
   font-size: 15px;
   font-style: italic;
   margin-top: 40px;
-  height: 92px;
-}
+  height: 120px;
+}}
 
 .testimony-button {
   margin-bottom: 0px;

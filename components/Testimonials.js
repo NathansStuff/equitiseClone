@@ -24,7 +24,6 @@ const Testimonials = ({ testimonys: initalTestimonys }) => {
       />
     );
   }
-  debugger;
   return (
     <div
       className='investment-home-container'
@@ -41,7 +40,7 @@ const Testimonials = ({ testimonys: initalTestimonys }) => {
         <div className='invest-subtitle'>
           <h4>TESTIMONIALS</h4>
         </div>
-        <InvestCarourel show={3} header='Meet some happy customers'>
+        <InvestCarourel show={3} header='Meet some happy customers' filter={['company', 'investor']}>
           {testifyies}
         </InvestCarourel>
       </div>

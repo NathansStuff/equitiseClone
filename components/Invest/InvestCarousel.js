@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-const InvestCarousel = ({ children, show, header = 'Latest News' }) => {
+const InvestCarousel = ({
+  children,
+  show,
+  header = 'Latest News',
+  filter = [],
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
   const length = children.length;
@@ -54,13 +59,38 @@ const InvestCarousel = ({ children, show, header = 'Latest News' }) => {
 
     setTouchPosition(null);
   };
+  debugger;
 
   return (
     <div className='carousel-container'>
-      <div className='carousel-header'>
-        <div>
-          <h3>{header}</h3>
+      {filter.length == 0 ? (
+        ''
+      ) : (
+        <div className='carousel-header'>
+          <div>
+            <h3>{header}</h3>
+          </div>
         </div>
+      )}
+      <div className='carousel-header'>
+        {filter.length == 0 ? (
+          <div>
+            <h3>{header}</h3>
+          </div>
+        ) : (
+          <div className='carousel-filter'>
+            <div className='carousel-filter-each'>
+              <h4>All</h4>
+            </div>
+            {filter.map(fil => {
+              return (
+                <div className='carousel-filter-each'>
+                  <h4>{fil}</h4>
+                </div>
+              );
+            })}
+          </div>
+        )}
         <div className='carousel-button'>
           <button onClick={prev} className='left-arrow'>
             <h4>&lt;</h4>
