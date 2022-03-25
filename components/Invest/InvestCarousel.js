@@ -10,7 +10,6 @@ const InvestCarousel = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
   const [filterTestimonial, setFilterTestimonial] = useState('all');
-  const length = children.length;
   const next = () => {
     if (currentIndex < length - 1) {
       setCurrentIndex(prevState => prevState + 1);
@@ -19,6 +18,18 @@ const InvestCarousel = ({
     }
   };
 
+  let showChildren = [];
+  if (filterTestimonial == 'all') {
+    children.map(child => {
+      showChildren.push(child);
+    });
+  } else {
+    children.map(child => {
+      child['props']['type'] == 'investor' ? showChildren.push(child) : '';
+    });
+  }
+  const length = showChildren.length;
+  debugger;
   const prev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(prevState => prevState - 1);
@@ -103,15 +114,19 @@ const InvestCarousel = ({
             })}
           </div>
         )}
-        <div className='carousel-button'>
-          <button onClick={prev} className='left-arrow'>
-            <h4>&lt;</h4>
-          </button>
+        {length > show ? (
+          <div className='carousel-button'>
+            <button onClick={prev} className='left-arrow'>
+              <h4>&lt;</h4>
+            </button>
 
-          <button onClick={next} className='right-arrow'>
-            <h4>&gt;</h4>
-          </button>
-        </div>
+            <button onClick={next} className='right-arrow'>
+              <h4>&gt;</h4>
+            </button>
+          </div>
+        ) : (
+          ''
+        )}
       </div>
       <div className='carousel-wrapper'>
         <div
@@ -119,46 +134,62 @@ const InvestCarousel = ({
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
         >
-          <div
-            className={`carousel-content show-${show}`}
-            style={{
-              transform: `translateX(-${currentIndex * (100 / show)}%)`,
-            }}
-          >
-            {children[length - 1]}
-            {children}
-            {children[0]}
-          </div>
+          {' '}
+          {length > show ? (
+            <div
+              className={`carousel-content show-${show}`}
+              style={{
+                transform: `translateX(-${currentIndex * (100 / show)}%)`,
+              }}
+            >
+              {showChildren[length - 1]}
+              {showChildren}
+              {showChildren[0]}
+            </div>
+          ) : (
+            <div
+              className={`carousel-content show-${show}`}
+              style={{
+                transform: `translateX(-${currentIndex * (100 / show)}%)`,
+              }}
+            >
+              {showChildren}
+            </div>
+          )}
         </div>
       </div>
-      <div className='carousel-bottom'>
-        <button
-          onClick={change1}
-          className={
-            'carousel-slider-button' && currentIndex == 0
-              ? 'carousel-slider-button-active'
-              : ''
-          }
-        />
-        {children.map((child, index) => {
-          if (index < 8 && index < children.length - 1) {
-            return (
-              <button
-                onClick={() => {
-                  change(index);
-                }}
-                className={
-                  'carousel-slider-button' && currentIndex == index + 1
-                    ? 'carousel-slider-button-active'
-                    : ''
-                }
-              />
-            );
-          }
-        })}
-      </div>
+      {length > show ? (
+        <div className='carousel-bottom'>
+          <button
+            onClick={change1}
+            className={
+              'carousel-slider-button' && currentIndex == 0
+                ? 'carousel-slider-button-active'
+                : ''
+            }
+          />
+          {showChildren.map((child, index) => {
+            if (index < length && index < showChildren.length - 1) {
+              return (
+                <button
+                  onClick={() => {
+                    change(index);
+                  }}
+                  className={
+                    'carousel-slider-button' && currentIndex == index + 1
+                      ? 'carousel-slider-button-active'
+                      : ''
+                  }
+                />
+              );
+            }
+          })}
+        </div>
+      ) : (
+        ''
+      )}
       {
-        (header = 'Latest News' ? (
+        (header == 'Latest News' ? (
           <div className='carousel-view-all'>
             <Link href='/news'>
               <button>View All</button>
