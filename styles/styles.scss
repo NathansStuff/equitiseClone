@@ -1761,7 +1761,7 @@ h1, .sidebar-title {
   padding: 0 15px;
 }
 .carousel-filter-each {
-  margin-right: 20px;
+  padding: 0 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1774,6 +1774,9 @@ h1, .sidebar-title {
     text-transform: capitalize;
     font-size: 15px;
   }
+}
+.carousel-filter-each-active{
+  border-bottom: 3px solid #6363ff;
 }
 .carousel-container {
   width: 100%;

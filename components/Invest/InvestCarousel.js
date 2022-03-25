@@ -9,6 +9,7 @@ const InvestCarousel = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
+  const [filterTestimonial, setFilterTestimonial] = useState('all');
   const length = children.length;
   const next = () => {
     if (currentIndex < length - 1) {
@@ -59,7 +60,6 @@ const InvestCarousel = ({
 
     setTouchPosition(null);
   };
-  debugger;
 
   return (
     <div className='carousel-container'>
@@ -79,12 +79,24 @@ const InvestCarousel = ({
           </div>
         ) : (
           <div className='carousel-filter'>
-            <div className='carousel-filter-each'>
+            <div
+              className={`carousel-filter-each ${
+                filterTestimonial == 'all' ? 'carousel-filter-each-active' : ''
+              }`}
+              onClick={() => setFilterTestimonial('all')}
+            >
               <h4>All</h4>
             </div>
             {filter.map(fil => {
               return (
-                <div className='carousel-filter-each'>
+                <div
+                  className={`carousel-filter-each ${
+                    filterTestimonial == fil
+                      ? 'carousel-filter-each-active'
+                      : ''
+                  }`}
+                  onClick={() => setFilterTestimonial(fil)}
+                >
                   <h4>{fil}</h4>
                 </div>
               );

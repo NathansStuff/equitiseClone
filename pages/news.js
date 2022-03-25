@@ -25,7 +25,6 @@ export default function News({news: initialData}) {
       <FilteringMenu
         filter={filter}
         onChange={(option, value) => {
-          debugger;
           setFilter({ ...filter, [option]: value });
         }}
       />
