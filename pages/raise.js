@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Testimonials from 'components/Testimonials';
 import Newsletter from 'components/Newsletter';
 import NewsSlider from 'components/NewsSlider';
+import SuccessStories from 'components/SuccessStories';
 export default function Home({ companies: initialCompanies }) {
   const timeNow = new Date();
   const { data: companies, companiesError } = useGetCompanies(initialCompanies);
@@ -104,10 +105,9 @@ export default function Home({ companies: initialCompanies }) {
               </p>
             </div>
           </div>
-         
         </div>
       </div>
-     
+      <SuccessStories limit={1} />
       <Testimonials filter={['wholesale', 'retail', 'ipo']} />
       <Newsletter />
       <NewsSlider />

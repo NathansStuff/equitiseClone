@@ -69,13 +69,16 @@ export default function InvestmentCardPast({
   const { data: investments, error } = useGetInvestments(initialInvestments);
   var i;
   var CompanyInvestments;
-  for (i = 0; i < investments.length; i++) {
+  var length = 0
+  investments ? length = investments.length : ''
+  for (i = 0; i < length; i++) {
     if (name === investments[i]['name'])
       CompanyInvestments = investments[i]['relatedInvestment'];
   }
-  const totalInvestments = CompanyInvestments.length;
+  var totalInvestments = 0
+  CompanyInvestments > 0 ? totalInvestments = CompanyInvestments.length : ''
   var totalInvested = 0;
-  for (i = 0; i < CompanyInvestments.length; i++) {
+  for (i = 0; i < totalInvestments; i++) {
     totalInvested += CompanyInvestments[i]['amount'];
   }
   const invested = abbreviateNumber(totalInvested);

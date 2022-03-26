@@ -15,7 +15,9 @@ export default function SuccessStories({
   }
   let showCompanies = { retail: [], wholesale: [], ipo: [] };
   companies.map(company =>
-    new Date(company.close) < timeNow && filter.includes(company.type)
+    new Date(company.close) < timeNow &&
+    filter.includes(company.type) &&
+    showCompanies[company.type].length < limit
       ? showCompanies[company.type].push(
           <InvestmentCardPast
             coverImage={company.coverImage}
@@ -36,7 +38,6 @@ export default function SuccessStories({
         )
       : ''
   );
-  debugger;
 
   return (
     <div className='investment-home-container'>
