@@ -2416,6 +2416,7 @@ h1, .sidebar-title {
     height: 56px;
     line-height: 28px;
     margin: 0;
+    margin-bottom: 10px;
 }
 }
 .faq-ul {
@@ -2660,7 +2661,8 @@ h1, .sidebar-title {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  padding: 50px 0;
+  
 }
 .raise-process-header {
 
@@ -2683,6 +2685,15 @@ h1, .sidebar-title {
   p {
     margin-bottom: 15px;
     margin-top: 0;
+  }
+  h3 {
+    color: #6363ff;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+    text-transform: uppercase;
   }
 }
 
@@ -2736,3 +2747,26 @@ h1, .sidebar-title {
   }
 }
 ///////////////RAISE PROCESS END///////////////
+///////////////WHY PARTNER FAQ START///////////////
+.accordion {
+  margin: 2rem auto;
+}
+
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.accordion-title,
+.accordion-content {
+  padding: 1rem;
+}
+
+
+.why-partner-container {
+  width: 700px;
+  max-width: 100%;
+}
+///////////////WHY PARTNER FAQ END///////////////
