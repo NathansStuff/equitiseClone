@@ -5,6 +5,7 @@ import InvestmentCardPast from 'components/Invest/InvestmentCardPast';
 export default function SuccessStories({
   companies: initialCompanies,
   filter = ['retail', 'ipo', 'wholesale'],
+  limit = 5,
 }) {
   const { data: companies, companiesError } = useGetCompanies(initialCompanies);
   const timeNow = new Date();
@@ -12,10 +13,10 @@ export default function SuccessStories({
   if (!companies) {
     return 'Loading!';
   }
-  let showCompanies = [];
+  let showCompanies = { retail: [], wholesale: [], ipo: [] };
   companies.map(company =>
     new Date(company.close) < timeNow && filter.includes(company.type)
-      ? showCompanies.push(
+      ? showCompanies[company.type].push(
           <InvestmentCardPast
             coverImage={company.coverImage}
             type={company.type}
@@ -35,6 +36,8 @@ export default function SuccessStories({
         )
       : ''
   );
+  debugger;
+
   return (
     <div className='investment-home-container'>
       <div>
@@ -43,7 +46,11 @@ export default function SuccessStories({
           <h2>Some of our highlights</h2>
         </div>
       </div>
-      <div className='investment-companies-container'>{showCompanies}</div>
+      <div className='investment-companies-container'>
+        {showCompanies['retail']}
+        {showCompanies['ipo']}
+        {showCompanies['wholesale']}
+      </div>
     </div>
   );
 }
