@@ -6,6 +6,9 @@ import Newsletter from 'components/Newsletter';
 import NewsSlider from 'components/NewsSlider';
 import SuccessStories from 'components/SuccessStories';
 import RaiseProcess from 'components/raise/RaiseProcess';
+import FadeIn from 'components/FadeIn';
+import { raiseProcessContent } from 'components/raise/raiseProcessContent';
+
 export default function Raise() {
   return (
     <PageLayout>
@@ -99,7 +102,12 @@ export default function Raise() {
           </div>
         </div>
       </div>
-      <RaiseProcess />
+      <FadeIn
+        title={raiseProcessContent.title}
+        blurb={raiseProcessContent.blurb}
+        subtitle={raiseProcessContent.subtitle}
+        children={[raiseProcessContent.children]}
+      />
       <SuccessStories limit={1} />
       <Testimonials filter={['wholesale', 'retail', 'ipo']} />
       <Newsletter />

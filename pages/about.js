@@ -5,6 +5,8 @@ import PageTitle from 'components/PageTitle';
 import ContentCard from 'components/ContentCard';
 import SuccessStories from 'components/SuccessStories';
 import { getAllAboutUsCard } from 'lib/api';
+import { AboutUsContent } from 'components/about-us/AboutUsContent';
+import FadeIn from 'components/FadeIn';
 
 export default function About({aboutUs}) {
   if (!aboutUs) {
@@ -33,6 +35,12 @@ export default function About({aboutUs}) {
           )
         )}
       </div>
+      <FadeIn
+        title={AboutUsContent.title}
+        blurb={AboutUsContent.blurb}
+        subtitle={AboutUsContent.subtitle}
+        children={[AboutUsContent.children]}
+      />
       <SuccessStories limit='1'/>
       <Newsletter />
       <NewsSlider />
