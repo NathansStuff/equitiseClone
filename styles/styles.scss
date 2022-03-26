@@ -2369,7 +2369,7 @@ h1, .sidebar-title {
   background: #fff;
   border-radius: 3px;
   box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
-  padding: 60px 70px 0 70px;
+  padding: 60px 70px 60px 70px;
   max-width: 1420px;
   h5 {
     align-items: center;
@@ -2400,10 +2400,12 @@ h1, .sidebar-title {
 
 .equity-faq-card-container {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .equity-faq-each {
-  max-width: 300px;
+  max-width: 400px;
   padding: 0 10px;
   
   h4 {
