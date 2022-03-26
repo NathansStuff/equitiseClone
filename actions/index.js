@@ -22,6 +22,6 @@ export const useGetAboutUsCard = initialData => {
   return useSWR(`/api/aboutUsCards`, fetcher, { initialData });
 };
 
-export const useGetAllTeams = initialData => {
+export const useGetTeams = initialData => {
   return useSWR(`/api/teams`, fetcher, { initialData });
 };

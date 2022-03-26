@@ -10,7 +10,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{ type: 'author' }],
+          to: [{ type: 'teamMember' }],
         },
       ],
     },

@@ -8,6 +8,7 @@ import news from './news';
 import testimony from './testimony';
 import aboutUsCard from './aboutUs';
 import teams from './teams';
+import teamMember from './teamMember';
 
 export default createSchema({
   name: 'default',
@@ -20,5 +21,6 @@ export default createSchema({
     testimony,
     aboutUsCard,
     teams,
+    teamMember,
   ]),
 });
