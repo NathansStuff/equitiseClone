@@ -29,7 +29,6 @@ const InvestCarousel = ({
     });
   }
   const length = showChildren.length;
-  debugger;
   const prev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(prevState => prevState - 1);

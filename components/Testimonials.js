@@ -3,7 +3,10 @@ import { getAllTestimonys } from 'lib/api';
 import InvestCarourel from 'components/Invest/InvestCarousel';
 import TestimonialCard from './TestimonyCard';
 
-const Testimonials = ({ testimonys: initalTestimonys }) => {
+const Testimonials = ({
+  testimonys: initalTestimonys,
+  filter = ['retail'],
+}) => {
   const { data: testimonys, testimonysError } =
     useGetTestimonys(initalTestimonys);
 
@@ -14,15 +17,17 @@ const Testimonials = ({ testimonys: initalTestimonys }) => {
   let testifyies = [];
   let i = 0;
   for (i; i < testimonys.length; i++) {
-    testifyies.push(
-      <TestimonialCard
-        customer={testimonys[i].customer.name}
-        avatar={testimonys[i].customer.avatar}
-        company={`${testimonys[i].company.name}`}
-        type={`${testimonys[i]['type']}`}
-        testimony={`${testimonys[i]['testimony']}`}
-      />
-    );
+    if (filter.includes(testimonys[i].company.type)) {
+      testifyies.push(
+        <TestimonialCard
+          customer={testimonys[i].customer.name}
+          avatar={testimonys[i].customer.avatar}
+          company={`${testimonys[i].company.name}`}
+          type={`${testimonys[i]['type']}`}
+          testimony={`${testimonys[i]['testimony']}`}
+        />
+      );
+    }
   }
   return (
     <div
@@ -40,7 +45,11 @@ const Testimonials = ({ testimonys: initalTestimonys }) => {
         <div className='invest-subtitle'>
           <h4>TESTIMONIALS</h4>
         </div>
-        <InvestCarourel show={3} header='Meet some happy customers' filter={['company', 'investor']}>
+        <InvestCarourel
+          show={3}
+          header='Meet some happy customers'
+          filter={['company', 'investor']}
+        >
           {testifyies}
         </InvestCarourel>
       </div>
