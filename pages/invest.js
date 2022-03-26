@@ -2,9 +2,9 @@ import PageLayout from 'components/PageLayout';
 import InvestmentCard from 'components/Invest/InvestmentCard';
 import { getAllCompanies, getAllInvestments } from 'lib/api';
 import { useGetCompanies, useGetInvestments } from 'actions';
-import InvestmentCardPast from 'components/Invest/InvestmentCardPast';
 import Newsletter from 'components/Newsletter';
 import NewsSlider from 'components/NewsSlider';
+import SuccessStories from 'components/SuccessStories';
 export default function Invest({
   companies: initialCompanies,
   investments: initialInvestments,
@@ -14,7 +14,7 @@ export default function Invest({
     useGetInvestments(initialInvestments);
   const timeNow = new Date();
 
-  if (!companies || !investments ) {
+  if (!companies || !investments) {
     return 'Loading!';
   }
 
@@ -63,42 +63,11 @@ export default function Invest({
             )}
           </div>
         </div>
-        <div className='investment-home-container'>
-          <div>
-            <div className='invest-subtitle'>
-              <h4>SUCCESS STORIES</h4>
-              <h2>Some of our highlights</h2>
-            </div>
-          </div>
-          <div className='investment-companies-container'>
-            {companies.map(company =>
-              new Date(company.close) > timeNow ? (
-                <div />
-              ) : (
-                <InvestmentCardPast
-                  coverImage={company.coverImage}
-                  type={company.type}
-                  name={company.name}
-                  blurb={company.blurb}
-                  link={{
-                    href: '/company/[slug]',
-                    as: `/company/${company.slug}`,
-                  }}
-                  slug={company.slug}
-                  close={company.close}
-                  start={company.start}
-                  minimum={company.minimum}
-                  tag1={company.tag1}
-                  tag2={company.tag2}
-                />
-              )
-            )}
-          </div>
-        </div>
+        <SuccessStories />
         <Newsletter />
-        
-          <NewsSlider/>
-        </div>
+
+        <NewsSlider />
+      </div>
     </PageLayout>
   );
 }
