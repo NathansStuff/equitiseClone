@@ -5,7 +5,7 @@ import InvestmentCardPast from 'components/Invest/InvestmentCardPast';
 export default function SuccessStories({
   companies: initialCompanies,
   filter = ['retail', 'ipo', 'wholesale'],
-  limit = 5,
+  limit = 3,
 }) {
   const { data: companies, companiesError } = useGetCompanies(initialCompanies);
   const timeNow = new Date();

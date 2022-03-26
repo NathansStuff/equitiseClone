@@ -1,20 +1,12 @@
 import PageLayout from 'components/PageLayout';
-import InvestmentCard from 'components/Invest/InvestmentCard';
 import { getAllCompanies } from 'lib/api';
 import { useGetCompanies } from 'actions';
-import CountUpTicker from 'components/CountUpTicker';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Testimonials from 'components/Testimonials';
 import Newsletter from 'components/Newsletter';
 import NewsSlider from 'components/NewsSlider';
 import SuccessStories from 'components/SuccessStories';
-export default function Home({ companies: initialCompanies }) {
-  const timeNow = new Date();
-  const { data: companies, companiesError } = useGetCompanies(initialCompanies);
-  if (!companies) {
-    return 'Loading!';
-  }
-
+import RaiseProcess from 'components/raise/RaiseProcess';
+export default function Raise() {
   return (
     <PageLayout>
       <div className='equity-header-cont'>
@@ -107,19 +99,11 @@ export default function Home({ companies: initialCompanies }) {
           </div>
         </div>
       </div>
+      <RaiseProcess />
       <SuccessStories limit={1} />
       <Testimonials filter={['wholesale', 'retail', 'ipo']} />
       <Newsletter />
       <NewsSlider />
     </PageLayout>
   );
-}
-export async function getStaticProps() {
-  const companies = await getAllCompanies({ offset: 0 });
-
-  return {
-    props: {
-      companies,
-    },
-  };
 }
