@@ -21,3 +21,7 @@ export const useGetTestimonys = initialData => {
 export const useGetAboutUsCard = initialData => {
   return useSWR(`/api/aboutUsCards`, fetcher, { initialData });
 };
+
+export const useGetAllTeams = initialData => {
+  return useSWR(`/api/teams`, fetcher, { initialData });
+};

@@ -7,6 +7,7 @@ import author from './author';
 import news from './news';
 import testimony from './testimony';
 import aboutUsCard from './aboutUs';
+import teams from './teams';
 
 export default createSchema({
   name: 'default',
@@ -18,5 +19,6 @@ export default createSchema({
     news,
     testimony,
     aboutUsCard,
+    teams,
   ]),
 });
