@@ -2770,3 +2770,74 @@ h1, .sidebar-title {
   max-width: 100%;
 }
 ///////////////WHY PARTNER FAQ END///////////////
+///////////////CONTENT CARD WRAPPER START///////////////
+.content-card-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.content-card {
+  max-width: 1200px;
+  background-color: white;
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 0px;
+  
+  div {
+    flex: 1 1 0px;
+    img {
+      object-fit: cover;
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+}
+.content-card-dets { 
+  padding:  60px;
+  
+  h1 {
+    align-items: center;
+    color: #6363ff;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0;
+  }
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.blue-button {
+  margin-bottom: 0px;
+  height: 36px;
+  button {
+    background: #06004d;
+    border-color: #06004d;
+    border: 1px solid #06004d;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer ;
+    z-index: 2;
+    transition: transform .3s,-webkit-transform .3s;
+
+    &:hover {
+      background-color: hsl(210, 5%, 51%);
+      border-color: hsl(210, 5%, 41%);
+      -webkit-transform: translateY(.25rem);
+      transform: translateY(-.25rem);
+    }
+  }
+}
+///////////////CONTENT CARD WRAPPER START END///////////////

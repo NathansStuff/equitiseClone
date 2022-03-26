@@ -10,7 +10,6 @@ export default function ProfileHome({ news }) {
   if (!news) {
     return 'Loading!';
   }
-  debugger;
   return (
     <div>
       <Navbar />

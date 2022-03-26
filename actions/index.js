@@ -17,3 +17,7 @@ export const useGetInvestments = initialData => {
 export const useGetTestimonys = initialData => {
   return useSWR(`/api/testimonys`, fetcher, { initialData });
 };
+
+export const useGetAboutUsCard = initialData => {
+  return useSWR(`/api/aboutUsCards`, fetcher, { initialData });
+};
