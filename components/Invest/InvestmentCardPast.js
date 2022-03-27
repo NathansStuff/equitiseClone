@@ -1,9 +1,7 @@
 import { urlFor } from 'lib/api';
 import { Fragment } from 'react';
 import Link from 'next/link';
-import { getInvestmentBySlug } from 'lib/api';
 import { useGetInvestments } from 'actions';
-import CountdownTimer from '../CountdownTimer';
 
 function diff_miliseconds(dt2, dt1) {
   var diff = dt2.getTime() - dt1.getTime();
@@ -69,14 +67,14 @@ export default function InvestmentCardPast({
   const { data: investments, error } = useGetInvestments(initialInvestments);
   var i;
   var CompanyInvestments;
-  var length = 0
-  investments ? length = investments.length : ''
+  var length = 0;
+  investments ? (length = investments.length) : '';
   for (i = 0; i < length; i++) {
     if (name === investments[i]['name'])
       CompanyInvestments = investments[i]['relatedInvestment'];
   }
-  var totalInvestments = 0
-  CompanyInvestments > 0 ? totalInvestments = CompanyInvestments.length : ''
+  var totalInvestments = 0;
+  CompanyInvestments > 0 ? (totalInvestments = CompanyInvestments.length) : '';
   var totalInvested = 0;
   for (i = 0; i < totalInvestments; i++) {
     totalInvested += CompanyInvestments[i]['amount'];
@@ -116,8 +114,8 @@ export default function InvestmentCardPast({
         )}
 
         {capitalTag2 ? (
-          <div className='investment-past-tag' >
-            <p >{capitalTag2}</p>
+          <div className='investment-past-tag'>
+            <p>{capitalTag2}</p>
           </div>
         ) : (
           <Fragment />
