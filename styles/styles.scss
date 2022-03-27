@@ -749,22 +749,7 @@ h1, .sidebar-title {
     margin-left: auto;
     margin-right: auto;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+ 
   .red-text {
     color: #f44336 !important;
   }
@@ -1176,15 +1161,6 @@ h1, .sidebar-title {
     }
   }
 
-
-
-
-
-
-
-
-
-
   /////////////////HEADER BANNER START///////////////
   .header-banner {
     width: 100%;
@@ -1266,7 +1242,6 @@ h1, .sidebar-title {
     padding: 12px 15px;
     background: #fff;
     border: 1px solid rgba(0,0,0,.1);
-    box-shadow: inset 0 1px 1px rgb(0 0 0 / 10%);
     border-radius: 3px;
     outline: none;
     resize: none;
@@ -2018,8 +1993,11 @@ h1, .sidebar-title {
 
 }
 .carousel-card-container {
-  cursor: pointer;
   height: 360px;
+}
+.carousel-card-container-long,
+.carousel-card-container {
+  cursor: pointer;
   margin: 5px;
   border: 10px;
   background-color: white;
@@ -2062,7 +2040,21 @@ h1, .sidebar-title {
 .h4-tag {
   padding: 0 8px;
 }
-
+.carousel-card-container-long {
+  display: flex;
+  
+  width: 100%;
+  img {
+    width: 100%;
+    height: 255px;
+  }
+  div {
+    width: 100%;
+  }
+}
+.carousel-card-long-container {
+  height: fit-content
+}
 .carousel-card-tags {
   padding: 0 20px;
   height: 46px;
@@ -2976,3 +2968,199 @@ h1, .sidebar-title {
   flex-direction: row;
 }
 ///////////////TEAMS END///////////////
+
+///////////////BLOG PAGE START///////////////
+.blog-div {
+  padding: 60px 0;
+  display: flex;
+  width: 100%;
+  // max-height: 750px;
+  justify-content: center;
+}
+
+// .blog-popular-div {
+//   margin-top: 40px;
+//   display: flex;
+//   width: 100%;  
+//   justify-content: center;
+// }
+// .blog-popular-container {
+//   width: 1000px;
+//   max-width: 100%;
+// }
+
+
+
+
+.blog-container {
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.first-blog-card {
+  width: 100%;
+  height: 735px;
+}
+.blogs-container {
+  padding: 60px;  
+}
+
+.first-blog-card-div {
+  height: 100%;
+
+}
+.carousel-card-img-container {
+  height: 50%;
+  img {
+    height: 100%;
+  }
+  
+}
+.small-blog-card {
+  width: 350px;
+}
+.blog-top2 {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+
+
+.blog-links-div {
+  display: flex;
+  justify-content: center;
+  // background-color: w;
+  width: 1000px;
+  max-width: 100%;
+}
+.blogs-link {
+  width: 100%;
+  align-items: flex-start;
+}
+
+.blog-links {
+  display: flex;
+  width: 100%;
+  // background-color: red;
+  flex-direction: column;
+}
+.blog-link {
+  button {width: 310px ;
+    height: 75px;
+  }
+  margin-top: 40px;
+  margin-bottom: 10px; 
+  margin-right: 10px;
+}
+.blog-links-3each {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-link-header {
+  h3{color: #6363ff;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+}}
+
+.blog-latest {
+  display: flex;
+  flex-direction: row;
+  max-width: 1000px;
+  
+}
+.blog-popular {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  
+}
+.side-by-side-div {
+  display: flex;
+  width: 100%;  
+}
+.blog-popular-div {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;  
+  justify-content: center;
+}
+.blog-popular-container {
+  width: 1000px;
+  max-width: 100%;
+}
+
+
+///////////////BLOG PAGE END///////////////
+///////////////NEWS CARD CONTAINER START///////////////
+.news-card-container {
+  background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 2px #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+  max-width: 500px;
+  min-height: 545px;
+}
+.news-type-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 194px;
+  padding: 15px;
+  img {
+    height: 100px;
+    width: 144px;
+    object-fit: cover;
+  }
+  h5 {
+    color: #06004D;
+    font-size: 16px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+  }
+  .normal {
+    font-size: 14px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+
+  }
+
+}
+.news-type-divider {
+  border-bottom: 1px solid grey;
+
+}
+
+.hover {
+  text-decoration: underline;
+  margin-left: 15px;
+&:hover {
+  cursor: pointer;
+}
+}
+.news-title {
+
+    color: #06004d;
+    font-family: Inter,sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 10px;
+}
+.news-container-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+///////////////NEWS CARD CONTAINER END///////////////

@@ -13,7 +13,7 @@ function covertTag(tag) {
   return splitStr;
 }
 
-export default function CarouselCard({
+export default function CarouselCardLong({
   coverImage,
   tag1,
   tag2,
@@ -24,13 +24,13 @@ export default function CarouselCard({
 }) {
   return (
     <Link {...link}>
-      <div className={`carousel-card-ult ${className}`}>
-        <div className={`carousel-card-container ${className == 'first-blog-card' ? 'first-blog-card-div' : ''} `}>
-          <div className='carousel-card-img-container'>
+      <div className={`carousel-card-ult-long`}>
+        <div className={`carousel-card-container-long `}>
+          <div className=''>
             <img src={coverImage} alt='placeholder' style={{ width: '100%' }} />
           </div>
-          <div>
-            <div>
+          <div className='carousel-card-long-container'>
+            <div className='carousel-card-long-container'>
               <div className='carousel-card-tags'>
                 <Link href={'/news/[slug]'} as={`/news/${tag1}`}>
                   <h4>{covertTag(tag1)} </h4>
