@@ -1,23 +1,19 @@
 import PageLayout from 'components/PageLayout';
 import InvestmentCard from 'components/Invest/InvestmentCard';
-import { getAllCompanies, getAllInvestments } from 'lib/api';
-import { useGetCompanies, useGetInvestments } from 'actions';
+import { getAllCompanies } from 'lib/api';
+import { useGetCompanies } from 'actions';
 import Newsletter from 'components/Newsletter';
 import NewsSlider from 'components/NewsSlider';
 import SuccessStories from 'components/SuccessStories';
+import Loading from 'components/Loading';
 export default function Invest({
   companies: initialCompanies,
-  investments: initialInvestments,
 }) {
   const { data: companies, companiesError } = useGetCompanies(initialCompanies);
-  const { data: investments, investmentsError } =
-    useGetInvestments(initialInvestments);
   const timeNow = new Date();
-
-  if (!companies || !investments) {
-    return 'Loading!';
+  if (!companies) {
+    return <Loading />;
   }
-
   return (
     <PageLayout>
       <div className='invest-container'>
@@ -74,11 +70,9 @@ export default function Invest({
 
 export async function getStaticProps() {
   const companies = await getAllCompanies({ offset: 0 });
-  const investments = await getAllInvestments();
   return {
     props: {
       companies,
-      investments,
     },
   };
 }

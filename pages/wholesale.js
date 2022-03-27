@@ -7,13 +7,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Testimonials from 'components/Testimonials';
 import Newsletter from 'components/Newsletter';
 import NewsSlider from 'components/NewsSlider';
-export default function Home({ companies: initialCompanies }) {
+import Loading from 'components/Loading';
+export default function Wholesale({ companies: initialCompanies }) {
   const timeNow = new Date();
   const { data: companies, companiesError } = useGetCompanies(initialCompanies);
+ 
   if (!companies) {
-    return 'Loading!';
+    return <Loading />;
   }
-
   return (
     <PageLayout>
       <div className='equity-header-cont'>

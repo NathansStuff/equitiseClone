@@ -7,9 +7,6 @@ import LatestNews from 'components/LatestNews';
 import { getAllNews } from 'lib/api';
 
 export default function ProfileHome({ news }) {
-  if (!news) {
-    return 'Loading!';
-  }
   return (
     <div>
       <Navbar />

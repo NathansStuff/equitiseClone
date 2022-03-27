@@ -1,18 +1,6 @@
 import PageLayout from 'components/PageLayout';
-import InvestmentCard from 'components/Invest/InvestmentCard';
-import { getAllCompanies } from 'lib/api';
-import { useGetCompanies } from 'actions';
-import CountUpTicker from 'components/CountUpTicker';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Testimonials from 'components/Testimonials';
 import Newsletter from 'components/Newsletter';
-import NewsSlider from 'components/NewsSlider';
-export default function Home({ companies: initialCompanies }) {
-  const timeNow = new Date();
-  const { data: companies, companiesError } = useGetCompanies(initialCompanies);
-  if (!companies) {
-    return 'Loading!';
-  }
+export default function WhyInveest() {
 
   return (
     <PageLayout>
@@ -184,13 +172,4 @@ export default function Home({ companies: initialCompanies }) {
       <Newsletter />
     </PageLayout>
   );
-}
-export async function getStaticProps() {
-  const companies = await getAllCompanies({ offset: 0 });
-
-  return {
-    props: {
-      companies,
-    },
-  };
 }

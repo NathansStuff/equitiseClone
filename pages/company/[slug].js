@@ -1,16 +1,11 @@
 import { getCompanyBySlug, getAllCompanies, getAllInvestments } from 'lib/api';
 import CompanyTitle from 'components/company/CompanyTitle';
 import PageLayout from 'components/PageLayout';
-import { useGetInvestments } from 'actions';
 import CompanyBody from 'components/company/CompanyBody';
 
-const CompanyDetail = ({ company, investments: initialInvestments }) => {
+const CompanyDetail = ({ company }) => {
   
-  const { data: investments, investmentsError } =
-    useGetInvestments(initialInvestments);
-  if (!investments) {
-    return 'Loading!';
-  }
+
   return (
     <PageLayout>
       <CompanyTitle
@@ -37,10 +32,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const company = await getCompanyBySlug(params.slug);
-  const investments = await getAllInvestments();
 
   return {
-    props: { company, investments },
+    props: { company},
   };
 }
 

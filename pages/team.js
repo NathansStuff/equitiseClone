@@ -4,13 +4,12 @@ import { useGetTeams } from 'actions';
 import EachTeam from 'components/teams/EachTeam';
 import Newsletter from 'components/Newsletter';
 import PageTitle from 'components/PageTitle';
-
+import Loading from 'components/Loading';
 export default function Team({ teams: initialTeams }) {
   const { data: teams, teamsError } = useGetTeams(initialTeams);
   if (!teams) {
-    return 'Loading!';
+    return <Loading />;
   }
-
   return (
     <PageLayout>
       <PageTitle

@@ -1,11 +1,8 @@
 import PageLayout from 'components/PageLayout';
-import { getAllCompanies } from 'lib/api';
-import { useGetCompanies } from 'actions';
 import Testimonials from 'components/Testimonials';
 import Newsletter from 'components/Newsletter';
 import NewsSlider from 'components/NewsSlider';
 import SuccessStories from 'components/SuccessStories';
-import RaiseProcess from 'components/raise/RaiseProcess';
 import FadeIn from 'components/FadeIn';
 import { raiseProcessContent } from 'components/raise/raiseProcessContent';
 

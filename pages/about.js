@@ -9,9 +9,7 @@ import { AboutUsContent } from 'components/about-us/AboutUsContent';
 import FadeIn from 'components/FadeIn';
 
 export default function About({aboutUs}) {
-  if (!aboutUs) {
-    return 'Loading!';
-  }
+
   return (
     <PageLayout>
       <PageTitle

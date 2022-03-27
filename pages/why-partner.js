@@ -2,20 +2,14 @@ import PageLayout from 'components/PageLayout';
 import InvestmentCard from 'components/Invest/InvestmentCard';
 import { getAllCompanies } from 'lib/api';
 import { useGetCompanies } from 'actions';
-import CountUpTicker from 'components/CountUpTicker';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Testimonials from 'components/Testimonials';
 import Newsletter from 'components/Newsletter';
 import NewsSlider from 'components/NewsSlider';
 import WhyPartnerFAQ from 'components/why-partner/WhyPartnerFAQ';
 
 export default function Home({ companies: initialCompanies }) {
-  const timeNow = new Date();
   const { data: companies, companiesError } = useGetCompanies(initialCompanies);
-  if (!companies) {
-    return 'Loading!';
-  }
-
+ 
   return (
     <PageLayout>
       <div className='equity-header-cont'>

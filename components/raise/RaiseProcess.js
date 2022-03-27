@@ -1,6 +1,4 @@
 import FadeInSection from 'components/FadeInSection';
-import { raiseProcessContent } from './raiseProcessContent';
-import FadeIn from 'components/FadeIn';
 
 export default function RaiseProcess() {
   return (

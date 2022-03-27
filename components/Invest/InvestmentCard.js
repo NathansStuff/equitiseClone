@@ -1,8 +1,8 @@
 import { urlFor } from 'lib/api';
 import Link from 'next/link';
-import { getInvestmentBySlug } from 'lib/api';
 import { useGetInvestments } from 'actions';
 import CountdownTimer from '../CountdownTimer';
+import FadeIn from 'components/FadeIn';
 
 export default function InvestmentCard({
   name,
@@ -11,7 +11,6 @@ export default function InvestmentCard({
   logo,
   type,
   link,
-  slug,
   start,
   close,
   minimum,
@@ -29,10 +28,10 @@ export default function InvestmentCard({
   const totalInvestments = CompanyInvestments ? CompanyInvestments.length : 0;
 
   var totalInvested = 0;
-
-  if (CompanyInvestments > 0) {
-    for (i = 0; i < CompanyInvestments.length; i++) {
-      totalInvested += CompanyInvestments[i]['amount'];
+  let k = 0;
+  if (totalInvestments > 0) {
+    for (k = 0; k < CompanyInvestments.length; k++) {
+      totalInvested += CompanyInvestments[k]['amount'];
     }
   }
 

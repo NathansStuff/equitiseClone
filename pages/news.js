@@ -1,14 +1,11 @@
 import { useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
-
 import PageLayout from 'components/PageLayout';
 import CardItem from 'components/CardItem';
 import CardListItem from 'components/CardListItem';
 import FilteringMenu from 'components/FilteringMenu';
 import { getAllNews } from 'lib/api';
 import { useGetNews } from 'actions';
-
-const fetcher = url => fetch(url).then(res => res.json());
 
 export default function News({news: initialData}) {
     const [filter, setFilter] = useState({
