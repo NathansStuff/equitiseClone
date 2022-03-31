@@ -3615,9 +3615,7 @@ h1, .sidebar-title {
 ///////////////LOGGEDINNAVBAR END///////////////
 
 ///////////////PortfolioBreakdown Start///////////////
-.portfolio-breakdown-overlay {
-  visibility: hidden;
-}
+
 .portfolio-breakdown-container {
   height: 450px;
   width: 450px;
@@ -3742,10 +3740,10 @@ h1, .sidebar-title {
 
 .portfolio-breakdown-pic {
   position: absolute;
-  width: 220px;
-  height: 220px;
-  bottom: 50%;
-  right: 10%;
+  width: 280px;
+  height: 280px;
+  bottom: 47%;
+  right: 7%;
 }
 
 .percent-first {
@@ -3772,4 +3770,63 @@ h1, .sidebar-title {
   left: 30%;
   top: 30%;
 }
+
+.percent-numbers {
+  position: absolute;
+  bottom: 35%;
+  right: 40%;
+  h1 {
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 31px;
+text-align: center;
+padding-left: 0;
+color: #06004D;
+}
+p {
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+text-align: center;
+
+color: #8A9099;
+}
+}
+
+.opaque {
+  opacity: 0.3;
+}
+
+.portfolio-breakdown-overlay {
+  // visibility: hidden;
+  // background-color: red;
+  height: 450px;
+  width: 450px;
+  margin: 28px 20px;
+  position: relative;
+  bottom: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-family: Plain,sans-serif;
+    font-weight: 700;
+    color: #06004d;
+    font-size: 16px;
+    padding: 0;
+    // margin: 20px 0;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 ///////////////PortfolioBreakdown END///////////////

@@ -1,17 +1,22 @@
 import BlueButton from 'components/BlueButton';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
-export default function PortfolioBreakdown() {
-  const percentage = 66;
-
-  return (
+export default function PortfolioBreakdown({ invested = false }) {
+    return (
     <div>
-      <div className='portfolio-breakdown-container'>
+      <div
+        className={`portfolio-breakdown-container ${invested ? '' : 'opaque'}`}
+      >
         <div className='portfolio-breakdown-header'>
           <h1>Opportunity Distribution</h1>
         </div>
         <div>
           <div className='portfolio-breakdown-pic'>
+            <div className='percent-numbers'>
+              <h1>$18K</h1>
+              <p>Invested</p>
+            </div>
+            
             <div className='percent-first'>
               <CircularProgressbar
                 value={70}
@@ -56,7 +61,7 @@ export default function PortfolioBreakdown() {
           </div>
         </div>
       </div>
-      <div className='portfolio-breakdown-overlay'>
+      <div className={`portfolio-breakdown-overlay ${invested ? 'hidden' : ''}`}>
         <div>
           <h1>Start Investing</h1>
         </div>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import BlueButton from './BlueButton';
 export default function LoggedInNavbar() {
-  const [clicked, setClicked] = useState(true);
+  const [clicked, setClicked] = useState(false);
 
   return (
     <div className='loggedin-nav-container'>
@@ -17,6 +17,7 @@ export default function LoggedInNavbar() {
           <p>AB</p>
         </div>
         <div>
+          
           <div className='dropdown' onClick={() => setClicked(!clicked)}>
             <div className={` ${clicked ? 'arrow-up-clicked' : 'arrow-up'}`} />
             <div
