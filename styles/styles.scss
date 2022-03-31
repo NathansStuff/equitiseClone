@@ -3627,6 +3627,9 @@ h1, .sidebar-title {
   background: #FFFFFF;
   box-shadow: -4px 8px 24px rgb(44 63 88 / 2%);
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .portfolio-breakdown-header{
   width: 100%;
@@ -3687,16 +3690,20 @@ h1, .sidebar-title {
   justify-content: center;
   align-items: center;
   width: 100%;
-  border-left: 1px solid gray;
  
   h1 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-    margin: 0;
+    margin-top: 5px;
     padding: 0;
     color: #06004D;
+    border-left: 1px solid gray;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
   }
   p {
     font-family: 'Inter';
@@ -3715,10 +3722,11 @@ h1, .sidebar-title {
   width: 100%;
   h1 {
     font-family: 'Inter';
+    margin-bottom: 0;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-    margin: 0;
+    margin-top: 5px;
     padding: 0;
     color: #06004D;
   }
@@ -3730,5 +3738,38 @@ h1, .sidebar-title {
     color: #8A9099;
   }
   
+}
+
+.portfolio-breakdown-pic {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  bottom: 50%;
+  right: 10%;
+}
+
+.percent-first {
+  // background-color: blue;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+}
+.percent-second {
+  // background-color: green;
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  left: 20%;
+  top: 20%;
+}
+.percent-third {
+  // background-color: pink;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  left: 30%;
+  top: 30%;
 }
 ///////////////PortfolioBreakdown END///////////////

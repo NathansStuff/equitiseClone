@@ -7,6 +7,7 @@ library.add(faList, faBorderAll, faLocationArrow,faMoneyBill1, faHeart, faMoneyB
 import 'styles/styles.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'highlight.js/styles/dracula.css';
+import 'react-circular-progressbar/dist/styles.css';
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
