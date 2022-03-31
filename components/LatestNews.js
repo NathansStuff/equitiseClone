@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const LatestNews = ({ image, slug, date, title }) => {
-  debugger;
+  
   return (
     <div className='link'>
       <Link href={`news/${slug}`}>

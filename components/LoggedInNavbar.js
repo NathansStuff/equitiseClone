@@ -13,11 +13,11 @@ export default function LoggedInNavbar() {
       </div>
       <div className='loggedin-nav-right'>
         <BlueButton href='/invest' content='View Deals' />
-        <div className='initials'>
+        <div className='initials' onClick={() => setClicked(!clicked)}>
           <p>AB</p>
         </div>
         <div>
-          <div class='dropdown' onClick={() => setClicked(!clicked)}>
+          <div className='dropdown' onClick={() => setClicked(!clicked)}>
             <div className={` ${clicked ? 'arrow-up-clicked' : 'arrow-up'}`} />
             <div
               className={` ${clicked ? 'arrow-down-clicked' : 'arrow-down'}`}
@@ -27,12 +27,12 @@ export default function LoggedInNavbar() {
                 clicked ? 'loggedin-dropdown-content-show' : ''
               }`}
             >
-              <Link href='/invest'>
-                <p>All Deals</p>
+              <Link href='/dashboard/profile'>
+                <p>My Profile</p>
               </Link>
 
-              <Link href='/invest'>
-                <p>All Deals</p>
+              <Link href='/logout'>
+                <p>Logout</p>
               </Link>
             </div>
           </div>

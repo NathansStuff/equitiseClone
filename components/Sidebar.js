@@ -1,7 +1,7 @@
-const Sidebar = () => {
+const Sidebar = ({ location }) => {
   return (
     <div className='sidebar'>
-      <div>
+      <div className='sidebar-container'>
         <h1 className='sidebar-title'>MENU</h1>
 
         <div className='sidebar-group-active'>
@@ -10,7 +10,13 @@ const Sidebar = () => {
             className='sidebarLogo'
             src='https://avatars1.githubusercontent.com/u/9482724?s=460&u=69a6acab13fd5547a4e316e496b573271077147f&v=4'
           />
-          <div className='sidebar-group-vert-active'>
+          <div
+            className={
+              location == '/dashboard'
+                ? 'sidebar-group-vert-active'
+                : 'sidebar-group'
+            }
+          >
             <div>
               <h3>Dashboard</h3>
             </div>
@@ -59,13 +65,13 @@ const Sidebar = () => {
           <h4>Profile</h4>
         </div>
         <div className='sidebar-account'>
-          <h4 >Login details</h4>
+          <h4>Login details</h4>
         </div>
         <div className='sidebar-account'>
-          <h4 >HIN settings</h4>
+          <h4>HIN settings</h4>
         </div>
         <div className='sidebar-account'>
-          <h4 >Investment preferences</h4>
+          <h4>Investment preferences</h4>
         </div>
       </div>
     </div>

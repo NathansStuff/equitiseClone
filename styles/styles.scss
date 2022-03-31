@@ -176,7 +176,6 @@ body {
 }
 
 .profilePageContent {
-    margin-top: 70px;
     display: flex;
 }
 
@@ -188,10 +187,11 @@ body {
     border-radius: 0px;
     background: #FFFFFF;
     box-shadow: 1px 0px 0px #EAEDF3;
-
     margin-left: 0px;
-  
+}
 
+.sidebar-container {
+  margin-top: 25px;
 }
 
 h1, .sidebar-title {
@@ -237,7 +237,6 @@ h1, .sidebar-title {
 .sidebar-group-active {
     display: flex;
     max-width: 100%;
-    width: 240px;
     padding-left: 30px;
     align-items: center;
     left: 0;
@@ -3591,5 +3590,11 @@ h1, .sidebar-title {
 }
 .loggedin-dropdown-content-show {
   display: block;
+}
+.initials,
+.dropdown {
+  &:hover {
+    cursor: pointer;
+  }
 }
 ///////////////LOGGEDINNAVBAR END///////////////
