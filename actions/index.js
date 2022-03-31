@@ -25,3 +25,8 @@ export const useGetAboutUsCard = initialData => {
 export const useGetTeams = initialData => {
   return useSWR(`/api/teams`, fetcher, { initialData });
 };
+
+export const useGetNewsfeed = initialData => {
+  return useSWR(`/api/newsfeed`, fetcher, { initialData });
+};
+

@@ -3194,7 +3194,7 @@ h1, .sidebar-title {
   position: absolute;
   width: 3px;
   background-color: grey;
-  top: 0;
+  top: 15px;
   bottom: 0;
   left: 50%;
   margin-left: -3px;
@@ -3220,11 +3220,17 @@ h1, .sidebar-title {
 .newsitem-img {
   width: 100%;
   object-fit: cover;
+  height: 154px;
 }
 
-.newsitem-flex {
+.newsitem-flex-left {
   display: flex;
   justify-content: flex-end;
+}
+
+.newsitem-flex-right {
+  display: flex;
+  justify-content: flex-start;
 }
 /* The actual content */
 .newsitem-content {
@@ -3257,6 +3263,20 @@ h1, .sidebar-title {
     color: #5f5f5f;
     font-weight: 400;
     margin-top: 10px;
+  }
+}
+
+.newsfeed-link {
+  
+    color: #121230;
+    font-weight: 500;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
 }
 
@@ -3307,12 +3327,12 @@ h1, .sidebar-title {
 
 /* Place the container to the left */
 .newsitem-left {
-  right: 100px;
+  right: 4px;
 }
 
 /* Place the container to the right */
 .newsitem-right {
-  left: 50%;
+  left: 50.2%;
 }
 
 /* Fix the circle for containers on the right side */

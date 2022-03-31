@@ -1,7 +1,15 @@
+import { useGetNewsfeed } from 'actions';
 import PageLayout from 'components/PageLayout';
 import PageTitle from 'components/PageTitle';
+import { getAllNewsfeed } from 'lib/api';
+import Loading from 'components/Loading';
+import NewsfeedItem from 'components/newsfeed/NewsfeedItem';
+export default function NewsFeed({ newsfeed: initialNewsfeed }) {
+  const { data: newsfeed, newsfeedError } = useGetNewsfeed(initialNewsfeed);
+  if (!newsfeed) {
+    return <Loading />;
+  }
 
-export default function NewsFeed() {
   return (
     <PageLayout>
       <PageTitle
@@ -13,64 +21,33 @@ export default function NewsFeed() {
         <div className='newsfeed-faq-card'>
           <div className='newsfeed-container'>
             <div className='timeline'>
-              <div className='newsitem-container newsitem-left'>
-                <div className='newsitem-content'>
-                  <div className='newsitem-date newsitem-date-left'>
-                    <div className='newsitem-date-line newsitem-date-line-left'></div>{' '}
-                    <h2>March 14th</h2>
-                  </div>
-                  <div className='newsitem-flex'>
-                    <div className='newsitem'>
-                      <img
-                        src='https://images.prismic.io/equitise-v3/9a554681-93c7-46b4-9df6-8363b777ed5c_Bundlfresh.png?auto=compress%2Cformat'
-                        className='newsitem-img'
-                      />
-                      <div className='newsitem-content'>
-                        <h1>TAG</h1>
-                        <h2>TITLE</h2>
-                        <p>
-                          Visit{' '}
-                          <a href='https://learngitbranching.js.org/'>
-                            this site
-                          </a>{' '}
-                          to learn about Git and become comfortable with basic
-                          Git practices
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='newsitem-container newsitem-right'>
-                <div className='newsitem-content'>
-                  <div className='newsitem-date'>
-                    <div className='newsitem-date-line newsitem-date-line-right'></div>{' '}
-                    <h2>March 14th</h2>
-                  </div>
-                  <div className='newsitem'>
-                    <img
-                      src='https://images.prismic.io/equitise-v3/9a554681-93c7-46b4-9df6-8363b777ed5c_Bundlfresh.png?auto=compress%2Cformat'
-                      className='newsitem-img'
-                    />
-                    <div className='newsitem-content'>
-                      <h1>TAG</h1>
-                      <h2>TITLE</h2>
-                      <p>
-                        Visit{' '}
-                        <a href='https://learngitbranching.js.org/'>
-                          this site
-                        </a>{' '}
-                        to learn about Git and become comfortable with basic Git
-                        practices
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {newsfeed.map((news, index) => {
+                return (
+                  <NewsfeedItem
+                    position={index % 2 == 0 ? 'left' : 'right'}
+                    blurb={news.blurb}
+                    title={news.title}
+                    image={news.coverImage}
+                    tag={news.tag}
+                    date={news.date}
+                    link={news.link}
+                    linktext={news.linktext}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
       </div>
     </PageLayout>
   );
+}
+export async function getStaticProps() {
+  const newsfeed = await getAllNewsfeed({ offset: 0 });
+
+  return {
+    props: {
+      newsfeed,
+    },
+  };
 }

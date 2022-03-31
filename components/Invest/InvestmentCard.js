@@ -2,7 +2,6 @@ import { urlFor } from 'lib/api';
 import Link from 'next/link';
 import { useGetInvestments } from 'actions';
 import CountdownTimer from '../CountdownTimer';
-import FadeIn from 'components/FadeIn';
 
 export default function InvestmentCard({
   name,
