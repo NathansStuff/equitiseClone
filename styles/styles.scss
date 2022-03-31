@@ -1754,8 +1754,11 @@ h1, .sidebar-title {
 /////////////////INVESTMENT CARD END///////////
 
 ///////////////NEWSLETTER START///////////////
+
+
 .newsletter {
-  background: #06004d;
+  // background: #06004d;
+  // z-index: -1;
   color: #fff;
   overflow: hidden;
   padding: 140px 0;
@@ -1766,6 +1769,7 @@ h1, .sidebar-title {
   justify-content: center;
   font-family: Inter,sans-serif;
   margin-top: 60px;
+  z-index: 2;
 }
 
 .newsletter-title {
@@ -3432,7 +3436,51 @@ h1, .sidebar-title {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   background-color: #06004D;
+}
 
-  // z-index: 100;
+@keyframes inner-bounce {
+  0%   { transform: translateX(-50px); }
+  100%  { transform: translateX(-50px); }
+}
+.newsletter-spacer {
+  // aspect-ratio: 960/540;
+  width: 120%;
+  // left: 10%;
+  position: absolute;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../public/newsletter.svg);
+  // height: 100%;
+  animation-name: inner-bounce;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  background-color: #06004D;
+  z-index: 2;
+}
+.bg{
+  background-repeat: no-repeat;
+  width: 120%;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../public/newsletter.svg);
+  background-color: #06004D;
+
+}
+
+@keyframes inner-bounce {
+  0%   { transform: translateX(0); }
+  100%  { transform: translateX(-50px); }
+}
+
+.newsletter-bg {
+  background-color: #06004D;
+  width: 120%;
+  height: 500px;
+  z-index: -1;
 }
 ///////////////SVG END///////////////
