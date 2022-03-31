@@ -7,20 +7,29 @@ import LatestNews from 'components/LatestNews';
 import { getAllNews } from 'lib/api';
 import Loading from 'components/Loading';
 import { useGetNews } from 'actions';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function Dashboard({ news: initialNews }) {
   const { data: news, teamsError } = useGetNews(initialNews);
   if (!news) {
     return <Loading />;
   }
-  const location = window.location
+  const location = window.location;
   return (
     <div>
       <LoggedInNavbar />
       <div className='profilePageContent'>
-        <Sidebar location={location.pathname}/>
+        <Sidebar location={location.pathname} />
         <div className='profile-page-main'>
-          <Banner />
+          <Banner href={'/'}>
+            <FontAwesomeIcon
+              icon='triangle-exclamation'
+              className='metrics-fontawesome'
+            />
+            <p>
+              Before you invest with Equitise we require you to verify your
+              identity
+            </p>
+          </Banner>
           <div>
             <div className='portfolio-opportunity'>
               <PortfolioSnapshot />

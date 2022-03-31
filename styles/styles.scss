@@ -349,15 +349,22 @@ h1, .sidebar-title {
     width: 100%;
     display: flex;
     flex-grow: 100%;
-
+    padding-left: 20px;
+    flex-direction: row;
+    // justify-content: center;
+    align-items: center;
+    height: 48px;
+    cursor: pointer;
     p {
         font-family: 'Inter';
         font-style: normal;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 22px;
         color: #FFFFFF;
         margin-left: 52px;
+        margin: 0;
+        padding-left: 16px;
     }
 }
 

@@ -1,8 +1,10 @@
-const Banner = () => {
+import Link from 'next/link';
+
+const Banner = ({ children, href }) => {
   return (
-    <div className='banner'>
-      <p>Example alert banner advertising new IPO deal</p>
-    </div>
+    <Link href={href}>
+      <div className='banner'>{children} </div>
+    </Link>
   );
 };
 
