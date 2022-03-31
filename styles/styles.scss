@@ -148,46 +148,15 @@ body {
             margin-top: 10px;
             margin-left: 50px;
             font-size: 20px;
+            &:hover {
+              cursor: pointer;
+            }
         }
     }
 
     
 
-    .initials {
-
-        /* Rectangle */
-
-        height: 38px;
-        width: 38px;
-        position: absolute;
-        left: 0%;
-        right: 0%;
-        top: 0%;
-        bottom: 0%;
-        border-radius: 19px;
-        margin-top: 16px;
-        margin-left: 93%;
-        background: #F6AB2F;
-
-        p {
-            position: absolute;
-            height: 24px;
-            left: 22.37%;
-            right: 22.37%;
-            top: calc(50% - 24px/2);
-            margin-top: 0px;
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 24px;
-            /* identical to box height, or 150% */
-
-            text-align: center;
-
-            color: #FFFFFF;
-        }
-    }
+ 
 }
 .navbar.scrolled{
     position: fixed;
@@ -2906,9 +2875,9 @@ h1, .sidebar-title {
   margin-bottom: 0px;
   height: 36px;
   button {
-    background: #06004d;
-    border-color: #06004d;
-    border: 1px solid #06004d;
+    background: #6363FF;
+    border-color: #6363FF;
+    border: 1px solid #6363FF;
     border-radius: 3px;
     color: #fff;
     display: inline-block;
@@ -3500,3 +3469,127 @@ h1, .sidebar-title {
   z-index: -1;
 }
 ///////////////SVG END///////////////
+///////////////LOGGEDINNAVBAR START///////////////
+.loggedin-nav-container {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #06004D;
+  color: #fff;
+  align-items: center;
+}
+.loggedin-nav-right {
+  display: flex;
+  flex-direction: row;
+  width: 220px;
+  padding-right: 30px;
+  justify-content: space-between;
+}
+
+.initials {
+  /* Rectangle */
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  border-radius: 19px;
+  background: #F6AB2F !important;
+  width: 38px !important;
+  height: 38px !important;
+
+  p {
+      position: relative;
+      top: 8px;
+      height: 24px;
+      top: calc(50% - 24px/2);
+      margin-top: 0px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      /* identical to box height, or 150% */
+
+      text-align: center;
+
+      color: #FFFFFF;
+  }
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid white;
+}
+.arrow-down {
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 3px solid white;
+  top: 10px;
+}
+
+.arrow-down-clicked {
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 3px solid lightblue;
+  top: 10px;
+}
+
+.arrow-up-clicked {
+  width: 0; 
+  height: 0; 
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid lightblue;
+}
+
+.logo {
+  p {
+      color: #F6F7F4;
+      margin-top: 10px;
+      margin-left: 50px;
+      font-size: 20px;
+      &:hover {
+        cursor: pointer;
+      }
+  }
+}
+
+.loggedin-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  width: 118px;
+  box-shadow: 0 2px 1px 0 rgb(0 0 0 / 10%), 0 1px 4px 0 rgb(0 0 0 / 10%);
+  z-index: 1;
+  // border-radius: 5px;
+  top: 40px;
+  color: #5f5f5f;
+  background-color: white;
+  right: -28px;
+  p {
+    padding: 8px 13px;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+      color: #06004D;
+      background-color: lightblue;
+    }
+  }
+}
+.loggedin-dropdown-content-show {
+  display: block;
+}
+///////////////LOGGEDINNAVBAR END///////////////

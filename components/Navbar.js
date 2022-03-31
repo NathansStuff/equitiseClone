@@ -26,7 +26,7 @@ export default function Navbar({ newsfeed: initialNewsfeed }) {
     <div className={scrolled ? 'navbar scrolled' : 'navbar'}>
       <div className='' />
       <div className='logo'>
-        <p>equitise</p>
+        <Link href='/'><p>Equity</p></Link>
       </div>
       <div className='navbar-links'>
         <div class='dropdown'>

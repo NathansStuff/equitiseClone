@@ -1,4 +1,4 @@
-import Navbar from 'components/Navbar';
+import LoggedInNavbar from 'components/LoggedInNavbar';
 import Sidebar from 'components/SideBar';
 import Banner from 'components/Banner';
 import PortfolioSnapshot from 'components/PortfolioSnapshot';
@@ -9,7 +9,7 @@ import { getAllNews } from 'lib/api';
 export default function ProfileHome({ news }) {
   return (
     <div>
-      <Navbar />
+      <LoggedInNavbar />
       <div className='profilePageContent'>
         <Sidebar />
         <div className='profile-page-main'>
