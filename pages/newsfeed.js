@@ -4,6 +4,8 @@ import PageTitle from 'components/PageTitle';
 import { getAllNewsfeed } from 'lib/api';
 import Loading from 'components/Loading';
 import NewsfeedItem from 'components/newsfeed/NewsfeedItem';
+import NavHeader from 'components/NavHeader';
+
 export default function NewsFeed({ newsfeed: initialNewsfeed }) {
   const { data: newsfeed, newsfeedError } = useGetNewsfeed(initialNewsfeed);
   if (!newsfeed) {
@@ -11,12 +13,11 @@ export default function NewsFeed({ newsfeed: initialNewsfeed }) {
   }
 
   return (
-    <PageLayout>
-      <PageTitle
-        title='Newsfeed'
-        content='Read about the latest news'
-        subtitle='Stay updated'
-      />
+    <PageLayout
+      title='Newsfeed'
+      content='Read about the latest news'
+      subtitle='Stay updated'
+    >
       <div className='equity-faq-container'>
         <div className='newsfeed-faq-card'>
           <div className='newsfeed-container'>
@@ -51,3 +52,4 @@ export async function getStaticProps() {
     },
   };
 }
+// <

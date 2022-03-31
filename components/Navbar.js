@@ -1,9 +1,22 @@
 import Button from './Button';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  const changeScrolled = () => {
+    if (window.scrollY >= 80) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+  window.addEventListener('scroll', changeScrolled);
+
   return (
-    <div className='navbar '>
+    <div className={scrolled ? 'navbar scrolled' : 'navbar'}>
+    <div className='' />
       <div className='logo'>
         <p>equitise</p>
       </div>

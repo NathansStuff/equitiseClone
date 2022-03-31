@@ -3,8 +3,9 @@ import { Fragment } from 'react';
 import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import NavHeader from './NavHeader';
 
-export default function PageLayout({ children, className }) {
+export default function PageLayout({ children, title, content, subtitle }) {
   return (
     <Fragment>
       <Head>
@@ -14,7 +15,7 @@ export default function PageLayout({ children, className }) {
         />
       </Head>
       <Fragment>
-        <Navbar />
+        <NavHeader title={title} content={content} subtitle={subtitle} />
         <div className={`page-background`}>{children}</div>
         <Footer />
       </Fragment>

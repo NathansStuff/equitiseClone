@@ -122,7 +122,8 @@ body {
   .dropdown:hover .dropdown-content {display: block;}
   
 .navbar {
-    position: absolute;
+    position: fixed;
+    position: sticky; 
     left: 0%;
     right: 0%;
     top: 0%;
@@ -133,7 +134,7 @@ body {
     max-height: 70px;
     width: 100%;
   
-    background: #06004D;
+    // background: #06004D;
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.06);
  
     h1 {
@@ -188,12 +189,21 @@ body {
         }
     }
 }
+.navbar.scrolled{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #06004D;
+    z-index: 10;
+  
+}
 
 .navbar-right {
     display: flex;
     width: 250px;
     margin-top: 0px;
     margin-right: 20px;
+    
 }
 
 .profilePageContent {
@@ -1374,7 +1384,8 @@ h1, .sidebar-title {
 }
     .invest-header-bg{
       padding: 90px 50px 140px;
-      background: #06004d;
+      z-index: 2;
+      // background: #06004d;
     color: #fff;
     }
     .invest-header-text {
@@ -2404,7 +2415,7 @@ h1, .sidebar-title {
 .equity-header-cont {
   display: flex;
   flex-direction: row;
-  background-color: #06004D;
+  // background-color: #06004D;
 
 }
 .equity-faq-container {
@@ -3380,3 +3391,32 @@ h1, .sidebar-title {
   }
 }
 ///////////////NEWSFEED END///////////////
+
+
+///////////////SVG START///////////////
+
+@keyframes inner-bounce {
+  0%   { transform: translateX(0); }
+  100%  { transform: translateX(-50px); }
+}
+.spacer {
+  // aspect-ratio: 960/540;
+  width: 120%;
+  // left: 10%;
+  position: absolute;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../public/wave-haikei.svg);
+  // height: 100%;
+  animation-name: inner-bounce;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  background-color: #06004D;
+
+  // z-index: 100;
+}
+///////////////SVG END///////////////
