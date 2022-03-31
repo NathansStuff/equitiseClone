@@ -1,9 +1,17 @@
+import { useState } from 'react';
+import { getAllNewsfeed } from 'lib/api';
+import { useGetNewsfeed } from 'actions';
 import Button from './Button';
 import Link from 'next/link';
-import { useState } from 'react';
+import Loading from './Loading';
 
-const Navbar = () => {
+export default function Navbar({ newsfeed: initialNewsfeed }) {
+  const { data: newsfeed, newsfeedError } = useGetNewsfeed(initialNewsfeed);
   const [scrolled, setScrolled] = useState(false);
+
+  if (!newsfeed) {
+    return <Loading />;
+  }
 
   const changeScrolled = () => {
     if (window.scrollY >= 80) {
@@ -16,7 +24,7 @@ const Navbar = () => {
 
   return (
     <div className={scrolled ? 'navbar scrolled' : 'navbar'}>
-    <div className='' />
+      <div className='' />
       <div className='logo'>
         <p>equitise</p>
       </div>
@@ -61,6 +69,14 @@ const Navbar = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Navbar;
+export async function getStaticProps() {
+  const newsfeed = await getAllNewsfeed({ offset: 0 });
+
+  return {
+    props: {
+      newsfeed,
+    },
+  };
+}
