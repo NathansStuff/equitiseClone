@@ -13,6 +13,7 @@ export default function InvestmentCard({
   start,
   close,
   minimum,
+  small=false,
   investments: initialInvestments,
 }) {
   const { data: investments, error } = useGetInvestments(initialInvestments);
@@ -39,7 +40,7 @@ export default function InvestmentCard({
   var closeDate = new Date(close);
 
   return (
-    <div className='investment-container'>
+    <div className={`investment-container ${small ? 'investment-small' : ''}`}>
       <Link {...link}>
         <div className='investment-link'></div>
       </Link>
@@ -54,7 +55,7 @@ export default function InvestmentCard({
           <h4>{name}</h4>
         </a>
 
-        <p>{blurb}</p>
+        {small ? '' : <p>blurb</p>}
       </div>
       {startDate < timeNow ? (
         <div>

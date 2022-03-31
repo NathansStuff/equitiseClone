@@ -130,7 +130,7 @@ body {
     bottom: 0%;
     display: flex;
     justify-content: space-between;
-    
+    z-index: 12;
     max-height: 70px;
     width: 100%;
   
@@ -1387,6 +1387,10 @@ h1, .sidebar-title {
       z-index: 2;
       // background: #06004d;
     color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 100px;
     }
     .invest-header-text {
       max-width: 50vw;
@@ -1472,6 +1476,10 @@ h1, .sidebar-title {
     box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
     margin-bottom: 20px;
     margin-right: 20px;
+}
+
+.investment-small {
+  height: 508px;
 }
 
 .investment-container-past {
@@ -3422,6 +3430,7 @@ h1, .sidebar-title {
 .spacer {
   // aspect-ratio: 960/540;
   width: 120%;
+  overflow: hidden;
   // left: 10%;
   position: absolute;
   height: 500px;
@@ -3436,6 +3445,9 @@ h1, .sidebar-title {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   background-color: #06004D;
+}
+.spacer-large {
+  height: 950px;
 }
 
 @keyframes inner-bounce {
@@ -3460,6 +3472,10 @@ h1, .sidebar-title {
   animation-fill-mode: forwards;
   background-color: #06004D;
   z-index: 2;
+}
+
+.nav-header-bg {
+  background-color: whitesmoke;
 }
 .bg{
   background-repeat: no-repeat;

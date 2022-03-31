@@ -4,15 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CurrentOffers from 'components/CurrentOffers';
 import Newsletter from 'components/Newsletter';
 import NewsSlider from 'components/NewsSlider';
+import BlueButton from 'components/BlueButton';
 
 export default function Home() {
   return (
     <PageLayout
-      title='Invest in businesses you believe in.
-    '
+      title='Invest in businesses you believe in.'
       subtitle='THE INVESTMENT PLATFORM'
-      content='Equitise is an Australian & New Zealand investment platform that brings extraordinary opportunities to everyday people. Investing is free and all companies that we partner with are highly vetted.
-      '
+      content='Equitise is an Australian & New Zealand investment platform that brings extraordinary opportunities to everyday people. Investing is free and all companies that we partner with are highly vetted.'
+      showcard={true}
     >
       <div className='equity-faq-container'>
         <div className='equity-faq-card'>
@@ -28,9 +28,7 @@ export default function Home() {
                 success of Australia's startups and high-growth businesses.
               </p>
             </div>
-            <div className='equity-signup-btn'>
-              <p>View all offers</p>
-            </div>
+            <BlueButton href='/invest' content='View all offers' />
           </div>
           <div className='equity-faq-card-container'>
             <div className='equity-faq-each'>
@@ -45,8 +43,10 @@ export default function Home() {
                 <ul className='faq-ul'>
                   <li>More than 10,000 investments to date</li>
                   <li>Highly vetted and highly accessible from $50</li>
-                </ul>
+                </ul>{' '}
+                <br />
               </p>
+              <BlueButton href='/equity' content='Learn More' />
             </div>
             <div className='equity-faq-card-container'>
               <div className='equity-faq-each'>
@@ -62,7 +62,9 @@ export default function Home() {
                     <li>Exclusive, highly vetted opportunities</li>
                     <li> Invest with venture funds and angels</li>
                   </ul>
+                  <br />
                 </p>
+                <BlueButton href='/wholesale' content='Learn More' />
               </div>
               <div className='equity-faq-card-container'>
                 <div className='equity-faq-each'>
@@ -78,7 +80,9 @@ export default function Home() {
                       <li>Invest in more established businesses</li>
                       <li>Shorter term investment</li>
                     </ul>
+                    <br />
                   </p>
+                  <BlueButton href='/ipo' content='Learn More' />
                 </div>
               </div>
             </div>

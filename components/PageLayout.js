@@ -5,7 +5,14 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import NavHeader from './NavHeader';
 
-export default function PageLayout({ children, title, content, subtitle }) {
+export default function PageLayout({
+  children,
+  title,
+  content,
+  subtitle,
+  style,
+  showcard,
+}) {
   return (
     <Fragment>
       <Head>
@@ -15,7 +22,13 @@ export default function PageLayout({ children, title, content, subtitle }) {
         />
       </Head>
       <Fragment>
-        <NavHeader title={title} content={content} subtitle={subtitle} />
+        <NavHeader
+          title={title}
+          content={content}
+          subtitle={subtitle}
+          style={style}
+          showcard={showcard}
+        />
         <div className={`page-background`}>{children}</div>
         <Footer />
       </Fragment>
