@@ -1391,9 +1391,22 @@ h1, .sidebar-title {
     .invest-header-text {
       max-width: 50vw;
       margin-left: 120px;
+      
+      @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+      @keyframes fadeInSlow {
+        0% {opacity:0;}
+        50% {opacity:0;}
+        100% {opacity:1;}
+      }
 
     h5 {
       font-size: 16px;
+      animation: fadeInSlow linear 3s;
+      // animation-delay: 2s;
+      // opacity: 0;
     }
     h2 {
       font-size: 56px;
@@ -1401,10 +1414,12 @@ h1, .sidebar-title {
       font-weight: 700;
       line-height: 1em;
       display: block;
+      animation: fadeIn linear 2s;
     }
     p {
       font-size: 18px;
       line-height: 1.65em;
+      animation: fadeIn linear 2s;
     }
     }
 
