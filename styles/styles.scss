@@ -177,6 +177,7 @@ body {
 
 .profilePageContent {
     display: flex;
+    background-color: whitesmoke;
 }
 
 .sidebar {
@@ -344,7 +345,7 @@ h1, .sidebar-title {
 
 .banner {
     background: #6363FF;
-    border-radius: 2px;
+    border-radius: 5px;
     margin-top: 24px;
     width: 100%;
     display: flex;
@@ -385,6 +386,13 @@ h1, .sidebar-title {
     background: #FFFFFF;
     box-shadow: -4px 8px 24px rgba(44, 63, 88, 0.02);
     border-radius: 4px;
+}
+
+.portfolio-opportunity {
+  display: flex;
+  flex-direction: row;
+  // width: 100%;
+  justify-content: space-between;
 }
 
 .portfolio-flex {
@@ -3605,3 +3613,122 @@ h1, .sidebar-title {
   }
 }
 ///////////////LOGGEDINNAVBAR END///////////////
+
+///////////////PortfolioBreakdown Start///////////////
+.portfolio-breakdown-overlay {
+  visibility: hidden;
+}
+.portfolio-breakdown-container {
+  height: 450px;
+  width: 450px;
+  background-color: white;
+  margin: 28px 20px;
+  border-radius: 4px;
+  background: #FFFFFF;
+  box-shadow: -4px 8px 24px rgb(44 63 88 / 2%);
+  border-radius: 4px;
+}
+.portfolio-breakdown-header{
+  width: 100%;
+  padding-top: 23px;
+  h1 {
+    height: 22px;
+    left: 30px;
+    top: 23px;
+    border-radius: nullpx;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #06004D;
+  }
+}
+.portfolio-breakdown-1 {
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #00EEFF;
+}
+
+.portfolio-breakdown-2 {
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #6363FF;
+}
+.portfolio-breakdown-3 {
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color:  #FFD240;
+}
+
+.portfolio-breakdown-num {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+
+.portfolio-breakdown-ind {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-left: 1px solid gray;
+ 
+  h1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    color: #06004D;
+  }
+  p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #8A9099;
+  }
+  
+}
+.portfolio-breakdown-ind-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  h1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    color: #06004D;
+  }
+  p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #8A9099;
+  }
+  
+}
+///////////////PortfolioBreakdown END///////////////

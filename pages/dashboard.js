@@ -8,6 +8,8 @@ import { getAllNews } from 'lib/api';
 import Loading from 'components/Loading';
 import { useGetNews } from 'actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PortfolioBreakdown from 'components/portfolio/PortfolioBreakdown';
+
 export default function Dashboard({ news: initialNews }) {
   const { data: news, teamsError } = useGetNews(initialNews);
   if (!news) {
@@ -32,29 +34,22 @@ export default function Dashboard({ news: initialNews }) {
           </Banner>
           <div>
             <div className='portfolio-opportunity'>
-              <PortfolioSnapshot />
-              <div>Opportunity Distribution</div>
-              <div>
-                <h2>Div 2 Personal</h2>
-                <div>Identity</div>
-                <div>Portfolio Distribution</div>
-              </div>
-              <div className='portfolio-flex'>
-                <LatestDeals />
-
-                <div className='news-holder'>
-                  <div className='news-holder-title'>
-                    <h2>Latest News</h2>
-                  </div>
-                  {news.map(latestNews => (
-                    <LatestNews
-                      title={latestNews.title}
-                      image={latestNews.coverImage}
-                      slug={latestNews.slug}
-                      date={latestNews.date}
-                    />
-                  ))}
+              <LatestDeals />
+              <PortfolioBreakdown />
+            </div>
+            <div className='portfolio-flex'>
+              <div className='news-holder'>
+                <div className='news-holder-title'>
+                  <h2>Latest News</h2>
                 </div>
+                {news.map(latestNews => (
+                  <LatestNews
+                    title={latestNews.title}
+                    image={latestNews.coverImage}
+                    slug={latestNews.slug}
+                    date={latestNews.date}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -75,3 +70,4 @@ export async function getStaticProps() {
     },
   };
 }
+// <PortfolioSnapshot />
