@@ -15,19 +15,12 @@ export default function Home({ companies: initialCompanies }) {
     return <Loading />;
   }
   return (
-    <PageLayout>
-      <div className='equity-header-cont'>
-        <div className='invest-header-bg'>
-          <div className='invest-header-text' style={{ 'max-width': '600px' }}>
-            <h5>RETAIL OFFERS</h5>
-            <h2>Equity Crowdfundings</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              at justo ipsum. Vestibulum consequat hendrerit urna sed facilisis.
-            </p>
-          </div>
-        </div>
-      </div>
+    <PageLayout
+      subtitle='RETAIL OFFERS'
+      title='Equity Crowdfundings'
+      content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+    at justo ipsum. Vestibulum consequat hendrerit urna sed facilisis.'
+    >
       <div className='equity-faq-container'>
         <div className='equity-faq-card'>
           <h5>FAQS</h5>

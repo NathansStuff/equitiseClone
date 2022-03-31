@@ -3,7 +3,6 @@ import { getAllTeams } from 'lib/api';
 import { useGetTeams } from 'actions';
 import EachTeam from 'components/teams/EachTeam';
 import Newsletter from 'components/Newsletter';
-import PageTitle from 'components/PageTitle';
 import Loading from 'components/Loading';
 export default function Team({ teams: initialTeams }) {
   const { data: teams, teamsError } = useGetTeams(initialTeams);
@@ -11,14 +10,12 @@ export default function Team({ teams: initialTeams }) {
     return <Loading />;
   }
   return (
-    <PageLayout>
-      <PageTitle
-        title='The Team'
-        subtitle='MEET THE TEAM'
-        content='Nunc suscipit pulvinar leo.'
-        style={{ padding: '40px 50px ' }}
-      />
-
+    <PageLayout
+      title='The Team'
+      subtitle='MEET THE TEAM'
+      content='Nunc suscipit pulvinar leo.'
+      style={{ padding: '40px 50px ' }}
+    >
       {teams.map(team => {
         return (
           <div className='team-container'>

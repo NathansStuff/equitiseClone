@@ -2,7 +2,7 @@ import Navbar from './Navbar';
 
 export default function NavHeader({ subtitle, content, title }) {
   return (
-    <div>
+    <div style={{'background-color': 'whitesmoke'}}>
       {' '}
       <div className='spacer' />
       <Navbar />

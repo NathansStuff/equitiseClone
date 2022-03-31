@@ -1,20 +1,13 @@
 import PageLayout from 'components/PageLayout';
 import Newsletter from 'components/Newsletter';
-export default function WhyInveest() {
 
+export default function WhyInveest() {
   return (
-    <PageLayout>
-      <div className='equity-header-cont'>
-        <div className='invest-header-bg'>
-          <div className='invest-header-text' style={{ 'max-width': '750px' }}>
-            <h2>Startup investing made easy</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              at justo ipsum. Vestibulum consequat hendrerit urna sed facilisis.
-            </p>
-          </div>
-        </div>
-      </div>
+    <PageLayout
+      title='Startup investing made easy'
+      content='  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+    at justo ipsum. Vestibulum consequat hendrerit urna sed facilisis.'
+    >
       <div className='equity-faq-container'>
         <div className='equity-faq-card' style={{ 'padding-bottom': '60px' }}>
           <div className='equity-faq-title'>
@@ -79,27 +72,41 @@ export default function WhyInveest() {
           </div>
         </div>
       </div>
-      <div className='equity-faq-container' style={{'margin-top': '50px', 'margin-bottom': '50px'}}>
-        <div className='equity-faq-card flex-more' style={{ 'padding-bottom': '60px', 'padding-left': '0' }}>
+      <div
+        className='equity-faq-container'
+        style={{ 'margin-top': '50px', 'margin-bottom': '50px' }}
+      >
+        <div
+          className='equity-faq-card flex-more'
+          style={{ 'padding-bottom': '60px', 'padding-left': '0' }}
+        >
           <div>
-            <img src='https://equitise.com/static/fcef93afaf6e8c7400e7fbcfcc4bd523/4ffff/eb67be6f-8678-4818-afd6-fd41df865061_4955273.webp' style={{'width': '579px' , 'height': '600px',   'object-fit': 'cover'
-        }}/>
+            <img
+              src='https://equitise.com/static/fcef93afaf6e8c7400e7fbcfcc4bd523/4ffff/eb67be6f-8678-4818-afd6-fd41df865061_4955273.webp'
+              style={{ width: '579px', height: '600px', 'object-fit': 'cover' }}
+            />
           </div>
 
-          <div style={{'width': '579px' , 'height': '600px', 'padding': '60px'}}>
+          <div style={{ width: '579px', height: '600px', padding: '60px' }}>
             <h2>WHAT IS EQUITY CROWDFUNDING?</h2>
-            <p  style={{ 'margin-bottom': '30px' }}>
-            Equity crowdfunding is a new way for start-ups to raise funds for growth. It's a new way for everyday people to invest in these start-ups, too. Via equity crowdfunding platforms like Equitise, anyone can buy shares in unlisted companies they feel passionate about, sharing in the company's success.
+            <p style={{ 'margin-bottom': '30px' }}>
+              Equity crowdfunding is a new way for start-ups to raise funds for
+              growth. It's a new way for everyday people to invest in these
+              start-ups, too. Via equity crowdfunding platforms like Equitise,
+              anyone can buy shares in unlisted companies they feel passionate
+              about, sharing in the company's success.
             </p>
-            <p  style={{ 'margin-bottom': '30px' }}>
-            Finding an investing in a startup early on can get you a significant return on investment. Whilst no one can accurately predict which startups will go on to succeed, Equitise gives you access to only highly-vetted startups that are thoroughly screened.
-
+            <p style={{ 'margin-bottom': '30px' }}>
+              Finding an investing in a startup early on can get you a
+              significant return on investment. Whilst no one can accurately
+              predict which startups will go on to succeed, Equitise gives you
+              access to only highly-vetted startups that are thoroughly
+              screened.
             </p>
             <div className='equity-signup-btn'>
-            <p>Learn About the Risks</p>
+              <p>Learn About the Risks</p>
+            </div>
           </div>
-          </div>
-          
         </div>
       </div>
       <div className='equity-faq-container'>

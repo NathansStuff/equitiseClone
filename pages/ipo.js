@@ -15,19 +15,12 @@ export default function Home({ companies: initialCompanies }) {
     return <Loading />;
   }
   return (
-    <PageLayout>
-      <div className='equity-header-cont'>
-        <div className='invest-header-bg'>
-          <div className='invest-header-text' style={{ 'max-width': '600px' }}>
-            <h5>INVEST IN</h5>
-            <h2>IPOs</h2>
-            <p>
-              Integer at justo ipsum. Vestibulum consequat hendrerit urna sed
-              facilisis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-        </div>
-      </div>
+    <PageLayout
+      title='IPOs'
+      subtitle='INVEST IN'
+      content='Integer at justo ipsum. Vestibulum consequat hendrerit urna sed
+    facilisis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    >
       <div className='equity-faq-container'>
         <div className='equity-faq-card'>
           <h5>FAQS</h5>

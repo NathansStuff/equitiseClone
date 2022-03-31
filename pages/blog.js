@@ -1,14 +1,11 @@
 import PageLayout from 'components/PageLayout';
-import PageTitle from 'components/PageTitle';
 import { getAllNews } from 'lib/api';
 import { useGetNews } from 'actions';
 import Loading from 'components/Loading';
-import InvestCarousel from 'components/Invest/InvestCarousel';
 import CarouselCard from 'components/Invest/CarouselCard';
 import BlueButton from 'components/BlueButton';
 import CarouselCardLong from 'components/Invest/CarouselCardLong';
 import NewsCardContainer from 'components/blog/NewsCardContainer';
-import News from './news';
 
 export default function Blog({ news: initialNews }) {
   const { data: news, newsError } = useGetNews(initialNews);
@@ -94,16 +91,20 @@ export default function Blog({ news: initialNews }) {
       companyNews.push(news[i]);
     }
     if (
-        investorNews.length < 2 &&
-        (news[i].tag1 == 'raise-funds' || news[i].tag1 == 'raise-funds')
-      ) {
-        investorNews.push(news[i]);
-      }
+      investorNews.length < 2 &&
+      (news[i].tag1 == 'raise-funds' || news[i].tag1 == 'raise-funds')
+    ) {
+      investorNews.push(news[i]);
+    }
   }
 
   return (
-    <PageLayout>
-      <PageTitle title='Resource Centre' />
+    <PageLayout
+      title='Resource Centre'
+      subtitle=''
+      content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+    at justo ipsum. Vestibulum consequat hendrerit urna sed facilisis'
+    >
       <div className='blogs-container'>
         <div className=''>
           <div className='blog-div'>

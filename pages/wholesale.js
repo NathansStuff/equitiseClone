@@ -11,24 +11,18 @@ import Loading from 'components/Loading';
 export default function Wholesale({ companies: initialCompanies }) {
   const timeNow = new Date();
   const { data: companies, companiesError } = useGetCompanies(initialCompanies);
- 
+
   if (!companies) {
     return <Loading />;
   }
   return (
-    <PageLayout>
-      <div className='equity-header-cont'>
-        <div className='invest-header-bg'>
-          <div className='invest-header-text' style={{ 'max-width': '600px' }}>
-            <h5>EXCLUSIVE FOR HIGH NET WORTH INVESTORS</h5>
-            <h2>Wholesale offers</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              at justo ipsum. Vestibulum consequat hendrerit urna sed facilisis.
-            </p>
-          </div>
-        </div>
-      </div>
+    <PageLayout
+      subtitle='EXCLUSIVE FOR HIGH NET WORTH INVESTORS'
+      title='Wholesale offers'
+      content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+    at justo ipsum. Vestibulum consequat hendrerit urna sed facilisis.'
+    >
+     
       <div className='equity-faq-container'>
         <div className='equity-faq-card'>
           <h5>FAQS</h5>

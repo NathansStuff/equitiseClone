@@ -8,19 +8,13 @@ import { raiseProcessContent } from 'components/raise/raiseProcessContent';
 
 export default function Raise() {
   return (
-    <PageLayout>
-      <div className='equity-header-cont'>
-        <div className='invest-header-bg'>
-          <div className='invest-header-text' style={{ 'max-width': '600px' }}>
-            <h5>THE SMART WAY TO FUND YOUR BUSINESS</h5>
-            <h2>Raise Funds</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              at justo ipsum. Vestibulum consequat hendrerit urna sed facilisis.
-            </p>
-          </div>
-        </div>
-      </div>
+    <PageLayout
+      title='Raise Funds'
+      subtitle='THE SMART WAY TO FUND YOUR BUSINESS'
+      content='              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+    at justo ipsum. Vestibulum consequat hendrerit urna sed facilisis.
+'
+    >
       <div className='equity-faq-container'>
         <div className='equity-faq-card'>
           <div className='equity-faq-title'>

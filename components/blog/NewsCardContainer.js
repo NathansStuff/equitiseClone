@@ -2,7 +2,6 @@ import { urlFor } from 'lib/api';
 import Link from 'next/link';
 
 export default function NewsCardContainer({ title, children, href }) {
-    debugger
   return (
     <div className='news-card-container'>
       <h1 className='news-title'>{title}</h1>

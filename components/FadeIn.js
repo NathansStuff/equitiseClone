@@ -1,7 +1,6 @@
 import FadeInSection from 'components/FadeInSection';
 
 export default function FadeIn({ title, blurb, subtitle, children }) {
-  debugger;
   return (
     <div className='raise-process-container'>
       <div>

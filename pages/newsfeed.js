@@ -1,10 +1,8 @@
 import { useGetNewsfeed } from 'actions';
 import PageLayout from 'components/PageLayout';
-import PageTitle from 'components/PageTitle';
 import { getAllNewsfeed } from 'lib/api';
 import Loading from 'components/Loading';
 import NewsfeedItem from 'components/newsfeed/NewsfeedItem';
-import NavHeader from 'components/NavHeader';
 
 export default function NewsFeed({ newsfeed: initialNewsfeed }) {
   const { data: newsfeed, newsfeedError } = useGetNewsfeed(initialNewsfeed);

@@ -1,24 +1,12 @@
 import PageLayout from 'components/PageLayout';
-import InvestmentCard from 'components/Invest/InvestmentCard';
-import { getAllCompanies } from 'lib/api';
-import { useGetCompanies } from 'actions';
 import Testimonials from 'components/Testimonials';
 import Newsletter from 'components/Newsletter';
 import NewsSlider from 'components/NewsSlider';
 import WhyPartnerFAQ from 'components/why-partner/WhyPartnerFAQ';
 
-export default function Home({ companies: initialCompanies }) {
-  const { data: companies, companiesError } = useGetCompanies(initialCompanies);
- 
+export default function WhyPartner() {
   return (
-    <PageLayout>
-      <div className='equity-header-cont'>
-        <div className='invest-header-bg'>
-          <div className='invest-header-text' style={{ 'max-width': '600px' }}>
-            <h2>Why Partner With Us</h2>
-          </div>
-        </div>
-      </div>
+    <PageLayout title='Why Partner With Us' subtitle='' content=''>
       <div className='equity-faq-container'>
         <div className='equity-faq-card'>
           <div className='equity-faq-title'>
@@ -84,23 +72,12 @@ export default function Home({ companies: initialCompanies }) {
               </p>
             </div>
           </div>
-         
-         
         </div>
       </div>
-      <WhyPartnerFAQ/>
+      <WhyPartnerFAQ />
       <Testimonials />
       <Newsletter />
       <NewsSlider />
     </PageLayout>
   );
-}
-export async function getStaticProps() {
-  const companies = await getAllCompanies({ offset: 0 });
-
-  return {
-    props: {
-      companies,
-    },
-  };
 }
