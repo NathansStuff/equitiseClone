@@ -28,7 +28,7 @@ export default function Dashboard({ news: initialNews }) {
               <LatestDeals />
               <PortfolioBreakdown />
             </div>
-            <div>
+            <div className='portfolio-content'>
               <PortfolioCards />
               <PortfolioNews />
             </div>
