@@ -1,9 +1,9 @@
 import BlueButton from 'components/BlueButton';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-
+import { Fragment } from 'react';
 export default function PortfolioBreakdown({ invested = false }) {
     return (
-    <div>
+    <div className='opportunity-dist-container'>
       <div
         className={`portfolio-breakdown-container ${invested ? '' : 'opaque'}`}
       >
