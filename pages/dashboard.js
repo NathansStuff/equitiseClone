@@ -6,8 +6,15 @@ import LatestDeals from 'components/LatestDeals';
 import PortfolioBreakdown from 'components/portfolio/PortfolioBreakdown';
 import PortfolioNews from 'components/PortfolioNews';
 import VerifyBanner from 'components/VerifyBanner';
+import PortfolioCards from 'components/PortfolioCards';
+import { useGetNews } from 'actions';
+import Loading from 'components/Loading';
 
-export default function Dashboard() {
+export default function Dashboard({ news: initialNews }) {
+  const { data: news, teamsError } = useGetNews(initialNews);
+  if (!news) {
+    return <Loading />;
+  }
   const location = window.location;
   return (
     <div>
@@ -22,6 +29,7 @@ export default function Dashboard() {
               <PortfolioBreakdown />
             </div>
             <div>
+              <PortfolioCards />
               <PortfolioNews />
             </div>
           </div>

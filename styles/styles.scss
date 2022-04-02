@@ -3834,3 +3834,65 @@ color: #8A9099;
 }
 
 ///////////////PortfolioBreakdown END///////////////
+///////////////PortfolioCARDS START///////////////
+.portfolio-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  border-radius: 1px;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+.portfolio-card-text {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 10px;
+    color: #06004d;
+    font-family: Plain sans-serif;
+  }
+  h5 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 5px 20px;
+    width: fit-content;
+  }
+}
+.pink-border {
+  background: #F948FF;
+  border-radius: 2px;
+}
+.portfolio-card-icon {
+  position: relative;
+  bottom: 5px;
+}
+.color-1 {
+  background: #eaeaff;
+}
+.color-2 {
+  background: lightsteelblue;
+}
+.color-3 {
+  background: #E9F1F9;
+}
+.blue-border {
+  background: #6363FF;
+  border-radius: 2px;
+}
+.lightblue-border {
+  background: #00EEFF;
+  border-radius: 2px;
+}
+.portfolio-cards-container {
+  margin: 28px 20px 28px 0;
+}
+///////////////PortfolioCARDS END///////////////
