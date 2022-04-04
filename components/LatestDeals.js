@@ -11,7 +11,7 @@ const LatestDeals = ({ companies: initialCompanies }) => {
   }
   return (
     <div className='portfolio-snapshot'>
-      <div className='portfolio-flex'>
+      <div className='portfolio-flex-deals'>
         <div className='portfolio-p'>
           <h3>Latest Deals</h3>
         </div>

@@ -30,5 +30,6 @@ export default function DateFormat(date) {
     'November',
     'December',
   ][dateTime.getMonth()];
-  return { day : day, month: month };
+  const year = dateTime.getFullYear()
+  return { day : day, month: month , year: year};
 }

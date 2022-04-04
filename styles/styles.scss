@@ -377,7 +377,7 @@ h1, .sidebar-title {
 
 
 .portfolio-snapshot {
-    height: 360px;
+    height: 450px;
     width: 753px;
     margin-top: 28px;
     left: 0px;
@@ -409,6 +409,18 @@ h1, .sidebar-title {
     align-items: center;
     align-items: flex-start;
 }
+.portfolio-flex-deals {
+  display: flex;
+  padding-bottom: 0px;
+  justify-content: space-between;
+  padding: 20px;
+  flex-grow: 1;
+  align-items: center;
+  align-items: flex-start;
+  border-bottom: 0.1px solid #eaedf3;
+
+}
+
 
 .portfolio-flex-2 {
     display: flex;
@@ -422,11 +434,6 @@ h1, .sidebar-title {
     display: flex;
     flex-direction: row;
     border-bottom: 0.1px solid #eaedf3;
-}
-
-.portfolio-p {
-  padding: 20px 0; 
-  
 }
 
 .portfolio-p p {
@@ -469,6 +476,7 @@ h1, .sidebar-title {
   color: #06004d;
   float: left;
   margin-bottom: 0;
+  padding-top: 8px;
 }
 
 
@@ -545,16 +553,15 @@ h1, .sidebar-title {
     margin-right: 30px;
 }
 
-  .latest-deal {
-      margin: 28px;
-      margin-bottom: 0;
-      display: flex;
+.latest-deal {
+  margin: 30px 28px 50px 28px;
+  display: flex;
 
-      img {
-          width: 172px;
-          height: 102px;
-      }
+  img {
+      width: 172px;
+      height: 102px;
   }
+}
 .latest-deal-card-content {
   width: 100%;
 }
@@ -640,7 +647,7 @@ h1, .sidebar-title {
       margin-bottom: 0;
       margin-right: 31px;
       justify-content: space-between;
-      width: 75%;
+      width: 50%;
   }
 
   .latest-stats {
@@ -654,7 +661,7 @@ h1, .sidebar-title {
   }
 
   .latest-progress {
-      width: 25%;
+      width: 50%;
       margin-left: 31px;
       margin-top: 10px;
      
@@ -693,10 +700,11 @@ h1, .sidebar-title {
     margin-right: 24px;
     display: flex;
     margin-bottom: 5px;
-
- 
 }
-
+.news-individual-container {
+  border-bottom: 0.1px solid #eaedf3;
+  padding: 20px 30px;
+}
 .link:hover {
     cursor: pointer;
 }
@@ -707,14 +715,11 @@ h1, .sidebar-title {
     flex-direction: column;
 
     h3 {
-        margin-top: 0;
-        margin-bottom: 0;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        color: #06004D;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      color: #06004d;
+      font-style: Plain;
     }
 
     p {
@@ -722,7 +727,7 @@ h1, .sidebar-title {
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;
-        font-size: 13px;
+        font-size: 14px;
         line-height: 22px;
         color: #9EA0A5;
     }

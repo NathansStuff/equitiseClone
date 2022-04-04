@@ -31,7 +31,6 @@ export default function LatestDealCard({
   var timeNow = new Date();
   var startDate = new Date(company.start);
   var closeDate = new Date(company.close);
-  debugger;
   return (
     <div className='latest-deal'>
       <img src={urlFor(company.coverImage)} />
@@ -60,9 +59,7 @@ export default function LatestDealCard({
               Raised: ${totalInvested.toLocaleString()} ({minimumPercent}%)
             </p>
           </div>
-          <div className='latest-stats'>
-            <p>Equity: 3%</p>
-          </div>
+          
           <div className='latest-stats'>
             <p>Investors: {totalInvestments}</p>
           </div>

@@ -5,7 +5,7 @@ import { useGetNews } from 'actions';
 import BlueButton from './BlueButton';
 
 export default function PortfolioNews({ news: initialNews }) {
-  const { data: news, teamsError } = useGetNews(initialNews);
+  const { data: news, newsError } = useGetNews(initialNews);
   if (!news) {
     return <Loading />;
   }
@@ -25,7 +25,7 @@ export default function PortfolioNews({ news: initialNews }) {
       <div className='news-holder'>
         <div className='news-holder-title'>
           <h2>Latest News</h2>
-          <BlueButton href='/news' content='View all news' />
+          <BlueButton href='/blog' content='View all news' />
         </div>
         {top3News}
       </div>
