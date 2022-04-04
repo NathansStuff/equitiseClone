@@ -10,7 +10,7 @@ export default function PortfolioBreakdown({ invested = false }) {
         <div className='portfolio-breakdown-header'>
           <h1>Opportunity Distribution</h1>
         </div>
-        <div>
+        <div className='portfolio-breakdown-flex'>
           <div className='portfolio-breakdown-pic'>
             <div className='percent-numbers'>
               <h1>$18K</h1>
